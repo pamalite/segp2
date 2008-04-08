@@ -1,0 +1,83 @@
+\documentclass{letter}
+
+\begin{document}
+
+{\large \textbf{\underline{Meeting Minutes Taken on 20$^{th}$ March, 2008 at 1430 hours}}}\\
+
+\textbf{Attendees:} David Hemer, Li Jiang, Matthew Launder (RSP), Callum, Alex, George,  Filimoni, Sahil, Ken, Ida, Fa Bu, Xiaodong, Ming, Hemant, Mohammad Bamogaddam
+
+\textbf{Excused:} Jon
+
+\textbf{Absent:} nil
+
+\textbf{Next Meeting:} 27/03/2008 (Thursday) @ 1300 hours
+
+\textbf{Contents:}
+
+\begin{enumerate}
+\item Requirements Elicitation
+	\begin{itemize}
+	\item \textit{Ticket 23: Support for tagging or folksonomy} \\
+	Matthew said RSP uses their a naming convention for files, internally. This is a general ticket on how files should be tagged. A couple of suggestions is to use key-value pairs as metadata. He considered this as a side issue for now. A quote from Matthew "a loose and fluffy idea". 
+	\item \textit{Ticket 26: Record deltas in the database} \\
+	Matthew said that the initial focus of this ticket is to look at Earth as a disk management tool for files across machines. Instead of capturing a snapshot of the filesystem, it will be cool to capture the differences between snapshots and use the deltas as a disk space usage prediction. (eg: When a particular disk is going to be full?) \\
+	Matthew considered this as a difficult problem, as a whole, and suggested to break it into smaller tickets. Also, this feature is very essential to RSP as they had blown out quite a few of their disks. 
+	\item \textit{Ticket 27: Figure out and record the file types of files in the database} \\
+	Matthew explained that maybe the magic numbers in UNIX filesystem can be used as a precursor to MIME types for files. 
+	\item \textit{Ticket 28: Everything is a sequence} \\
+	Matthew defined a sequence as an order list of individual frames of a video. \\
+	The ticket is suggesting to let Earth to automatically recognize a group of files as a sequence from the RSP file naming convention, and bundle them togather using metadata. \\
+	However, Matthew expressed that it is not really essential for now not really sure how to implement this efficiently. 
+	\item \textit{Ticket 29: For files that are images record other information} \\
+	Matthew explained to have Earth recognize a file, whether it is an image and extract the image metadata, like width and height, and store as metadata. He expressed that is important to RSP to work effectively. 
+	\item \textit{Ticket 25: Create simple REST web service for getting sizes of directories} \\
+	Matthew explained that ticket essentially wants to report directories sizes via REST web service. 
+	\item \textit{Ticket 37: Some kind of mapping between local filesystem paths and network accessible paths} \\
+	Matthew expressed that he had no idea how to do it for now. He wants something robust that do not need to be maintained separately. 
+	\item \textit{Ticket 40 \& 42: File searching plugin to allow RSP file naming convention as search criteria} \\
+	ditto
+	\item \textit{Ticket 66: List of space used by each user} --need correction-- \\
+	Matthew essentially explained that this is essentially listing files and group by their metadata.
+	\item \textit{Ticket 78: Respect permissions when viewing through web application} \\
+	Matthew expressed that this is not terribly important to RSP for now. Also, more investigation is needed to make this work. This is due to the requirement of some kind of user authentication. (eg: Authenticate from LDAP or have a separate user login?)
+	\item \textit{Ticket 107: EarthFS} \\
+	Matthew said that this is not important for now. The feature requested is like the smart folders found on the latest Mac OS X with Spotlight. 
+	\item \textit{Ticket 120: Show green bars (for sizes) in "All Files" view} \\
+	ditto
+	\item \textit{Ticket 127: If not using SVG capable browser warn the user when trying to look at SVG} \\
+	Matthew expressed that this might be worth investigating and suggested to point the user to a possible SVG plugin for the browser.
+	\item \textit{Ticket 138: Radial and Treemap views when combined with filters have very long running queries} \\
+	Matthew said this is a hard one. He said that Julians, a developer in RSP, had already worked on this before. Probably is good to contact him and understand more. \\
+	David suggested to have a sub group to only work on this ticket as they need to understand the database. 
+	\item \textit{Ticket 145: Navigation tab: directories shown as $ > $ 0 TB is not very useful to me} \\
+	Matthew explained that this is an issue when we have a list of very large files and very small files where the biggest measurement unit is used. \\
+	It was suggested to have all files to have their own space measuring units instead.
+	\item \textit{Ticket 146: Run daemon\_test.rb continuously on trunk code} \\
+	Matthew said that is part of the continuous integration practiced in RSP. \\
+	The script, daemon\_test.rb, is ran continuously to perform sanity checks on each check-in's. This is to ensure that if a rogue check-in is discovered, the script will send everyone an email to notify everyone that the current repository is not stable or someone had checked-in a faulty code. 
+	\item \textit{Ticket 166: Record total available disk space for each disk} \\
+	Matthew and David acknowledged that this ticket looks easy, but it is tricky to do. \\
+	The reason is that \texttt{earthd} has only the directory view and do not have a sense of on what volume the directory is. 
+	\item \textit{Ticket 169: Plugin system for files} --need corrections-- \\
+	Matthew expressed this can be quite difficult to do. 
+	\item \textit{Ticket 179: in ``top level" navigation show total size as well as size used} \\
+	Similar to Ticket 66 and may require Ticket 26 to work. 
+	\item \textit{Discarded tickets} \\
+	The following are the tickets discarded as they are either duplicates or spam: 
+		\begin{itemize}
+			\item Ticket 44 (spam)
+			\item Ticket 45 (duplicate from Ticket 42)
+		\end{itemize}
+	\end{itemize}
+\item Milestone Discussion
+	\begin{itemize}
+	\item Not discussed due to time constraints. 
+	\end{itemize}
+\item Opens
+	\begin{itemize}
+	\item David suggested to use agile development presented by Matthew on the project, and work incrementally by starting off with easy or straightforward tickets first. 
+	\item The group would like self-assign subgroups. David reminded that the condition of self-assignment is to have at least 2 BE(SE) students per subgroup. 
+	\item Matthew said it will be good to use the overall Trac system to exchange ideas and post questions. If required to have a personalized response from RSP, Matthew said that everyone in the group can direct the question to David first and have him forward them to RSP. 
+	\end{itemize}
+\end{enumerate} 
+\end{document}  
