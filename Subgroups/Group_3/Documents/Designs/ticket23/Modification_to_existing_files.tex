@@ -1,0 +1,64 @@
+\documentclass[a4paper,10pt]{article}
+
+
+%opening
+\title{Files Changed}
+\author{Jonathan Velasco}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+The following are the files that had been changed so far having in goal the support of tag.  There is not warranty as it has not been tested yet.  
+
+So far the changes include
+
+\begin{enumerate}
+ \item Adding fiel to shearch for a tag to the browser
+ \item 'Search' the database for a tag.  So far the result is 'empty' as no file have a tag
+ \item Possible files that may need modifications
+\end{enumerate}
+
+
+\end{abstract}
+
+\section{Adding fiel to shearch for a tag to the browser}
+
+\subsection*{File}
+app/views/browser/\_breadcrumb\_and\_filter.html.haml
+
+\subsection*{Modifications}
+lines 43-46
+
+\%tr
+   td.last-row{:style => "text-align: right;"}= content\_tag :label, "by tag:", "for" => "filter\_tag"
+   td.last-row= text\_field\_tag "filter\_tag", params[:filter\_tag], :size => 15
+
+\%tr
+
+
+\section{Searching}
+
+\subsection*{File}
+ app/models/earth/file.rb
+
+\subsection*{Modifications}
+lines 91-94
+
+     \# JON - search database for tag
+      elsif filter\_tag != '*'
+        ["files.name LIKE ? AND files.id IN (SELECT file\_id FROM file\_tag, tag WHERE files.id = file\_tag.file\_id AND tag.value LIKE ?)", filter\_filename.tr('*', '\%'), filter\_tag.tr('*', '\%')]
+      \# JON - end
+
+
+\section{Possible files that may need modifications}
+\begin{description}
+ \item app/views/layouts/application.haml
+ \item spec/model/earth\_file\_spec.rb
+ \item test/unit/file\_test.rb
+ \item test/functional/graph\_controller\_test.rb
+ \item app/controllers/browser\_controler.rb
+ \end{description}
+\end{document}
