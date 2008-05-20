@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\pagestyle{headings}
+
+\begin{document}
+\title{\textbf{Plugin Design Document}\\ for \textit{Earth} Project}
+
+\maketitle
+\thispagestyle{empty}
+\newpage{}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage{}
+
+\setcounter{page}{1}
+
+\section{Existing System Architecture and Components Design}
+
+\subsection{Plugin Component Design} 
+
+\subsubsection{Non-implemented Plugins}
+
+Currently each plugin is able to connect to the MVC model, and access the database as is necessary.
+The existing plugin system contains an assortment of plugins that are provided as "vendor" options.	The existing plugins are explained below.
+However these none of these plugins are currently implemented or rather installed into earth.
+
+\begin{itemize}
+\item Earth Active Record:
+This plugin keeps an active record of earth and removes any modified files as necessary. 
+
+\item Auto Complete:
+This plugin provides the ability to auto complete search queries but limits the results to 10 entries by default and sorts by the given field.
+  
+\item Faster Nested Set:
+This plugin provides another nested set implementation. It provides a more natural API and uses only one update statement to insert/move/delete rather than the 2 that is currently used.
+Requires some additional hook-in code.
+
+\item Hornsby:
+This provides a plugin that allows scenarios to be built.
+
+\item Helper Test:
+This plugin is a helper test generator. Provides stubs to test helpers and can be placed within test/unit/helpers to be run automatically with unit tests.
+
+\item Redhill on Rails:
+Plugin that provides generic support for foreign-keys and mechanisms to obtain indexes from a model class and to determine when Schema.define() is running.
+
+\item Mocha:
+Mocha is a library for mocking and stubbing. Most commonly Mocha is used in conjunction with unit tests.
+
+\item Test Spec:
+This provides test and spec layers an interface on top of unit tests to enable both test driven and behaviour driven development.
+It provides a clean room implementation that maps most assertions to "should" syntax.
+
+\item Stable:
+Haml and Sass are templating engines for HTML and CSS. They allow for easier coding of both types of documents with provided templates.
+
+\item Rails rcov:
+This provides easy to use rake tasks to determine coverage of unit tests on the code.
+
+\end{itemize}
+
+\subsubsection{Implemented Plugins}
+
+Currently there is only one implemented plugin which is the file monitor. However this plugin does not need to be installed currently and acts as though it were any of the other classes in the structure.
+This file monitor plugin currently handles a number of tasks. 
+
+\subsubsection{Plugin Management}
+
+There are 2 files that deal with the plugin management. The first is the plugin manager and the second is the earth plugin class.
+Currently they are to deal with the occurence of any installation of plugins. The plugin manager handles creates a certificate for the plugin and monitors the access via public/private keys. It further accesses the plugin's code and installs and loads the plugin into earth. Additionally the plugin manager ensures that there aren't any existing plugins of a higher version than the one about to be installed. The earth plugin class ensures that the plugin is valid and that its methods have been implemented in addition to checking that the plugin implements the necessary methods.
+
+\end{document}
