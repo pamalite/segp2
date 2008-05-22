@@ -1,0 +1,110 @@
+\documentclass{letter}
+
+\begin{document}
+
+{\large \textbf{\underline{Meeting Minutes Taken on 19$^{th}$ May, 2008 at 1410 hours}}}\\
+
+\textbf{Attendees:} Callum, Alex, George, Ming, Filimoni, Ken, Cui, Hemant, Mohammed, Hill, Keane, Ida, George 
+
+\textbf{Excused:} Sahil
+
+\textbf{Next Meeting:} 26/05/2008 (Monday) @ 1400 hours
+
+\textbf{Contents:}
+
+\begin{enumerate}
+\item Minutes on 12$^{th}$ May, 2008 Reviewed
+	\begin{itemize}
+		\item Milestone 2 Progress 
+			\begin{itemize}
+				\item Ticket 138 (filtered query optimisation) - options being researched, may need database optimization and use of postgres optimizer, but still looking at queries.
+				\item Ticket 27 is restored to being unfinished due to unforeseen circumstances
+				\item Ticket 146 (running test continuously) - operational, but can't run at the same time as normal daemon currently.
+				\item Ticket 42 - addition of metadata into the databases will be implemented to allow search to be able to look for details about job name, shot name and sequence name.
+				\item Ticket 23 - rough sketch laid out for how to implement tagging.
+				\item Documentation - Plugin and Database documentation is currently being undertaken.
+				\item Milestone 1 Integration - requires Git push as well as test cases and testing.
+				\item Group main contacts to maintain documentation - Ken (G3), Ming(G2), Fil(G1)
+			\end{itemize}
+		\item Git Repository
+			\begin{itemize}
+				\item All group repositories are online and every has been invited.
+				\item Trac access is available to members and should be used to comment on the various tasks.
+				\item Documentation and implementation of Trac processes and addition of ticket statuses to be undertaken by Callum.
+			\end{itemize}
+	\end{itemize}
+\item Milestone 2 Progress Updates
+	\begin{itemize}
+		\item Group 1
+			\begin{itemize}
+				\item Ticket 138
+					\begin{itemize}
+						\item Cui Xiaodong had posted an article about this ticket had already been addressed by RSP. 
+						\item A quick benchmark yielded good results on the speed of data retrieval, and the solution done by RSP also scales well. 
+					\end{itemize}
+				\item Ticket 146
+					\begin{itemize}
+							\item Fil commented that the test script is no longer spewing out errors. 
+					\end{itemize}
+				\item Integration of Milestone 1
+					\begin{itemize}
+						\item Alex said that will have something done by 21/5/2008 (Wednesday).
+					\end{itemize}
+			\end{itemize}
+		\item Group 2
+			\begin{itemize}
+				\item Ticket 42
+					\begin{itemize}
+							\item Mohammed said that Keane had done part the ticket requirements, and the prototype can now search by jobs and shots.
+							\item The subgroup will make the ticket into a plugin once the ticket is solved. 
+							\item They can demo what Keane had done by 23/5/2008 (Friday).
+					\end{itemize}
+			\end{itemize}
+		\item Group 2
+			\begin{itemize}
+				\item Ticket 23
+					\begin{itemize}
+						\item Jon had drafted the design and currently is in the progress of completing the prototype. 
+					\end{itemize}
+					\item Ticket 27
+					\begin{itemize}
+						\item NTU 
+					\end{itemize}
+			\end{itemize}
+		\item Design Documentations
+			\begin{itemize}
+				\item Plugin System
+					\begin{itemize}
+						\item Ming commented that the plugin system seems to be non-existence. 
+						\item There should be a new plugin design by 23/5/2008 (Friday)
+					\end{itemize}
+				\item Database
+					\begin{itemize}
+						\item Jian Huang said that the first public draft of the database documents (ERD and DD) will be out by 23/5/2008 (Friday)
+					\end{itemize}
+				\item Testing
+					\begin{itemize}
+						\item Alex reported that this is done. 
+					\end{itemize}
+			\end{itemize}
+	\end{itemize}
+\item Presentation of Milestone 2
+	\begin{itemize}
+		\item It is agreed to have the subgroups' main contacts to present what have they done so far, and have them demoed. As for specific questions, they should be directed to the ticket owners.
+		\item Milestone 1 integration
+			\begin{itemize}
+				\item Milestone 1 tickets must be merged into the repo by 22/5/2008 (Thursday) at 1700 hours.
+				\item Tickets inclusions will be finalized by 20/5/2008 (Tuesday)
+			\end{itemize}
+		\item An informal meeting will be on 22/5/2008 (Thursday) to finalized the integration. 
+	\end{itemize}
+\item Individual and Group reports
+	\begin{itemize}
+		\item It is agreed to commit it into the repo and send a pull request to David. 
+	\end{itemize}
+\item Opens
+	\begin{itemize}
+		\item Mohammed proposed to change the Friday lecture times to 12-1pm. 
+	\end{itemize}
+\end{enumerate} 
+\end{document}  
