@@ -1,0 +1,50 @@
+=================================
+Milestone Integration steps
+Prepared by: Mohammad Bamogaddam
+=================================
+
+Reference: "Thanks to Alex Useful Links"
+http://b.lesseverything.com/2008/3/25/got-git-howto-git-and-github
+
+------
+Notes:
+------
+for group1:
+change mfb1982 ===> eeggs
+for group3:
+change mfb1982 ===> pamalite
+for both:
+change 3d4e3d22675ce0a6a7d8e5824c1419c21acf0e1c ===> to the last commit from your group's repo related to milestone1
+-------------------------------------------------
+
+Do the Following:
+
+git clone git@github.com:mfb82/earth.git
+1# Copy the main repo to your lcal PC
+
+git remote add group2 git@github.com:mfb1982/earth.git
+2# Tells your local git repo to add a new remote repository
+
+git checkout -b group2/master
+3# create a new branch and switch to it
+
+git branch ## optional, to show you in which branch you are ###
+
+git pull group2 master
+4# pull the group2 repository
+
+git checkout -b milestone1 3d4e3d22675ce0a6a7d8e5824c1419c21acf0e1c
+5# create a new branch from the last commit for milestone 1 in the group repo and name it "milestone1"
+
+git branch ## optional, to show you in which branch you are ###
+
+git checkout master
+6# puts us back in the context of our master branch
+
+git merge group2Mileston1
+7# merges the local "milestone1" branch into our master branch
+
+git log ## optional, to show you the commits so you can be sure that the last commit is what you need ###
+
+git push
+8# finally, pushes the changes
