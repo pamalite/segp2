@@ -41,7 +41,7 @@ git branch ## optional, to show you in which branch you are ###
 git checkout master
 6# puts us back in the context of our master branch
 
-git merge group2Mileston1
+git merge milestone1
 7# merges the local "milestone1" branch into our master branch
 
 git log ## optional, to show you the commits so you can be sure that the last commit is what you need ###
