@@ -1,0 +1,67 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+
+\begin{document}
+
+\title{Software Engineering Group Project - 7096A}
+\author{Semester 1 Week 10 Meeting - Sub-Group 1}
+\date{Wed May 21, 2008 (1400hr)}
+
+\maketitle 
+
+\noindent {\large \textbf{\underline{Query Optimisation for Filtering under Radial View (Ticket 138)}}}\\
+\noindent {\normalsize \textbf{Assignee:} Xiaodong Cui}\\
+\noindent {\normalsize \textbf{Hours:} 45hrs (approx)}\\
+\begin{enumerate}
+\item {Task Description}
+  \begin{itemize}
+  \item Radial views when combined with filters have very long running queries. Improved speed of radial graph, addresses performance problem described in Ticket 138.
+  \end{itemize}
+\item {Problem Solved}
+  \begin{itemize}
+  \item Broken query problem, when generating the radial view together with a filter, it gives the following error message.
+  \item \emph{PGError: ERROR: column reference ''bytes" is ambiguous}
+  \item \emph{LINE 1: SELECT SUM(bytes) AS sum\_bytes, SUM(blocks) AS sum\_blocks, C\ldots}
+  \item This is because we have not specified which table can be used to get '‘bytes" attribute. The table can be used here is the files table.
+  \end{itemize}
+  
+\newpage
+\item {Time Measurements}
+  \begin{itemize}
+  \item In order of tuning a query, we need to measure current performance of the query. So I checked out the old version of earth, say 1004, and asked it to monitor the same directory, then managed to get response times of generating radial view for both version 1004 and 1179 using ruby-debug, also the response time can be displayed in the browser. The results are listed in Table 1 below.
+    \begin{table}[ht!]
+      \begin{tabular}{|p{4cm}|p{4cm}|} \hline
+         & \\
+        \textbf{Earth r1004} & \textbf{Earth r1179}   \\
+         & \\
+        \hline
+         & \\
+        (23385 rows in files) & (23385 rows in files) \\
+         & \\
+        \hline
+         & \\
+        Average: 70-80 seconds & Average: 0.73-0.82seconds \\
+         & \\
+        \hline
+      \end{tabular}
+    \end{table}
+  \item Then I measured the query performance on earth 1179 with different sizes of database (by adding huge number of files in the directory monitored by earth), the results are listed in Table 2 below.
+    \begin{table}[ht!]
+      \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|} \hline
+         & & \\
+        23385 rows & 44696 rows & 66022 rows\\
+         & & \\
+        \hline
+         & & \\
+        Average: 0.75s & Average: 3.17s & Average: 7.02s\\
+         & & \\
+        \hline
+      \end{tabular}
+    \end{table}
+  \item The problem of long running queries has been addressed, may need some more work to make the performance better.
+  \end{itemize}
+\end{enumerate}
+
+\[\emph{End}\]
+
+\end{document}

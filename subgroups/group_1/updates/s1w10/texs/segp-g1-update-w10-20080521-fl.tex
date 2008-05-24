@@ -1,0 +1,38 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+
+\begin{document}
+
+\title{Software Engineering Group Project - 7096A}
+\author{Semester 1 Week 10 Meeting - Sub-Group 1}
+\date{Wed May 21, 2008 (1400hr)}
+
+\maketitle 
+
+\noindent {\large \textbf{\underline{Ticket 146 - Continuous Testing of Earth Trunk Code}}}\\
+\noindent {\normalsize \textbf{Assignee:} Filimoni Lutunaika}\\
+\noindent {\normalsize \textbf{Hours:} 40hrs (approx)*}\\
+\begin{enumerate}
+\item {Task Description}
+  \begin{itemize}
+  \item In addition to the continuous integration upon SVN commits (Ticket 117), set up a continuous run of \emph{daemon\_test.rb} over the trunk code.
+  \end{itemize}
+\item {Status}
+  \begin{itemize}
+  \item At this stage, the \emph{daemon\_test.rb} script can run continuously if number of iterations is not specified. However, the test will abort if the process is terminated by the user (via terminal) or if a serious error is encountered.
+  \item The script \emph{daemon\_test.rb} runs on the test database (earth\_test) instead of the development. Also, the testing process requires a dedicated workspace (directory) where it will create and destroy folders and files as part of the testing process. The path to this workspace is normally specified during the execution of the script through the terminal.
+  \item After creating files and folders within the specified testing workspace, the script then checks the operation of the earth daemon (earthd) in updating the backend and retrieving the updated metadata on folders and files. This is essentially the core of the testing script and exhibits all the essential features of integration testing.
+  \end{itemize}
+\item {Pending}
+  \begin{itemize}
+  \item Improvement of testing script to allow convenient execution of the tests via the terminal or web browser (approx. 6hrs).
+  \end{itemize}
+\item {Notes}
+  \begin{itemize}
+  \item * Significant portion of development time spent on investigating the execution of ruby script via the browser.
+  \end{itemize}
+\end{enumerate}
+
+\[\emph{End}\]
+
+\end{document}

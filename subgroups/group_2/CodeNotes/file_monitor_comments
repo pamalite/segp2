@@ -1,0 +1,68 @@
+
+# it is currently not used as a plugin
+# just used as a normal helper class
+# go to script/earthd and notice LOAD_FILE_MONITOR_AS_PLUGIN
+
+Nested Classes:
+1- ETAPrinter
+
+
+Methods:
+
+1- plugin_name
+
+# static method
+# returns a string of the plugin name
+
+2- plugin_version
+# static method
+# returns version of this plugin
+
+3- iteration(cache, only_initial_update = false, force_update_time = nil) 
+	# it is the entry point for file_minitor class from earthd script
+
+# parameters:
+	- cache => starts as an empty array
+ 	- only_initial_update => flag (true or false)
+	- force_update_time =>
+
+
+# Finds the current running server by (Earth::Server.this_server) method
+# Finds all the root directories for the given server as an array using (Earth::Directory.roots_for_server) method
+# saves all directories info into cache Hash
+	cache{:top_level_directories => {*},...}
+		{*} is another hash -- {directory_id => directory object}
+# calls method run()
+	parameters: directories (objects) on top level, time
+
+
+
+4- run(directories, force_update_time=nil)
+
+# parameters:
+	- array of directories (objects)
+	- time
+
+# updates the directories information at database using method update(directories, time)
+# note: children_count can be found in vendor/plugins/faster_nested_set/lib/faster_nested_set.rb
+
+
+5- update(directories, update_time = 0, *args)
+
+# parameters:
+	- directories => array of directories (objects) (top level directories at begining)
+	- time
+	- *args ?????
+
+# updates the directories and conatining files information on database (recursievly i.e. the whole tree)
+# uses update_non_recursive(directory, options) method to update one directory at a time
+
+
+
+6- update_non_recursive(directory, options)
+
+# parameters:
+	- directory => a directory object
+	- options => hash
+
+# updates/adds one directory information to the database including its files (it does not go to its children directories)
