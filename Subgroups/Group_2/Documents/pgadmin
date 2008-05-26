@@ -1,0 +1,26 @@
+
+About PGAdmin3
+
+PGadmin3 is a GUI for posgresql. By using this the structure of database can be dislpayed in the main window.You can also manipulate database through this friendly interface. And PGadmin can show the tables of the database as well.
+
+If you are using fedora 8, you can use the following commands to install pgadmin3:
+
+     su
+
+    password:
+
+    yum install pgadmin3
+
+After installing it, you should open your postgresql.
+
+    postgres -D /usr/local/pgsql/data  &
+
+(Here I assume that the directory used for storing your database  is  /usr/local/pgsql/data)
+
+Then open the PGAdmin that you have installed just now, and do some configuration for it.
+
+
+
+1.Press the first icon on the menubar to add a new server. For Linux what you only need to do is to fill the Name item(that can be any name you like), and ,for other items, you can just ignore them. Then  press "confirm", now you can view  the databases in earth. 
+
+2.For now , you will find the database earth_development. After  pressing the '+' .On  the  left of 'earth_development' , you will find 'public'.Under the 'public' hierarchy, you will find 'tables', and all the tables of earth are there. You    choose a table and  press the 6th icon in the menu bar (which looks like a table)   to display it.
