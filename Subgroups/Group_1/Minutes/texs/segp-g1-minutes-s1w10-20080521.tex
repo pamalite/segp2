@@ -1,0 +1,33 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+\begin{document}
+
+\title{Software Engineering Group Project 4001/7096A}
+\author{Semester 1 Week 11 Meeting - Sub-Group 1}
+\date{Wed May 28, 2008 (1415hr)}
+
+\maketitle
+ 
+\noindent {\large \textbf{\underline{Minutes of Meeting on Wed May 21, 2008}}}\\
+ 
+\noindent \textbf{Attendees:} Dr. Li Jiang, Alex Egan, Filimoni Lutunaika, George Sainsbury, Xiaodong Cui\\
+
+\begin{enumerate}
+	\item Progress Reports
+	\begin{itemize}
+		\item Alex presented his report, stating his work on the Repository Process Document and Testing Process Document. These were said to be mostly complete with some final changes and formatting to be done.
+		\item George presented his report, stating work in integration had been undertaken by him. The current test cases were said to be sufficient due to their overall minimal changes and that they were in areas that did not directly affect each other. Ticket 66 still needs more checking due to late changes. Ticket 127 needs testing on more platforms.
+		\item Cui presented his report. He explained the ticket he was working on, the optimisation of radial view queries with filters. A problem was fixed with one of the filters that involved the files and directories tables. From testing, performance of the queries seemed okay. This was checked by having the time to run the query displayed on the page. Cui also researched optimising Ruby and Rails. Caching data and loading of queries seems to be enabled to improve performance. It was suggested by Li that splitting the queries into smaller ones and then combining them may improve performance. Li also suggested reducing the database redundancy somehow, such as by altering the database schema. Scaling was shown to be an issue as form testing, with approximately 3 times the number of files indexed, the time took 10 times as long to complete the query. The current version of Earth as given to us from Rising Sun Pictures is much more optimised than older versions. Alex suggested that asking Rising Sun Pictures for an estimate of the number of files they imagine indexing would be useful for further testing. It was noted by Fil that at the moment, radial view is not such an important feature but as more disk management features are added to Earth, it may become central. Cui said he plans to continue to investigate the design of the radial view operations and look into shifting some of the query processing to the a backend of some sort.
+		\item Fil presented his report. He had encountered some permission issues with the Earth daemon needing to run as root user. Fil implemented a browser-based test output for the daemon. This is able to show the tests that are running and is useful because the help file for the tests only explains how to run the tests but not what or where it is being tested. Fil will update the test help file to explain more about what is going on.
+	\end{itemize}
+	\item Discussion
+	\begin{itemize}
+		\item Li said that the progress reports were on track and that they were going in the right direction. The reports this week are clearer but he still wants more description of tasks and progress. They should state explicitly what you did, what you improved and what you are to do in the future. Li also noted the task distribution is good. Overall, he is happy with the documents so far but would like to see the improvements mentioned.
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Next Meeting:} May 28, 2008 (Wed) @ 1415hr\\
+
+\[\emph{End}\]
+ 
+\end{document} 
