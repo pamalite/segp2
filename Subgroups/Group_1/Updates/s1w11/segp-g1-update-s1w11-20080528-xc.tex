@@ -1,0 +1,33 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+ 
+\begin{document}
+ 
+\title{Software Engineering Group Project - 7096A}
+\author{Semester 1 Week 11 - Sub-Group 1}
+\date{Wed May 28, 2008}
+
+\maketitle 
+
+\noindent {\large \textbf{\underline{Ticket 138 - Query Optimisation under Radial View}}}\\
+ 
+\paragraph{}
+
+\noindent {\normalsize \textbf{By:} Xiaodong CUI}\\
+
+\paragraph{}
+
+Task done for the last week:
+\begin{itemize}
+\item Added a ticket for the broken query problem.
+\item Ticket 138 presentation on last Friday
+\item There is a method find\_files\_down\_to\_level method under the model file directory.rb returns all 
+files belonging to sub-directories of the current directory down to the given level. It contains a single 
+query, but it takes almost 60\% of the overall running time, so we need to optimize the query.
+\item Rewrite the query to eliminate the sub-queries, increased the speed by 0.5 seconds.
+\item Planned to add a column in the files table with directories level, so we do not need JOIN in the query.
+\end{itemize}
+
+\[\emph{End}\]
+ 
+\end{document}
