@@ -1,0 +1,126 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+\usepackage{a4wide}
+\begin{document}
+
+\title{Software Engineering Group Project 4001/7096A}
+\author{Semester 1 Week 12 Meeting - Sub-Group 1}
+\date{Wed Jun 4, 2008 (1415hr)}
+
+\maketitle
+ 
+\noindent {\large \textbf{\underline{Minutes of Meeting on Wed May 28, 2008}}}\\
+ 
+\noindent \textbf{Attendees:} Dr. David Hemer, Dr. Li Jiang, Alex Egan, 
+Filimoni Lutunaika, George Sainsbury, Xiaodong Cui\\
+
+\section{Milestone 2 Reviews}
+
+\subsection{Ticket 146 - Continuous Running of Daemon Test Script}
+
+\paragraph{}Fil updated the group on his progress with the continuous 
+testing of the Earth daemon as raised in Ticket 146. He had completed
+preliminary testing using both his own and the uni machine with satisfactory 
+results. The test script verifies the performance of the daemon by 
+manipulating the test directory on the local machine and checks that 
+these changes are captured by the daemon in a timely fashion and updated 
+on the PostgreSQL database. This manipulation of test directory involves 
+creating, deleting, moving and timestamping (touching) files and folders at 
+random. He had also included a text file which contains specific 
+instructions on how to configure and execute the script in a test environment.
+
+\paragraph{} David responded to this by raising the issue of how these 
+progresses are being recorded. Ideally, whatever modifications and changes 
+that had been made for this task should be updated on RSP's Trac system
+for the benefit of other interested developers. Even if the source codes 
+have not been pushed onto the RSP repository, information about the status
+of each task or ticket should still be updated together with the relevant 
+reference to the SEGP2 repository.
+
+
+\subsection{Ticket 138 - Query Optimisation under Radial View}
+ 
+\paragraph{} Cui informed the group about his progress on the
+optimisation of queries when filtering under radial view. He had found 
+that a significant part of the delay to the current implementation is 
+not due to the actual execution of the query on the database. He also
+deduced that the delay was somewhere on the Rails side of the application 
+after finding out that running the raw query on the PostgreSQL database 
+only took a small fraction of the measured turnaround time for the same query. 
+Nevertheless, he had made some modifications to the current query which 
+produced a slight improvement to the total running time of the query.
+
+\paragraph{} David discussed the group's views on how to proceed with 
+this particular ticket and mentioned that it was alright to set this 
+Ticket aside for the time being and have its priority downgraded. 
+This way, the group would be able to take on a new ticket of high 
+priority that has application-wide improvements for the next milestone.
+
+
+\subsection{Documentation of Project Repository and Testing Process}
+
+\paragraph{} Alex discussed the outcome of presenting the \emph{Project 
+Repository Document} and \emph{Testing Process Document} to the main 
+project group of Monday. The main group had subsequently decided to 
+adopt the procedures specified in these documents and reorganised the
+hierarchy of the physical repository accordingly.
+
+
+\section{Milestone 3 Planning}
+
+\paragraph{} David sought clarification on how the group had come up with 
+the tasks (tickets) for Milestone 3. Fil mentioned that the tasks (tickets) 
+were selected based on how they would complement what had been the tasks
+undertaken during the development sprint for Milestone 2. Furthermore, 
+since the other two subgroups had decided to concentrate on plugins 
+during the current development sprint, Group 1 decided to investigate
+a few other high priority tickets instead.
+
+\paragraph{} George informed the group that he would be investigating the 
+process of creating a gem for Earth. If the actual process simply involves 
+pointing all the constituent components onto a target build directory then 
+it could be a simple matter of identifying all the relevant dependencies
+and creating the Earth gem. David then added that the future integration 
+of plugins should also be considered when undertaking this task.
+
+\paragraph{} Alex informed the group about his plans to investigate and 
+implement the remove feature for the Earth daemon. He highlighted the current 
+shortcomings of the Earth application due to the lacking remove feature. 
+In response, David highlighted the ways in which this task could be 
+attempted such as whether to simply flag the records under the removed folder 
+in the file hierarchy or permanently delete all the related records 
+from the database. He also advised that some further analysis of these 
+issues be considered in order to find the best way to approach the task. 
+Nevertheless, he recommended trying out the most simple solution first 
+before fully committing to a more complex alternative.
+
+\paragraph{} David then raised some concerns on how the time estimates 
+in the Group 1 Milestone 3 plan were obtained. Fil admitted that the group 
+did not reach this level of detail while selecting the task, instead he simply 
+deduced the time that each member would be expected to spend on the project 
+during this development sprint. David then reiterated the need to do proper 
+planning particularly when it concerns matching development tasks to the
+resources at hand. The group might have to consider some preliminary scoping 
+of each task in order to obtain a better appreciation of each task and a more
+accurate time estimate.
+
+\paragraph{} David also commented on the significant portion of development 
+time that the group has decided to allocate for integration testing phase. 
+Fil explained that based on the group's rather mediocre experiences during 
+the previous milestone, it had been decided that more resources (time) be 
+expended at the integration testing phase. These additional timing constraints
+would effectively reduce the actual development period. However, the strategy
+would allow for a better code review strategy than would be otherwise possible.
+
+\paragraph{} George then suggested that the next meeting be scheduled at the 
+same time (1415hrs) and same day (Wed) next week. This was agreeable 
+to everyone and the meeting proper ended at around 1500hrs.
+
+
+\section{Other Matters}
+
+\textbf{Next Meeting:} Jun 4, 2008 (Wed) @ 1415hrs\\
+
+\[\emph{End}\]
+ 
+\end{document} 
