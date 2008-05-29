@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="" company="" manager="" phase="" project-start="20080527T000000Z" mrproject-version="2" calendar="1">
+<project name="Milestone 3" company="SEGP2 Group 1" manager="Filimoni Lutunaika" phase="" project-start="20080527T000000Z" mrproject-version="2" calendar="1">
   <properties/>
   <phases/>
   <calendars>
@@ -20,43 +20,118 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Ticket 138 - Query Optimisation under Radial View" note="Tue 27 May 2008, 23:22&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
-    <task id="2" name="Ticket 148 - Daemon Configuration using GUI" note="Tue 27 May 2008, 23:24&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
-    <task id="3" name="Ticket 174 - Create Earth Gem" note="Tue 27 May 2008, 23:25&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
-    <task id="4" name="Implement Remove Feature" note="Tue 27 May 2008, 23:26&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
-    <task id="5" name="Integration Testing of Milestone 3 Solutions" note="Tue 27 May 2008, 23:33&#10;" work="115200" duration="115200" start="20080606T160000Z" end="20080612T120000Z" work-start="20080606T160000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+    <task id="1" name="Ticket 131 - Use Real Disk Usage Instead of Byte Size" note="Tue 27 May 2008, 23:22&#10;Fri 30 May 2008, 01:38&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="2" name="T#131 - Subtask 1 of 4" note="Fri 30 May 2008, 01:41&#10;" work="36000" duration="36000" start="20080527T000000Z" end="20080528T090000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="3" name="T#131 - Subtask 2 of 4" note="Fri 30 May 2008, 01:42&#10;" work="54000" duration="54000" start="20080529T000000Z" end="20080530T140000Z" work-start="20080529T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
       <predecessors>
-        <predecessor id="1" predecessor-id="4" type="FS"/>
-        <predecessor id="1" predecessor-id="3" type="FS"/>
-        <predecessor id="1" predecessor-id="2" type="FS"/>
+        <predecessor id="1" predecessor-id="2" type="FS" lag="54000"/>
+      </predecessors>
+    </task>
+    <task id="4" name="T#131 - Subtask 3 of 4" note="Fri 30 May 2008, 01:43&#10;" work="54000" duration="54000" start="20080531T060000Z" end="20080603T140000Z" work-start="20080602T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="3" type="FS" lag="57600"/>
+      </predecessors>
+    </task>
+    <task id="5" name="T#131 - Subtask 4 of 4" note="Fri 30 May 2008, 01:44&#10;" work="36000" duration="36000" start="20080607T080000Z" end="20080610T090000Z" work-start="20080609T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="1" type="FS" lag="57600"/>
+      </predecessors>
+    </task>
+    <task id="6" name="Ticket 148 - Daemon Configuration using GUI" note="Tue 27 May 2008, 23:24&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="7" name="T#148 - Subtask 1 of 4" note="Fri 30 May 2008, 01:53&#10;" work="18000" duration="18000" start="20080527T000000Z" end="20080527T130000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="8" name="T#148 - Subtask 2 of 4" note="Fri 30 May 2008, 01:55&#10;" work="54000" duration="54000" start="20080528T050000Z" end="20080529T140000Z" work-start="20080528T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="7" type="FS" lag="57600"/>
+      </predecessors>
+    </task>
+    <task id="9" name="T#148 - Subtask 3 of 4" note="Fri 30 May 2008, 01:55&#10;" work="72000" start="20080530T060000Z" end="20080603T120000Z" work-start="20080530T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="8" type="FS" lag="57600"/>
+      </predecessors>
+    </task>
+    <task id="10" name="T#148 - Subtask 4 of 4" note="Fri 30 May 2008, 01:56&#10;" work="36000" start="20080607T080000Z" end="20080610T100000Z" work-start="20080609T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="6" type="FS" lag="57600"/>
+      </predecessors>
+    </task>
+    <task id="11" name="Ticket 174 - Create Earth Gem" note="Tue 27 May 2008, 23:25&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="12" name="T#174 - Subtask 1 of 3" note="Fri 30 May 2008, 01:57&#10;" work="14400" start="20080527T000000Z" end="20080527T120000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-work"/>
+    <task id="13" name="T#174 - Subtask 2 of 3" note="Fri 30 May 2008, 01:58&#10;" work="57600" duration="57600" start="20080529T120000Z" end="20080602T100000Z" work-start="20080529T120000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="12" type="FS" lag="172800"/>
+      </predecessors>
+    </task>
+    <task id="14" name="T#174 - Subtask 3 of 3" note="Fri 30 May 2008, 01:59&#10;" work="14400" duration="14400" start="20080607T080000Z" end="20080609T120000Z" work-start="20080609T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="11" type="FS" lag="57600"/>
+      </predecessors>
+    </task>
+    <task id="15" name="Implement Remove Feature" note="Tue 27 May 2008, 23:26&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="16" name="ERF - Subtask 1 of 3" note="Fri 30 May 2008, 02:02&#10;" work="43200" duration="43200" start="20080527T000000Z" end="20080528T110000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="17" name="ERF - Subtask 2 of 3" note="Fri 30 May 2008, 02:03&#10;" work="28800" duration="28800" start="20080530T110000Z" end="20080602T100000Z" work-start="20080530T110000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="16" type="FS" lag="172800"/>
+      </predecessors>
+    </task>
+    <task id="18" name="ERF - Subtask 3 of 3" note="" work="14400" duration="14400" start="20080606T160000Z" end="20080609T110000Z" work-start="20080606T160000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="15" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="19" name="Integration Testing of Milestone 3 Solutions" note="Tue 27 May 2008, 23:33&#10;" work="115200" duration="115200" start="20080606T160000Z" end="20080612T120000Z" work-start="20080606T160000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="15" type="FS"/>
+        <predecessor id="1" predecessor-id="11" type="FS"/>
+        <predecessor id="1" predecessor-id="6" type="FS"/>
         <predecessor id="1" predecessor-id="1" type="FS"/>
       </predecessors>
     </task>
-    <task id="6" name="Demonstration" note="" work="0" start="20080613T000000Z" end="20080613T000000Z" work-start="20080613T080000Z" percent-complete="0" priority="1" type="milestone" scheduling="fixed-work">
-      <constraint type="must-start-on" time="20080613T000000Z"/>
+    <task id="20" name="Demonstration" note="" work="3600" duration="3600" start="20080613T000000Z" end="20080613T090000Z" work-start="20080613T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <constraint type="start-no-earlier-than" time="20080613T000000Z"/>
+      <predecessors>
+        <predecessor id="1" predecessor-id="19" type="FS"/>
+        <predecessor id="1" predecessor-id="18" type="FS"/>
+        <predecessor id="1" predecessor-id="14" type="FS"/>
+        <predecessor id="1" predecessor-id="10" type="FS"/>
+        <predecessor id="1" predecessor-id="5" type="FS"/>
+      </predecessors>
     </task>
   </tasks>
   <resource-groups default_group="1">
     <group id="1" name="Group 1" admin-name="Filimoni Lutunaika" admin-phone="0404548918" admin-email="filimoni.lutunaika@gmail.com"/>
   </resource-groups>
   <resources>
-    <resource id="1" name="Filimoni Lutunaika" short-name="Fil" type="2" units="0" email="filimoni.lutunaika@gmail.com" note="Tue 27 May 2008, 23:21&#10;" std-rate="1"/>
-    <resource id="2" name="Xiaodong Cui" short-name="Cui" type="2" units="0" email="xiaodong.cui@gmail.com" note="Tue 27 May 2008, 23:20&#10;" std-rate="1"/>
-    <resource id="3" name="George Sainsbury" short-name="George" type="2" units="0" email="gsainbury@gmail.com" note="Tue 27 May 2008, 23:20&#10;" std-rate="1"/>
-    <resource id="4" name="Alex Egan" short-name="Alex" type="2" units="0" email="eegs@gmail.com" note="Tue 27 May 2008, 23:19&#10;" std-rate="1"/>
+    <resource id="1" name="Alex Egan" short-name="Alex" type="2" units="0" email="eegs@gmail.com" note="Tue 27 May 2008, 23:19&#10;" std-rate="1"/>
+    <resource id="2" name="George Sainsbury" short-name="George" type="2" units="0" email="gsainbury@gmail.com" note="Tue 27 May 2008, 23:20&#10;" std-rate="1"/>
+    <resource id="3" name="Xiaodong Cui" short-name="Cui" type="2" units="0" email="xiaodong.cui@student.adelaide.edu.au" note="Tue 27 May 2008, 23:20&#10;" std-rate="1"/>
+    <resource id="4" name="Filimoni Lutunaika" short-name="Fil" type="2" units="0" email="filimoni.lutunaika@gmail.com" note="Tue 27 May 2008, 23:21&#10;" std-rate="1"/>
   </resources>
   <allocations>
-    <allocation task-id="6" resource-id="1" units="100"/>
-    <allocation task-id="5" resource-id="1" units="25"/>
-    <allocation task-id="2" resource-id="1" units="100"/>
-    <allocation task-id="6" resource-id="2" units="100"/>
-    <allocation task-id="5" resource-id="2" units="25"/>
-    <allocation task-id="1" resource-id="2" units="100"/>
-    <allocation task-id="6" resource-id="3" units="100"/>
-    <allocation task-id="5" resource-id="3" units="25"/>
+    <allocation task-id="20" resource-id="1" units="25"/>
+    <allocation task-id="18" resource-id="1" units="100"/>
+    <allocation task-id="17" resource-id="1" units="100"/>
+    <allocation task-id="16" resource-id="1" units="100"/>
+    <allocation task-id="19" resource-id="1" units="25"/>
+    <allocation task-id="15" resource-id="1" units="100"/>
+    <allocation task-id="14" resource-id="2" units="100"/>
+    <allocation task-id="13" resource-id="2" units="100"/>
+    <allocation task-id="12" resource-id="2" units="100"/>
+    <allocation task-id="20" resource-id="2" units="25"/>
+    <allocation task-id="19" resource-id="2" units="25"/>
+    <allocation task-id="11" resource-id="2" units="100"/>
+    <allocation task-id="5" resource-id="3" units="100"/>
+    <allocation task-id="4" resource-id="3" units="100"/>
     <allocation task-id="3" resource-id="3" units="100"/>
+    <allocation task-id="2" resource-id="3" units="100"/>
+    <allocation task-id="20" resource-id="3" units="25"/>
+    <allocation task-id="19" resource-id="3" units="25"/>
+    <allocation task-id="1" resource-id="3" units="100"/>
+    <allocation task-id="10" resource-id="4" units="100"/>
+    <allocation task-id="9" resource-id="4" units="100"/>
+    <allocation task-id="8" resource-id="4" units="100"/>
+    <allocation task-id="7" resource-id="4" units="100"/>
+    <allocation task-id="20" resource-id="4" units="25"/>
+    <allocation task-id="19" resource-id="4" units="25"/>
     <allocation task-id="6" resource-id="4" units="100"/>
-    <allocation task-id="5" resource-id="4" units="25"/>
-    <allocation task-id="4" resource-id="4" units="100"/>
   </allocations>
 </project>

@@ -3,10 +3,19 @@
 \usepackage{graphicx}
 
 \begin{document}
-\title{\textbf{EARTH PROJECT}\\ \textit{} \\ \textit{} \textbf{Milestone 3 Plan}\\ \textit{} \\ \textit{} \textit{for} \\ \textit{} \\ \textit{} \textbf{Group 1}\\ \textit{} \\ \textit{}}
-\author{Alex Egan \\ Filimoni Lutunaika \\ George Sainsbury \\ Xiaodong Cui}
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=40mm]{figs/earth}
+\vfill
+\textbf{\huge Milestone 3 Plan}\\ \textit{} \\ \textit{} 
+\textit{for} \\ \textit{} \\ \textit{} 
+\textbf{\huge Group 1}\\ \textit{} \\ \textit{}
+\vfill
+\textbf{Alex Egan \\ Filimoni Lutunaika \\ George Sainsbury \\ Xiaodong Cui}
+\end{center}
+\end{titlepage}
  
-\maketitle
+
 
 \newpage
 
@@ -26,25 +35,30 @@
 
 \label{subsec:purpose-and-scope}
  
-Milestone 3 follows on the from development tasks undertaken during Milestones 1 and 2. In particular, 
-it expands on the investigation done for Ticket 138 issue regarding the unacceptable performance of the 
-Earth application when filtering under radial view. In addition, Milestone 3 also involves the investigation 
-and possible resolve for the following 2 Tickets:
+Milestone 3 follows on from the development tasks undertaken during Milestones 1 and 2.
+Group 1 is investigating the following 3 tickets during the current development sprint:
+
+\subsubsection*{Ticket 131 - Use real disk usage instead of byte size throughout the web application}
+
+\noindent Information of disk space usage is being gathered by the Earth application.
+This is a better and more precise metric for determining where disk space 
+is used. The GUI should be able to use this value instead in all situations. 
 
 \subsubsection*{Ticket 148 - Configuration of daemon should be possible through GUI}
 
-The daemon configuration options should be done through the administrative interface of Earth so that 
-starting a daemon on a server is as simple as ./earth\_daemon.rb and all options are fed from a central location.
+\noindent The daemon configuration options should be done through the 
+administrative interface of Earth so that starting a daemon on a server 
+is as simple as ./earth\_daemon.rb and all options are fed from a central 
+location.
 
-\noindent Of course, this has implications that we should be able to add a server to be indexed through the admin 
-interface instead of it being created the first time the daemon runs. 
+\noindent Of course, this has implications that we should be able to add 
+a server to be indexed through the admin interface instead of it being 
+created the first time the daemon runs. 
 
 
 \subsubsection*{ Ticket 174 - Look into making Earth release a gem}
 
-It would allow us to automatically deal with the dependencies such as:
-
-
+\noindent It would allow us to automatically deal with the dependencies such as:
 
 \begin{itemize}
 \item the gems:
@@ -53,18 +67,12 @@ It would allow us to automatically deal with the dependencies such as:
   \subitem postgres 
 \end{itemize}
  
-The remove feature of the daemon is also being considered by Group 1 for Milestone 3. 
+\noindent The remove feature of the daemon is also being considered by Group 1 for Milestone 3. 
 
  
-\subsection{Milestone 3 Deliverables}
+\subsection{Plan Review}
  
-The following section outlines when specific documents and deliverables will be 
-completed and available. These are the main deliverables. However, more detailed 
-information about internal milestones are provided in subsection \ref{subsec:purpose-and-scope}.
- 
-\subsection{Evolution of the Plan}
- 
-This plan will be reviewed at the end of the Milestone 3 development 'sprint'. This plan 
+\noindent This plan will be reviewed at the end of the Milestone 3 development 'sprint'. This plan 
 will be updated if there is a radical change to the requirements of any Milestone 3 task. 
 The changes can be made by any of the group member who should then inform the group leader 
 about these changes. However, significant changes that have a system-wide effect will be deferred 
@@ -80,49 +88,115 @@ to the next milestone to minimize any disruption to the other tasks of the curre
 
 Tasks for Milestone 3 are being allocated as follow:
  
-\subsubsection*{Ticket 138: Query Optimisation for Filtering Under Radial View}
-Cui is being re-allocated this task for Milestone 3 given his prior knowledge of this issue while undertaking the same Ticket during Milestone 2.
+\subsubsection{Ticket 131: Use real disk usage instead of byte size}
 
-\noindent Time Estimate: 50hrs
- 
-\subsubsection*{Ticket 148: Configuration of Daemon using GUI}
-Fil is being allocated this task for Milestone 3 to allow for the easy re-configuration of the earthd daemon when switching between the three operating modes of the application, development, test and production. This feature is particularly useful during the integration testing phase where regular switching between the various operating modes will be required.
- 
-\noindent Time Estimate: 50hrs
+\paragraph{Description}
+Cui has been allocated this Ticket given its priority and the 
+importance of real disk usage information for the Earth application. 
+Given the vague description for this ticket on the Trac system,
+the task has been further sub-divided into subtasks to allow for
+better allocation of resources and proper monitoring.
 
-\subsubsection*{Ticket 174: Creating the Earth Gem}
-George is being allocated this task which involves investigating the process of creating the Earth Gem. The availability of this Gem will have a significant impact on the productivity of developers as less resources (time) is expended re-installing the Earth when necessary.
+\paragraph{Subtasks}
+\noindent
+\begin{enumerate}
+\item Need to find the how files are stored in the disk, how much 
+disk space must be used to store a given size file, then the relationship 
+between the file size and actual disk space. (10hrs)
+\item Change the byte size to real disk usage. (15hrs)
+\item Use the real disk usage in all web applications. (15hrs)
+\item Integration Testing (10hrs)
+\end{enumerate}
 
-\noindent Time Estimate: 24hrs
- 
-\subsubsection*{Pending Earth Feature: Implementing the Remove Function on Daemon}
-Alex is being allocated this task which entails implementing the remove feature of the earth daemon. This is certainly a non-trivial task but the Group decided that it is an essential feature of the Earth Application that deserves serious attention.
- 
-\noindent Time Estimate: 24hrs
+\paragraph{Total Time Estimate} 50hrs
 
+
+\subsubsection{Ticket 148: Configuration of Daemon using GUI}
+
+\paragraph{Description}
+Fil is being allocated this task for Milestone 3 to allow for the 
+easy re-configuration of the earthd daemon when switching between 
+the three operating modes of the application: development, test 
+and production. This feature is particularly useful during the 
+integration testing phase where regular switching between the 
+various operating modes will be required.
+
+\paragraph{Subtasks}
+\noindent
+\begin{enumerate}
+\item Identify all current and available configuration options for the Earth daemon. (5hrs)
+\item Design page layout and select appropriate control options such as textboxes and buttons. (15hrs)
+\item Implement scripts linking page controls and daemon features. (20hrs)
+\item Integration Testing (10hrs)
+\end{enumerate}
+
+\paragraph{Total Time Estimate} 50hrs
+ 
+
+\subsubsection{Ticket 174: Creating the Earth Gem}
+
+\paragraph{Description}
+George is being allocated this task which involves investigating 
+the process of creating the Earth Gem. The availability of this 
+Gem will have a significant impact on the productivity of developers 
+as less resources (time) is required to re-installing the Earth
+application.
+
+\paragraph{Subtasks}
+\noindent
+\begin{enumerate}
+\item Identify all dependencies for the basic Earth installation (4hrs)
+\item Investigate the process of creating a gem of the Earth application (16hrs)
+\item Integration Testing (4hrs)
+\end{enumerate}
+
+\paragraph{Total Time Estimate} 24hrs
+ 
+\subsubsection{Earth Feature: Investigate Implementation of the Daemon Remove Function}
+
+\paragraph{Description}
+Alex is being allocated this task which entails investigating the implementation of the 
+Earth application remove function. This is certainly a non-trivial task that the Group 
+has decided to investigate during this development sprint.
+
+\paragraph{Subtasks}
+\noindent
+\begin{enumerate}
+\item Conduct exploratory study of ways to implement the Earth remove function (12hrs)
+\item Document feasibility of each identified implementation approach (8hrs)
+\item Integration Testing (4hrs)
+\end{enumerate}
+
+\paragraph{Total Time Estimate} 24hrs
+
+\newpage
  
 \subsection{Scheduling}
- 
-The milestones and tasks are shown graphically in Figure \ref{fig:m3gannt} below. This figure shows the
- relative times between the deadlines of the tasks required and also shows the estimated time for the completion of each individual tasks.\\
+
+\paragraph{} 
+The milestones and tasks are shown graphically in Figure \ref{fig:m3gantt} below. 
+This figure shows the relative times between the deadlines of the tasks required 
+and also shows the estimated time for the completion of each individual tasks.
  
 \begin{figure}[h!]
 \begin{centering}
-\includegraphics[width=150mm]{figs/m3}
+\includegraphics[width=150mm]{figs/m3gantt}
 \end{centering}
 \caption{Gantt chart of tasks for milestone 3}
-\label{fig:m3gannt}
+\label{fig:m3gantt}
 \end{figure}
 
 \newpage
 
 \subsection{Resource Allocation}
  
-As described in Section \ref{subsec:purpose-and-scope}, people will be allocated to each task in the following fashion:
+\paragraph{}
+As described in Section \ref{subsec:purpose-and-scope}, resources (developers) will be allocated to 
+each task as follow:
  
 \begin{itemize}
   
-\item \textbf{Ticket 138:} Xiaodong Cui \\
+\item \textbf{Ticket 131:} Xiaodong Cui \\
  
 \item \textbf{Ticket 148:} Filimoni Lutunaika \\
  
@@ -160,7 +234,7 @@ In addition to the assigned tasks for this Milestone 1, the roles of Git Leader 
 
 \subsubsection{Git Leader}
 
-For Milestone 3, Alex will be in charge of managing the repository for Group 1. This includes ensuring that the Milestone 3 solutions undergo integration testing before being commited onto the Group 1 repository.
+For Milestone 3, Alex will be in charge of managing the repository for Group 1. This includes ensuring that the Milestone 3 solutions undergo integration testing before being committed onto the Group 1 repository.
 
 
 \subsubsection{Documentation Person}
