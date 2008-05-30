@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{NAME IN CAPITAL (STUDENTID)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+A summary of not more than 100 words that gives an overview of what you have done so far. Also, an overview of what sort of progress you had with the tasks assigned. 
+
+\section*{Tasks and Activities Assigned}
+
+Itemize your activities into short descriptions. In each item, state the ideas and solutions you have used or implemented to solve the problems you faced. Also, state in each item the estimated time you used. An example:
+
+\begin{itemize}
+	\item Ticket 66
+		\begin{itemize}
+			\item Description: To show the space usage per user per file server.
+			\item Idea/Solution: Used the existing tables \textsl{servers}, \textsl{directories} and \textsl{files} as a joined query to \textsl{sum} the \textsl{bytes} of each file, which is \textsl{group by} \textsl{files.uid} and \textsl{directories.server\_id}. 
+			\item Affected files: 
+				\begin{itemize}
+					\item \tt{app $\backslash$ controllers $\backslash$ browser\_controller.rb}
+					\item \tt{app $\backslash$ browser $\backslash$ usages.html.haml}
+					\item \tt{app $\backslash$ servers $\backslash$ show.haml}
+				\end{itemize}
+			\item Estimated time taken: 3 hours
+		\end{itemize}
+\end{itemize}
+
+\section*{Strengths}
+
+List at most three items that you felt you have done them right, and the reason you felt that way. 
+
+\section*{Rooms for Improvements}
+
+List at most three item that you felt that still requires some effort from your side. Also, state what are your plans to improve them moving forward. 
+
+\end{document}  
