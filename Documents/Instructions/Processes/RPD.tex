@@ -1,0 +1,288 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+
+\title{\textbf{Repository Process Document}\\for \textit{Earth}}
+\author{Alex Egan\\Mohammad Bamogaddam}
+\date{ }
+\maketitle
+\abstract{This document explains the repository structure and how to use it. This includes the necessary git commands and GitHub functions to work on the Earth project effectively. Reading this document in conjunction with the Testing Process Document will explain the testing requirements mentioned at various stages.
+}
+\thispagestyle{empty}
+
+\newpage
+
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+
+%%%
+
+\setcounter{page}{1}
+\section{Introduction}
+
+This document explains the repository structure and how to use it. This includes the necessary git commands and GitHub functions to work on the Earth project effectively. Reading this document in conjunction with the Testing Process Document will explain the testing requirements mentioned at various stages.\\
+\\
+The repository has three tiers. The first layer is the main group repository that a fork of the Rising Sun Pictures repository. Each subgroup has a repository that is forked from the main group repository and these form the second layer. The bottom layer are the individual group members' repositories, which are forks of their respective subgroup repositories.\\
+\\
+A separate repository stores documents and other files that are not Earth project code.
+
+%%%
+
+\section{Tool Setup}
+
+\subsection{Installing Git}
+\label{install}
+This will install git so it can be used.
+\begin{enumerate}
+	\item Download git source package from http://git.or.cz/
+	\item Extract the souce from the archive
+	\item In a terminal execute the commands:
+	\begin{itemize}
+		\item cd \(<\)git-source-directory\(>\)
+		\item make
+		\item make install
+		\item make test (optional)
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Creating a GitHub Account}
+\label{account}
+This creates a GitHub account to be used.
+\begin{enumerate}
+	\item Browse to http://github.com
+	\item Use the Sign Up link to create an account including SSH keys. There is a link on the sign-up and on the guides page on how to create SSH keys.
+	\item Add any extra SSH keys for other machines.
+	\item Inform your group's git leader of your git username.
+\end{enumerate}
+
+%%%
+
+\section{Human Resources Allocation (Git Leaders)}
+Each group will have a GitHub leader, also known as a git leader. They are responsible for their subgroup's repository and together, manage the main group repository.\\
+\\
+The git leaders for each group are below:
+\begin{itemize}
+	\item Group1: Alex Egan
+	\item Group2: Mohammad Bamogaddam
+	\item Group3: Ken S'ng Wong
+\end{itemize}
+
+%%%
+
+\section{Creation and Setup of Repositories}
+
+\subsection{Creating a Forked Repository}
+\label{fork}
+A forked repository is a branch of a given repository. In terms of git and GitHub, it means that the forked repository is a descendant of the original and the two can be merged easily.
+\begin{enumerate}
+	\item Log into your GitHub account at http://github.com.
+	\item Browse to the repository you wish to fork.
+	\item Click the fork button on the repository's GitHub page.
+	\item Add the other git leaders as collaborators to this repository. See Section \ref{add-collab} for details.
+\end{enumerate}
+
+\subsection{Adding Collaborators}
+\label{add-collab}
+This task must be performed by the owner of the repository. It will allow a user to add changes into the repository.
+\begin{enumerate}
+	\item Log into your GitHub account at http://github.com.
+	\item Browse to the repository you wish to add collaborators to.
+	\item Click on the Admin tab at the top of the repository's GitHub page.
+	\item Click on the Collaborators sub-tab below the Admin tab.
+	\item Click the Add another collaborator link.
+	\item Enter the GitHub username of the person you wish to add as a collaborator.
+	\item Click on the Add button.
+\end{enumerate}
+
+%%%
+
+\section{Working with Git and GitHub}
+
+\subsection{Getting Code}
+\label{get-code}
+The following steps detail how to obtain a copy of the repository so that it can be worked on.
+\begin{enumerate}
+	\item Locate the address of the repository. Git protocol addresses can be found on the repository's GitHub page. The URL of that page is the HTTP address. Either of these can be used.
+	\item In a terminal, execute:
+	\begin{itemize}
+		\item git-clone \(<\)repository-address\(>\) \(<\)directory-to-store-repository-in\(>\)
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Updating a Working Copy}
+\label{update}
+The following will bring your working copy up to date with the latest changes in the repository.
+\begin{enumerate}
+	\item In a terminal, execute either one of the following, depending on your needs:
+	\begin{itemize}
+		\item git-fetch (to just fetch the changes that are in the repository)
+		\item git-pull (to both fetch the changes that are in the repository and merge them with your changes)
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Adding New Files to the be Tracked by Git}
+\label{add-files}
+The following commands will add new files and or directories to be tracked by Git for the next commit. They will need to be committed at some point to a repository as detailed in Section \ref{committing}.
+\begin{enumerate}
+	\item In a terminal, execute:
+	\begin{itemize}
+		\item git-add \(<\)files-or-directories-space-separated\(>\)
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Committing Changes}
+\label{committing}
+The following details how to commit changes made in a working copy up the repository structure.
+\begin{enumerate}
+	\item Edit or add new files to the working copy.
+	\item In a terminal, execute:
+	\begin{itemize}
+		\item git-commit (to commit the added changes to the working copy's repository)\\
+		\\
+		or
+		\\ git-commit -a (to commit all changed files)
+		\item git-push (to send the commits back to the GitHub repository)
+	\end{itemize}
+\end{enumerate}
+
+\section{Merging two Repositories}
+\label{merging}
+This section details how to merge two repositories so that changes in one become part of the other.
+\begin{enumerate}
+	\item In a terminal, execute the following commands:
+	\begin{itemize}
+		\item git-remote add \(<\)name-of-repository-to-be-merged\(>\) \(<\)address-of-repository-to-be-merge\(>\)
+		\item git-checkout -b \(<\)name-of-repository-to-be-merged\(>\)/master
+		\item git-pull \(<\)name-of-repository-to-be-merged\(>\) master
+		\item git-checkout -b \(<\)name-to-call-the-merged-branch\(>\)
+		\item git-checkout master
+		\item git-merge \(<\)name-of-repository-to-be-merged\(>\) \(<\)name-to-call-the-merged-branch\(>\)
+	\end{itemize}
+\end{enumerate}
+
+\subsection{GitHub Pull Request}
+\label{pull-req}
+This section explains how to send a GitHub pull request.
+\begin{enumerate}
+	\item Log into your GitHub account at http://github.com.
+	\item Browse to the repository you wish to issue a pull request for.
+	\item Click on the Pull Request button.
+	\item Add a message that details why this request is being made.
+	\item Select the people who you wish to notify.
+	\item Click send.
+\end{enumerate}
+
+\subsection{Tagging Versions}
+\label{tag}
+This section explains how to tag a version in the repository.
+\begin{enumerate}
+	\item In a terminal, execute the following commands:
+	\begin{itemize}
+		\item git-tag \(<\)tag-name\(>\)
+	\end{itemize}
+\end{enumerate}
+
+%%%
+
+\section{Process}
+
+\subsection{Initalising}
+These are initial steps to do before working on Earth can proceed.
+\begin{enumerate}
+	\item Each group member needs to install git as per Section \ref{install}
+	\item Each group member needs a GitHub account as per Section \ref{account}
+\end{enumerate}
+
+\subsection{Repository Hierarchy Creation}
+These instructions explain how the repository hierarchy has been created.
+\begin{enumerate}
+	\item A git leader forks the Rising Sun Pictures Earth repository, mlandauer/earth, according to Section \ref{fork}. The collaborators to be added here are Ken and Alex. This has been done by Mohammad. This is the root layer of the repository.
+	\item Each subgroup git leader forks the root repository (mfb82/earth). Collaborators to be added are the members of each group and the other two git leaders. This has been done by Mohammed (mfb1982/earth), Alex (eegs/earth) and Ken (pamalite/earth). This is the second layer of the repository.
+	\item Each subgroup member forks their group's repository. Any people they wish to be able to access their code-in-progress can be added as collaborators. This is the third layer of the repository.
+\end{enumerate}
+
+\subsection{Working on the Documents}
+\label{working}
+These instructions explain how to work on the project documents for any group member.
+\begin{enumerate}
+	\item The group member obtains a copy of the documentation as per Section \ref{get-code}. The repository address is git@github.com:pamalite/segp2.git.\\
+	\item Edit the documents and add files as per Section \ref{add-files}.
+	\item Changes can then be added as per Section \ref{committing}.
+\end{enumerate}
+
+\subsection{Working on the Code}
+\label{working}
+These instructions explain how to work on the Earth code for any group member.
+\begin{enumerate}
+	\item The group member obtains a copy of their repository as per Section \ref{get-code}. The repository address should be git@github.com:\(<\)GitHub username\(>\)/earth.git by default.\\
+	\\
+	or\\
+	\\
+	Update the local repository to the current version as per Section \ref{update}.
+	\item Edit the code and add files as per Section \ref{add-files}.
+	\item New or modified code should be tested as per the Testing Process.
+	\item When testing is complete, commit the changes to the member's repository as per Section \ref{committing}.
+\end{enumerate}
+
+\subsection{Completion of a Task}
+This explains what needs to be done when a group member finishes a task after working on it as per section \ref{working}.
+\begin{enumerate}
+	\item A GitHub pull request should be made to the subgroup's git leader as per Section\ref{pull-req}. The message of the request should, at least, detail any ticket numbers that the changes relate to and what files are changed or added.
+\end{enumerate}
+
+\subsection{Submitting Changes to the Subgroup Repository}
+This explains how to submit changes to the subgroup repository after changes have been made as per Section \ref{working}.
+\begin{enumerate}
+	\item Changes from the subgroup repository should be merged into the member's repository as per Section \ref{merging}.
+	\item Testing needs to be performed as per the Testing Process.
+	\item If the changes successfully pass the test cases, a GitHub pull request can be made as per Section \ref{pull-req} to the subgroup's git leader.
+\end{enumerate}
+
+\subsection{Receiving a Pull Request from a Subgroup Member}
+\label{pull-req-from-member}
+This explains what a git leader should do when they receive a pull request from a subgroup member.
+\begin{enumerate}
+	\item The git leader merges the subgroup member's changes into the current subgroup repository code using a temporary branch as per Section \ref{merging}.
+	\item Testing needs to be performed as per the Testing Process.
+	\item If the changes successfully pass the test cases and code coverage is sufficient, the code is accepted into the subgroup repository.
+	\item The git leader sends a pull request to each subgroup member to update their repositories to the new subgroup codebase.
+	\item The git leader sends a pull request to the root repository git leader, or leaders.
+\end{enumerate}
+
+\subsection{Receiving a Pull Request from a Subgroup Git Leader}
+\label{pull-req-from-member}
+This explains what a git leader should do when they receive a pull request from a subgroup git leader.
+\begin{enumerate}
+	\item The git leader merges the subgroup's changes into the current root repository code using a temporary branch as per Section \ref{merging}.
+	\item Testing needs to be performed as per the Testing Process.
+	\item If the changes successfully pass the test cases and code coverage is sufficient, the code is accepted into the root repository.
+	\item The git leader sends a pull request to each subgroup git leader to update their repositories to the new root codebase.
+	\item The new codebase in the root repository should be tagged with a version as per Section \ref{tag}.
+\end{enumerate}
+
+\subsection{Submitting Changes to the Rising Sun Pictures Reposiotry}
+\label{send-to-rsp}
+This explains how to submit changes to the Rising Sun Pictures repository for inclusion into the offical Earth project.
+\begin{enumerate}
+	\item A git leader that is in charge of the root repository sends a pull request to Matthew Landauer as per Section \ref{pull-req}. His GitHub username is mlandauer.
+\end{enumerate}
+
+%%%
+
+\section{Summary of Repositories}
+
+Below is a list of the important repositories on GitHub that are in use for the project.\\
+\\
+\textbf{Main repository: }mfb82/earth\\
+\textbf{Group 1 repository: }eegs/earth\\
+\textbf{Group 2 repository: }mfb1982/earth\\
+\textbf{Group 3 repository: }pamalite/earth\\
+\textbf{Project documentation repository: }pamalite/segp2\\
+\textbf{Rising Sun Pictures repository: }mlandauer/earth\\
+
+%%%
+
+\end{document}
