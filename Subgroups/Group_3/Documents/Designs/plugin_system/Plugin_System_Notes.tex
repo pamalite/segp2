@@ -22,11 +22,34 @@
 \subsection*{Possible files affected?}
 
 \begin{itemize}
-	\item \texttt{config / earth-webapp.yml}
-	\item \texttt{app / controllers / *.rb}
-	\item \texttt{app / helpers / *.rb}
-	\item \texttt{config / routes.rb}
-	\item \texttt{app / views / *.haml}
+	\item \texttt{config/earth-webapp.yml}
+	\item \texttt{app/controllers/*.rb}
+	\item \texttt{app/helpers/*.rb}
+	\item \texttt{config/routes.rb}
+	\item \texttt{app/views/*.haml}
+\end{itemize}
+
+\subsection*{Plugin system core and supporting files?}
+
+\begin{itemize}
+	\item Core files
+		\begin{itemize}
+			\item \texttt{lib/earth\_plugin\_interfaces/plugin\_manager.rb}
+			\item \texttt{lib/earth\_plugins\_interfaces/earth\_plugin.rb}
+		\end{itemize}
+	\item Supporting files
+		\begin{enumerate}
+			\item \texttt{script/create\_cert.rb}
+			\item \texttt{script/sign\_plugin.rb}
+			\item \texttt{script/install\_plugin.rb}
+			\item \texttt{script/earthd}  
+		\end{enumerate}	
+	\item Current primary plugin directories
+		\begin{itemize}
+			\item \texttt{config/certifcates/} - Where the OpenSSL certificates are. 
+			\item \texttt{config/keys/} - Where the server's key pairs are.
+			\item \texttt{lib/earth\_plugins/} - Where the plugins should be.
+		\end{itemize}	
 \end{itemize}
 
 \subsection*{OpenSSL and how to test?}
@@ -51,11 +74,11 @@ Before running, make sure you have \texttt{script/create\_cert} and \texttt{scri
 					\item Run \texttt{cert.public\_key.verify(OpenSSL::Digest::SHA1.new, signature, code)}. (You should get \texttt{true} as the result after running this line.)
 				\end{enumerate}
 		\end{enumerate}
-	\item The L33T way:
+	\item The \texttt{L33T} way:
 		\begin{enumerate}
 			\item Run \texttt{openssl genrsa -des3 1024 > host.key} to generate the key file.
 			\item Run \texttt{openssl req -new -x509 -sha1 -days 365 -key host.key > host.cert} to generate a certificate from the key.
-			\item Run \texttt{openssl dgst -sha1 -sign host.key <plugin>.rb > <plugin>/rb.sha1} to sign the plugin with the key and digest it with SHA1 algorithm.
+			\item Run \texttt{openssl dgst -sha1 -sign host.key <plugin>.rb > <plugin>.rb.sha1} to sign the plugin with the key and digest it with SHA1 algorithm.
 			\item Run \texttt{script/console} as the same as the 2$^{nd}$ half of the RSP way to verify the plugin was properly signed and digested. 
 		\end{enumerate}
 \end{enumerate}
