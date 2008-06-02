@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+
+\section*{Plugin System Notes}
+
+\subsection*{What does the Plugin Manager Support Now?}
+
+\begin{itemize}
+	\item Supported
+		\begin{itemize}
+			\item Daemon - It is made for the daemon.
+		\end{itemize}
+	\item Unsupported
+		\begin{itemize}
+			\item Controllers and Views - The way the front-end was designed using HAML hindered the dynamic rendering capabilities of Ruby on Rails. It is very obvious plugins for the front-end is not supported at this stage. 
+			\item Models - No information available for now. At first glance, should not support.
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Possible files affected?}
+
+\begin{itemize}
+	\item \texttt{config / earth-webapp.yml}
+	\item \texttt{app / controllers / *.rb}
+	\item \texttt{app / helpers / *.rb}
+	\item \texttt{config / routes.rb}
+	\item \texttt{app / views / *.haml}
+\end{itemize}
+
+\subsection*{OpenSSL and how to test?}
+
+The biggest hurdle with the plugin system is the signature check that is done while loading and installing a plugin. There are 2 ways that can be done to get the signature of a plugin. 
+
+Before running, make sure you have \texttt{script/create\_cert} and \texttt{script/sign\_plugin} scripts updated by replacing the \texttt{require\_gem `termios'} to the following lines: \\
+
+\texttt{gem `termios'} \\
+\texttt{require `termios'}
+
+\begin{enumerate}
+	\item The RSP way:
+		\begin{enumerate}
+			\item Run \texttt{script/create\_cert} to generate a certificate of your host system. (You will need to create directories \texttt{config/certificates} and \texttt{config/keys} in order this script to work. 
+			\item Run \texttt{script/sign\_plugin <plugin>} to create a \texttt{*.sha1} signature file. 
+			\item Run \texttt{script/console} to check whether the signature is valid. (NOTE: At this stage, you should have created 3 files: \texttt{config/certificates/test\_cert.pem}, \texttt{config/keys/test\_key.pem} and \texttt{<plugin>.rb.sha1})
+				\begin{enumerate}
+					\item Run \texttt{signature = File.read(``<plugin>.rb.sha1'')}
+					\item Run \texttt{code = File.read(``<plugin>.rb'')}
+					\item Run \texttt{cert = OpenSSL::X509::Certificate.new( \\ File::read(``config/certificates/test\_cert.pem''))}
+					\item Run \texttt{cert.public\_key.verify(OpenSSL::Digest::SHA1.new, signature, code)}. (You should get \texttt{true} as the result after running this line.)
+				\end{enumerate}
+		\end{enumerate}
+	\item The L33T way:
+		\begin{enumerate}
+			\item Run \texttt{openssl genrsa -des3 1024 > host.key} to generate the key file.
+			\item Run \texttt{openssl req -new -x509 -sha1 -days 365 -key host.key > host.cert} to generate a certificate from the key.
+			\item Run \texttt{openssl dgst -sha1 -sign host.key <plugin>.rb > <plugin>/rb.sha1} to sign the plugin with the key and digest it with SHA1 algorithm.
+			\item Run \texttt{script/console} as the same as the 2$^{nd}$ half of the RSP way to verify the plugin was properly signed and digested. 
+		\end{enumerate}
+\end{enumerate}
+
+\subsection*{Possible solutions?}
+
+\begin{itemize}
+	\item The general idea of a plugin is to automatically load the plugins from designated plugin directories and load them one by one as the system goes along. This can be achieved by recursively calling the \texttt{require} or \texttt{load} command. In order to do this, the plugin system should be smart enough to only work when there are plugins in the plugins directories. 
+	\item One of the problem Earth is that it does not support Controllers and Views plugins. This is obvious with the way the plugin manager was designed. So, a solution to this is to extend the plugin manager to accommodate such plugins as well. That means the the plugin manager needs to verify the signatures of multiple files, instead of only one file. 
+		\begin{itemize}
+			\item The sub-problem of this approach is that the Radial feature was implemented as part of ApplicationController and any plugin will fail when Radial is being used. So, the idea is to convert the Radial into a plugin as well. 
+		\end{itemize}
+\end{itemize}
+
+\end{document}  
