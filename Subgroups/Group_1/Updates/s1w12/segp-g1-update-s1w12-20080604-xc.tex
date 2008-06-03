@@ -1,0 +1,45 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+ 
+\begin{document}
+ 
+\title{Software Engineering Group Project - 7096A}
+\author{Semester 1 Week 12 - Team 1}
+\date{Wed Jun 4, 2008}
+
+\maketitle 
+
+\noindent {\large \textbf{\underline{Ticket 131 - Use real disk usage throughout web application}}}\\
+
+\noindent {\normalsize \textbf{By:} Xiaodong Cui}\\
+
+\noindent \textbf{Task Update}
+\begin{itemize}
+\item The disk usage is the number of occupied 512-byte blocks, we have gathered the number of blocks, so the disk occupied is calculated as stat.blocks x 512 bytes.
+\item This is to be applied throughout the application: navigation, all files, and radial views, now showing actual disk usage for all files and directories.
+\item Broke two tests, need to be fixed. 
+\end{itemize}
+
+\begin{table}[ht!]
+\begin{tabular}{|p{3cm}|p{8cm}|} \hline
+\textbf{Modified Files} & \\ 
+\hline
+Navigation & \emph{/app/models/size.rb}\\
+ & \emph{/app/helpers/application\_helper.rb}\\
+ & \emph{/app/views/browser/\_breadcrumb\_and\_filter.html.haml}\\
+ & \emph{/app/views/browser/show.html.haml}\\
+ & \emph{/app/models/earth/server.rb}\\
+ & \emph{/app/models/earth/directory.rb}\\ 
+\hline
+All Files & \emph{/app/views/browser/flat.html.haml}\\
+ & \emph{/app/controllers/browser\_controller.rb} \\ 
+\hline
+Radial Views & \emph{/app/helpers/graph\_helper.rb}\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\[\emph{End}\]
+ 
+\end{document}

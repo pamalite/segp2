@@ -1,0 +1,69 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+ 
+\begin{document}
+ 
+\title{Software Engineering Group Project - 7096A}
+\author{Semester 1 Week 12 - Team 1}
+\date{Wed Jun 4, 2008}
+
+\maketitle 
+
+\noindent {\large \textbf{\underline{Ticket 148 - Configuration of Daemon via GUI}}}
+
+\noindent {\normalsize \textbf{By} Filimoni Lutunaika}\\
+
+\noindent \textbf{\large Task Progress}\\
+
+\noindent \textbf{\normalsize 1. Daemon Configuration Options}
+
+\begin{table}[ht!]
+\begin{tabular}{|p{0.5cm}|p{2.4cm}|p{3.5cm}|p{4.8cm}|} \hline
+\textbf{No.} & \textbf{Feature} & \textbf{Command Line} & \textbf{Remarks} \\
+\hline
+1. & Start daemon & \emph{./script/earthd start} & Start earth daemon\\
+\hline
+2. & Stop daemon & \emph{./script/earthd stop} & Stop earth daemon\\
+\hline
+3. & Daemon status & \emph{./script/earthd status} & Display daemon status\\
+\hline
+4. & Restart daemon & \emph{./script/earthd restart} & Restart earth daemon\\
+\hline
+5. & Clear data & \emph{./script/earthd clear} & Clear all data for localhost\\
+\hline
+6. & Add folders & \emph{./script/earthd add /path} & Specify folder to monitor\\
+\hline
+7. & Remove folders & \emph{./script/earthd add /path} & Specify folder to stop monitoring\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\noindent \textbf{\normalsize Note} Feature \#7 above is included as it is currently being implemented.\\
+
+\noindent \textbf{\normalsize 2. Page Layout Design}
+
+\begin{table}[ht!]
+\begin{tabular}{|p{3cm}|p{8cm}|} \hline
+\textbf{Added File} & \emph{/app/views/servers/configure.haml}\\
+\hline
+\textbf{Modified Files} & \emph{/app/views/servers/index.haml}\\
+ & \emph{/app/views/layouts/servers.haml}\\
+ & \emph{/app/controllers/servers\_controller.rb}\\
+ & \emph{/public/javascripts/application.js}\\
+ & \emph{/app/helpers/servers\_helper.rb}\\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent \textbf{\normalsize Note} To enhance accesibility for developers and users, 
+the daemon configuration options are currently placed under the \emph{Administration Home} category.\\
+
+\noindent \textbf{\normalsize 3. Configuration scripts}\\
+Identified a number of test cases for the planned implementation and still investigating the 
+most effective way to implement the 7 configuration options identified in (1) above
+
+
+\[\emph{End}\]
+ 
+\end{document}
