@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\pagestyle{headings}
+
+\begin{document}
+\title{\textbf{Requirement Process Document}\\ for \textit{Earth} Project}\author{Ming Jie Tan}
+
+\maketitle
+\thispagestyle{empty}
+\newpage{}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage{}
+
+\setcounter{page}{1}
+
+\section{Introduction}
+Requirements need to be maintained in order to demonstrate what tasks have been completed and to help others understand what has been done or what is needed to be done in order to complete the requirement. This document outlines the different stages of requirements. These are:
+\begin{itemize}
+\item Adding a new Requirement
+\item Updating an existing Requirment
+\item Closing a Requirement
+\end{itemize}
+\\
+Adding a new requirement refers to the outlining the details that should be provided when specifying a new requirement.
+Updating an existing requirement refers to where existing tickets do not have much information, to update with better information as to how to tackle the problem.
+Closing a requirement refers to the steps to take when closing a requirement, from testing to integration, and what types to label each requirement.
+
+\newpage{}
+\section{Adding a new requirement}
+\\
+When adding a new requirement, in order for following up on this ticket, a number of details should be added to the description of the new requirement. These are:
+\begin{itemize}
+\item Providing a full description of what is required.
+\item Other tickets that are related to this requirement.
+\item Sections of code that relate to this requirement.
+\end{itemize}
+\\
+However, before adding a new requirement, other existing tickets should be checked in order to ensure that there isn't any overlap in requirements. In the case where a ticket that covers the same grounds as the requirement that was to be added, the ticket should just be updated in order to provide up to date and detailed information about the requirement.\\
+\\
+The first step when creating a new requirement is to determine what sort of requirement it is ( enhancement, defect or task). Once this this is completed, a short summary should be written that describes in one like what the new requirment aims to accomplish. Following this, a full description of the problem needs to be written up that covers the above information. The full description should describe in as much detail as possible what is required so that any other developer would be able to understand what is needed to be done in order to complete the requirement without the need to ask further questions.\\
+\\
+To further provide such details, any related tickets should be mentioned and explained as to how they are related to the new requirement. Finally, any related code that is already in use in Earth should be mentioned so that any new developer will know where to start in order to complete the task.\\
+\\
+Following the description, what type of component the requirement relates to should be selected as well as the priority of the requirement. Finally the ticket should be assigned to the relevant developers.\\
+
+\subsection{Updating an existing Requirement}
+\\
+Updating an existing requirement with either new or better information about how to complete the requirement follows a similar pattern to adding a new requirement. When the requirement is updated, the same steps should be taken when providing information about the requirements changes. This includes making a description and providing sections of codes that relate to the now updated requirement. The update should have detailed enough information to allow any developer to use. \\
+
+\newpage{}
+\section{Closing a Requirement}
+\\
+When closing a requirement, there are a number of steps that need to be taken before being able to declare a requirement both tested and integrated. Before a requirement can be completed at root level, it needs to first be tested at the local level, then tested at the subgroup level once it has been integrated with the other members code and finally tested at the root level after being integrated with all other subgroups. In order to keep the requirement updated as to its progress, comments should be made at each level of testing/integration. As such during local level development of the code, when the code could be deemed as testable, and update should be posted to say that the code is now undergoing local level testing.\\
+\\
+Once this level of testing is completed and the code is set to be integrated, the ticket should be updated to show that the code is now being integrated and tested at the subgroup level. The ticket should then be assigned to the people who are handling the subgroup's integration of code. They will then need to test and integrate the code as necessary. Once this is completed they will then need to update the ticket saying that the subgroup level testing has been passed and is now undergoing root level integration and testing. This ticket will then be assigned to the individuals in charge of testing and integrating that milestone. Once this has been completed, we can post that the ticket has been resolved by adelaide uni and needs to undergo approval by rising sun pictures. This will be done by providing a message on the requirement saying to pull from the root for the completed results of that ticket.\\
+
+\newpage{}
+\section{Summary}
+Below is a summary of how successful requirements would be added, updated and closed.
+\subsection{Adding}
+In order to add a requirement the following steps should be taken.
+\begin{itemize}
+\item Check that there are no other tickets that cover the same requirements.
+\item If there are other tickets, update that ticket instead.
+\item Classify the new requirement.
+\item Provide a short summary of the requirement.
+\item Provide a full description of what is required of the new task.
+\item Mention the other tickets that are related to this requirement.
+\item Sections of code that relate to this requirement.
+\item Provide the component type and priority of the new requirement
+\item Assign the ticket.
+\end{itemize}
+	
+\subsection{Updating}
+When updating a requirement the information of the requirement should also be updated. The following steps show how an update should be approached.
+\begin{itemize}
+\item Update the short summary if necessary
+\item Provide a description of what has now changed for the requirement.
+\item Mention the other tickets that are related to this requirement due to the changes.
+\item Sections of code that relate to this requirement due to the changes.
+\item Update the component type and priority of the new requirement
+\item Re-assign the ticket.
+\end{itemize}
+
+\subsection{Closing}
+When closing, each level of testing results in updates to the requirement. The following steps show how the closing of a ticket should be done.
+\begin{itemize}
+\item Update ticket saying that local testing is now being undertaken.
+\item Once local testing is completed, update the ticket so that it now says that subgroup testing and integration of the ticket are being undertaken.
+\item Assign the ticket to those who are integrating the subgroup's code.
+\item Once Subgroup level testing is completed, update the ticket so that it now says that root level testing and integration of the ticket are being undertaken.
+\item Assign the ticket to the individuals in charge of integrating and testing that milestone at the root level.
+\item Once this has been completed, update the ticket saying that the ticket is now completed and ready to be pulled from our repository for RSP to do their own testing of the code.
+\item Re-assign the ticket to RSP.
+\end{itemize}
+
+\end{document}
