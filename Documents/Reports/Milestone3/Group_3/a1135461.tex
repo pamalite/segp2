@@ -1,0 +1,35 @@
+\documentclass[a4paper,10pt]{article}
+
+
+%opening
+\title{Millestone 3}
+\author{Jonathan Velasco}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Planing}
+
+For this millestone the planing was done more carefully, spending more or less 4 hours on it.  We tried to estimate how many hours we will be available because these three weeks were very busy for some members.
+
+Eventhough, the estimation for the task were wrong.  For example, task such as 'research' was expected to be no longer than 5 hours.  However, on the practice, researching about the hooks took me far longer than that, aprox 10 hours, and still there is holes that must be filled.
+
+\section{Hooks}
+
+I was looking on possibilities for writing the hooks to use them for Ken's changes.  
+
+I though there will be like 'rules' or 'designs' already established for doing hooks using rails.  However, after doing the research, all the different tutorials found make use of the inbuilt functionality of ruby:
+
+\begin{verbatim}
+ - $ ruby script/generate plugin plugin_name
+ - Edit the "vendor/plugins/plugin_name/init.rb" file to look 
+            like this: require 'plugin_name' 
+ - Pretty much all the code does into one file: 
+            "vendor/plugins/plugin_name/lib/plugin_name.rb"
+ - The test should go into a folder like test/unit inside the model folder
+\end{verbatim}
+
+The above is a raw steps done to create plugins using ruby.  The structure gotten from using the above steps produce a collection of folders which seems to be quite similar to those form earth.  However, this has not been prover nor tested yet on earth, therefore, we still don't know if this the above can be used for our case
+\end{document}
