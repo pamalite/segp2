@@ -1,0 +1,61 @@
+\documentclass{letter}
+ 
+\begin{document}
+
+\textbf{Minutes from 13/08/2007 (Tuesday)}
+
+\textbf{Attendees:} David, Ken, Jon, Hill
+
+\textbf{Next Meeting:} 20/08/2008 (Tuesday) @ 1110 hours
+
+\begin{itemize}
+ \item The file monitor has been change to implement the API develop by Ken/Jill
+ \item Aim to store file into database
+\end{itemize}
+
+
+\begin{itemize}
+
+ \item David asked? How will the groups be able to use it?
+ \item Ken: see if you can reference methods from API
+ \item David: how to use API to address some of the tickets? where do they start
+ \item Hill: take the basic function from the API, otherwise, extend the APi
+ \item David: are the plugins going to have similar structure than current file monitor
+ \item Ken: yes
+
+ \item David: so is a new plugging using the methos from API? but how do you know where to use them? how do you go to a file monitor??
+ \item David: the methods seems not to be to generic
+ \item David: make 2 plugins that have roughly a different behaviour
+ \item David: is this going to work in practise?
+ \item David: how did u design the API?
+ \item David: what/when the database or the models need to be changes to accommodate a different application?  Advance plugins may require more (you have a function to get info from files, but later, you what to get more information or different information from the files... how  to we do that with this??)
+ \item Ken: currently cannot.
+ \item David: Let say you can get the tables and models, is API good enough to cover extra tables. How do you write into different tables depending on what your application is? If  you have a more advance plugging you may write more metadata that you don't do with basic plugins.  It has to be obvious to the developer what/where to add the code needed.
+ \item David: where is the actual file monitor?
+ \item Ken: used by the earth daemon
+ \item David: so your API define default behaviour in somewhere.  But when writing plugins you may want to override this default behaviour (beside extending it)
+ \item David: they seem to be fairly high level function
+ \item David: if I want to do an extension, where do I do the extension??
+ \item Hill: if you dint have something just extend API
+ \item David: shouldn't extend the API that often/much
+ \item David: writing a new plugging should just extend/call what is in the API
+ \item Ken: we can look through ticket and extend the API to what it may be needed in the future
+ \item David: API should have lower level function to either use or overwrite. That's why we need to look at the tickets
+ \item David: We need to get to the point to be able to demonstrate some of the tickets as plugins.  
+ \item David: \textbf{we need to look at (future task) how to take existing tickets and how the system works (to tickets, one with extension function) }
+ \item David: \textbf{what we need to have is a clear structure of how other groups can use this design to extend the API and provide support for specifics plugins}
+ \item David: example, 2 plugins using different naming convection....
+ \item David: go trough old tickets and see where those functions should go 
+ \item David: \textbf{end of week have a clear direction , putting a design together}
+ \item David: is there a concepts of plugins to plugins???
+ \item Ken: no at the moment.  Haven't been consider
+ \item David: is the file monitor a single API ?  should it be broken down
+ \item David: experiment
+ \item David: next iteration: is this system going to work?
+ \item David: \textbf{so far if we want to rewrite a function from the API we will need to rewrite (duplicate) all the code, but maybe there are pieces that does not to be changed.  By findin the default behaviour that will give us the hooks.}
+ \item David: we may need to get the hole group to work with.
+ \item David: the basic systems seems to be OK but need decomposition.
+ \item David: need to get all ready in next 2 days to be able to bring the other groups on board 
+\end{itemize}
+
+\end{document}
