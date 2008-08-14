@@ -1,0 +1,21 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+ 
+\begin{document}
+ 
+\title{Software Engineering Group Project - 7096B}
+\author{Semester 2 Week 1 - Sub-Group 1}
+\date{Wed Aug 06, 2008 (1300hr)}
+ 
+\maketitle 
+ 
+
+\noindent {\large \textbf{\underline{Creating the Earth Gem  (Ticket \#174)}}}\\
+\paragraph{}
+\noindent {\normalsize \textbf{By:} Alex Egan}\\
+\paragraph{}
+Basically my progress report is that the ticket is still in the same state as it was in at the end of the last milestone.
+
+\[\emph{End}\]
+
+\end{document}
