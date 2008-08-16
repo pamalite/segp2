@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<project name="" company="" manager="" phase="" project-start="20080527T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Working" description="A default working day"/>
+      <day-type id="1" name="Nonworking" description="A default non working day"/>
+      <day-type id="2" name="Use base" description="Use day from base calendar"/>
+    </day-types>
+    <calendar id="1" name="Default">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Ticket 138 - Query Optimisation under Radial View" note="Tue 27 May 2008, 23:22&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="2" name="Ticket 148 - Daemon Configuration using GUI" note="Tue 27 May 2008, 23:24&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="3" name="Ticket 174 - Create Earth Gem" note="Tue 27 May 2008, 23:25&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="4" name="Implement Remove Feature" note="Tue 27 May 2008, 23:26&#10;" work="288000" duration="288000" start="20080527T000000Z" end="20080606T160000Z" work-start="20080527T080000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration"/>
+    <task id="5" name="Integration Testing of Milestone 3 Solutions" note="Tue 27 May 2008, 23:33&#10;" work="115200" duration="115200" start="20080606T160000Z" end="20080612T120000Z" work-start="20080606T160000Z" percent-complete="0" priority="1" type="normal" scheduling="fixed-duration">
+      <predecessors>
+        <predecessor id="1" predecessor-id="4" type="FS"/>
+        <predecessor id="1" predecessor-id="3" type="FS"/>
+        <predecessor id="1" predecessor-id="2" type="FS"/>
+        <predecessor id="1" predecessor-id="1" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="6" name="Demonstration" note="" work="0" start="20080613T000000Z" end="20080613T000000Z" work-start="20080613T080000Z" percent-complete="0" priority="1" type="milestone" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20080613T000000Z"/>
+    </task>
+  </tasks>
+  <resource-groups default_group="1">
+    <group id="1" name="Group 1" admin-name="Filimoni Lutunaika" admin-phone="0404548918" admin-email="filimoni.lutunaika@gmail.com"/>
+  </resource-groups>
+  <resources>
+    <resource id="1" name="Filimoni Lutunaika" short-name="Fil" type="2" units="0" email="filimoni.lutunaika@gmail.com" note="Tue 27 May 2008, 23:21&#10;" std-rate="1"/>
+    <resource id="2" name="Xiaodong Cui" short-name="Cui" type="2" units="0" email="xiaodong.cui@gmail.com" note="Tue 27 May 2008, 23:20&#10;" std-rate="1"/>
+    <resource id="3" name="George Sainsbury" short-name="George" type="2" units="0" email="gsainbury@gmail.com" note="Tue 27 May 2008, 23:20&#10;" std-rate="1"/>
+    <resource id="4" name="Alex Egan" short-name="Alex" type="2" units="0" email="eegs@gmail.com" note="Tue 27 May 2008, 23:19&#10;" std-rate="1"/>
+  </resources>
+  <allocations>
+    <allocation task-id="6" resource-id="1" units="100"/>
+    <allocation task-id="5" resource-id="1" units="25"/>
+    <allocation task-id="2" resource-id="1" units="100"/>
+    <allocation task-id="6" resource-id="2" units="100"/>
+    <allocation task-id="5" resource-id="2" units="25"/>
+    <allocation task-id="1" resource-id="2" units="100"/>
+    <allocation task-id="6" resource-id="3" units="100"/>
+    <allocation task-id="5" resource-id="3" units="25"/>
+    <allocation task-id="3" resource-id="3" units="100"/>
+    <allocation task-id="6" resource-id="4" units="100"/>
+    <allocation task-id="5" resource-id="4" units="25"/>
+    <allocation task-id="4" resource-id="4" units="100"/>
+  </allocations>
+</project>
