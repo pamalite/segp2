@@ -1,0 +1,97 @@
+\begin{center}
+{\textbf{\underline{{Ken's Milestone 4 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+I have self-assigned myself to work with Jian Huang on the plugin framework, as proposed by himself at the end of Milestone 3. I have spend about the first 10 hours trying to brainstorm with him on how this proposed framework work. Due to communication issues, it required me unexpectedly more time to learn about the idea. Besides that, I have also spend time trying to catalogue the school computers for our use. And due to an unexpected software issue, the troubleshooting took away quite an amount of time away from doing actual work. At the end of this milestone, a redesigned plugin framework surface was delivered. 
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Create API standards base on the functionality of the file monitor.
+	     \begin{itemize}
+	        \item Sub-task 1: Look at the file monitor system and list (extract possible API methods needed.
+	           \begin{itemize}
+					\item Description: Prior to this task, it took me 8 hours to try to understand Jian Huang's proposal. The long time taken was due to communication breakdown between both us, as he had troubles articulating his thoughts clearly to me which caused a lot of confusions and misunderstandings. Another 5 hours were taken up to polish up my RoR skills after the semester break, and trying to fully understand how the framework can be ``imported'' like Java, and be sub-classed/instantiated for use.
+					\item Idea/Solution: N/A
+					\item Affected files: \texttt{earth\_plugin\_layers.pdf}
+					\item Git commits: \texttt{(segp2) 1de2dfee0b33a8d66198e10960db50fa8984fd4b}
+					\item Estimated time taken (planned): 16 hours
+					\item Estimated time taken (actual): 14 hours
+				\end{itemize}
+			\item Sub-task 2: Develop (code) the API itself (just for file monitor).
+			   \begin{itemize}
+					\item Description: Initially, we planned that we are going to give the most hours for this task. However, due to personal and other academic commitments, the hours were not met. During this task, a lot of issues were encountered. The language barrier that I had with Huang, coupled with our naivety about how the ``require'' keyword is used cost us 16 hours to get the initial prototype working. 
+					\item Idea/Solution: N/A. 
+					\item Affected files: \texttt{file\_monitor.rb}, \texttt{api\_eta\_printer.rb}, \texttt{api\_file\_monitor.rb}
+					\item Git commits: \texttt{(pamalite/earth) 2d087d82d8f117678b75a6a70efdad435fc0f8c4}
+					\item Estimated time taken (planned): 62 hours
+					\item Estimated time taken (actual): 16 hours
+				\end{itemize}
+	     \end{itemize}
+	\item Replace what is current available on file monitor.
+	     \begin{itemize}
+	         \item Sub-task 1: Re-develop file monitor with the proposed API.
+	            \begin{itemize}
+	              \item Description: This task was done in the previous task. 
+					\item Idea/Solution: N/A
+					\item Affected files: N/A
+					\item Git commits: N/A
+					\item Estimated time taken (planned): 64 hours
+					\item Estimated time taken (actual): 0 hours
+				 \end{itemize}
+	         \item Sub-task 2: Publish standards and API
+	            \begin{itemize}
+				    \item Description: This task was not taken due to an absent of a proper functional prototype to be documented. 
+					\item Idea/Solution: N/A 
+					\item Affected files: N/A
+					\item Git commits: N/A
+					\item Estimated time taken (planned): 1 hour
+					\item Estimated time taken (actual): 0 hours
+				 \end{itemize}
+	     \end{itemize}
+	\item Cataloguing SEGP2 computers
+	     \begin{itemize}
+	         \item Description: This task was self-assigned to create a central repository of all the computers provided by the school. It was undertaken due to the fact most of the members have trouble locating the machines. The catalogue was created on the SEGP2 forum, and some FAQ written to give specific answers to very frequently observed issues face by myself. 
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{http://forums.cs.adelaide.edu.au/mod/forum/discuss.php?d=7243}
+	         \item Git commits: N/A
+	         \item Estimated time taken (actual): 1 hour
+	     \end{itemize}
+	\item Setting up VNC for remote desktop purposes
+	     \begin{itemize}
+	         \item Description: This task was self-assigned to mitigate the issue of an unexpected locked lab. It took me quite a few of my time to figure out how to tunnel VNC protocol through SSH within the school LAN.  
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{http://forums.cs.adelaide.edu.au/mod/forum/discuss.php?d=7254}
+	         \item Git commits: N/A
+	         \item Estimated time taken (actual): 8 hours
+	     \end{itemize}
+	\item Setting up Aptana IDE on SE1. 
+	      \begin{itemize}
+	         \item Description: This task was self-assigned as it has something to do with my on-going research project to allow developers to log their time without actually logging them. However, this experiment was met with a disaster after it was revealed that Aptana might had reconfigured the underlying Rails library. Most of the time was spend on troubleshooting the issue.
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{http://forums.cs.adelaide.edu.au/mod/forum/discuss.php?d=7243}
+	         \item Git commits: N/A
+	         \item Estimated time taken (actual): 10 hours
+	     \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 53 hours (including 4 hours meeting time) over the spread of 3 weeks. I have only a budgeted 45 hours (15 hours per week) for this semester. The other 15 hours were spend on my research project. 
+
+Looking at the hours I felt that I have not had a productive 53 hours. Most of the hours were mainly spending on troubleshooting and leveling language barriers with my task partner. 
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item Better time-estimations: Failure to estimate time required a particular tasks had always been a setback for the group, besides myself. Since this is the first time the nature of the tasks were different from the previous milestones, it takes some time to get myself into my comfort zone. I am aiming to give better time estimates in the coming last few milestones. 
+      \begin{itemize}
+         \item Plan: Review more on past milestones, and perform reality checks during planning. 
+      \end{itemize}
+   \item Better communication with other members: It was almost impossible to communicate with my task partner due to language barriers. I had to resort to language translations and lengthy explanations to get a simple thought across. My aim for the coming milestones is to improve my way of ``internationalizing'' my thoughts as efficiently as possible to get the discussions moving as fast as possible. 
+      \begin{itemize}
+         \item Plan: Level communication expectations between my task partner and I before any discussion take place.
+      \end{itemize}
+\end{itemize}
