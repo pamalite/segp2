@@ -1,0 +1,121 @@
+\documentclass[oneside, 10pt, a4]{article}
+\usepackage{times}
+
+\begin{document}
+
+\title{Software Engineering Group Project - 7096B}
+\author{Semester 2 Week 4 - Group 1}
+\date{Mon Aug 18, 2008}
+
+\maketitle
+
+\begin{center}
+\section{Individual Milestone 4 Report - Ticket 131}
+\end{center}
+
+\paragraph{} By Xiaodong Cui (1149546)
+
+
+\subsection*{Introduction}
+
+\paragraph{}
+I was assgined tasks to do ticket 131 and prepare documentation for group 1 at the beginning of milestone 4. Ticket 131 is about using real disk usage instead of byte size for all web applications. At present, it is configurable for users to decide whether use file bytes or real disk size by just setting in earth-webapp.yml file.
+
+\subsection*{Task Description}
+
+\paragraph{}
+We are now gathering disk space usage (calculated as number of occupied 512-byte blocks) along with the size of each file, This is a better/more precise metric for determining where disk space is used, which probably is Earth's main purpose at this time. Therefore, the GUI should use this value instead in all situations. One solution had been implemented during milestone 3, but it was fragmented and could not be configurable by users. During milestone 4 I implemented a solution that could be configurable by users. The main task was broken down into four subtasks, and the resources were allocated to those subtasks. The documentation part includes setting meeting agendas, organising progress update meetings and writing plans and reports for group 1.
+
+\subsection*{Resource Management}
+
+\paragraph{}
+As a master student, basically I have approximately 30 hours per week working on the project, totally about 90 hours for milestone 4.
+\begin{itemize}
+ \item Ticket 131 - Use real disk usage instead of byte size throughout the web application.
+	\begin{itemize}
+	\item Sub-task 1: Investigate potential solutions:
+			\begin{itemize}
+			\item Description: I spent about 16 hours to understand the relative web structure of earth, tried to find better solutions. Another 4-6 hours were spent on investigate the feasibility of solutions.
+			\item Planned Time: 24 hours
+			\item Actural Time: 21 hours (week 1 31/07/08-03/08/08)
+			\end{itemize}
+		\item Sub-task 2: Design solution
+			\begin{itemize}
+			\item Description: The previous solution uses disk size only, the current solution make it configurable for users to decide whether use disk size or file size for web application. Based on Investigation part, I designed the implementation structure for the solution
+			\item Planned Time: 25 hours
+			\item Actural Time: 19 hours (week 2 03/08/08-07/08/08)
+			\end{itemize}
+		\item Sub-task 3: Code solution
+			\begin{itemize}
+			\item Description: The actually coding for the solution. Changed and added some code to get the solution implemented. Refer to Appendix A to check files have been modified.
+			\item Planned Time: 15 hours
+			\item Actural Time: 17 hours (week 2 07/08/08-11/08/08)
+			\end{itemize}
+ 		\item Sub-task 4: Test solution
+			\begin{itemize}
+			\item Description: This is to test the solution to see if the requirements specified in the Ticket description have been met, and to correct errors from test results.
+			\item Planned Time: 6 hours
+			\item Actural Time: 11 hours (week 3 11/08/08-13/08/08)
+			\end{itemize}
+		\item Sub-task 5: Integrate solution to the Subgroup 1 codebase
+			\begin{itemize}
+			\item Description: The new solution has been integrated to Subgroup 1 codebase.
+			\item Planned Time: 2 hours
+			\item Actural Time: 2 hours (week 3 13/08/08)
+			\end{itemize}
+		\item Sub-task 6: Update the Earth Trac system
+			\begin{itemize}
+			\item Description: Earth Trac system must be updated with the solution, but currently the system is down, I may update it later.
+			\item Planned Time: 1 hours
+			\item Actural Time: 0 hours
+			\end{itemize}
+		\item Total Planned Time: 73 hours
+		\item Total Actual Time: 70 hours
+		\end{itemize}
+\item Documentation for group 1	
+		\begin{itemize}
+		\item This includes writing Agenda, minutes, report and plan for subgroup 1.
+		\item Actual Time: 6 hours
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Implementation}
+
+\paragraph{}
+The solution was aimed to make it configurable by users to decide whether use file bytes or disk size in web application. A variable @size\_type was included in earth-webapp.yml for size configuration, and the value for this variable then was used as a flag to control what could be displayed on web pages. Also a new variable diskSize was added to Size.rb to represent the disk usage size. Based on this design, users can decide which size information they want to see on web pages, it is more flexible than just using real disk usage size.
+
+\subsection*{Milestone 4 Summary}
+
+\paragraph{}
+During milestone 4, the main time was spent on investigation and design potential solutions. I spent more time than I initially expected, this is because I need to understand the structure on how earth to control what need to be displayed on web applications. Also I need to gether all relevant information on how to implement the solution using ruby on rails. Once the investigation and design parts finished, other parts were relatively easier to get implemented. I also felt that we did not have enough communication between group members, this is because each of us was working on different ticket, and tickets were not connected, so we had little chance to work together with others.
+
+\subsection*{Conclusion}
+
+\paragraph{}
+The main task Ticket 131 was completed in milestone 4. However, there are may some other solution better than the current one, as I continue gaining experience on ruby and rails and earth project, I may find better solution for this ticket.
+
+\section*{Appendix A - Modified Files}
+
+\begin{itemize}
+ \item Navigation:
+	\begin{itemize}
+ 	\item size.rb
+	\item application\_helper.rb
+	\item server.rb
+	\item directory.rb
+	\item show.html.haml
+	\end{itemize}
+ \item All files
+	\begin{itemize}
+ 	\item flat.html.haml
+	\item browse\_controller.rb
+	\end{itemize}
+\item Radial views
+	\begin{itemize}
+ 	\item graph\_helper.rb
+	\item graph\_controller.rb
+	\end{itemize}
+\end{itemize}
+
+\[\emph{End}\]
+\end{document}
