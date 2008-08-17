@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{JONATHAN VELASCO (1135461)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 4 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+I took responsibility for the administrative tasks and elaboration of agendas and minutes.  Also, I was originally, together with the rest of the group, assigned to work extracting the possible API methods, however, this task was then taken by Ken and Jian.  And I was suggested by Ken to start studding the GUI together with Sahil.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Create API standards base on the functionality of the file monitor.
+	     \begin{itemize}
+	        \item Sub-task 1: Look at the file monitor system and list (extract possible API methods needed).
+	           \begin{itemize}
+		   	\item Description: I start by looking at the file monitor to try to extract the possible API methods.  I spent approximately 3 hours looking at it.  However, I needed to discuss it with Ken in order to get a better understanding of how to extract the methods for the API
+			\item Idea/Solution: N/A
+			\item Affected files: N/A
+			\item Git commits: N/A
+			\item Estimated time taken (planned): 2 (just looking how to extract few methods in order to check I was going in the right track hours
+			\item Estimated time taken (actual): 3 hours
+		\end{itemize}
+	     \end{itemize}
+	\item Study GUI thinking on how to implement Jian idea to it.  I decided to focus first on the TABS.  I splitted it into two tasks
+	     \begin{itemize}
+	         \item Sub-task 1: Creation of a TAB (investigation)
+	            \begin{itemize}
+	         	\item Description: The idea that I have is to create a system to be able to create a new tab automatically.  I looked at how Ken created the UserUsage tab, and broken down into the essential components.  I check the file that he created/modified in order to create the tab.  Doing this took me approximately 3 hours.
+			\item Idea/Solution: N/A
+			\item Affected files: N/A
+			\item Git commits: N/A
+			\item Estimated time taken (planned): 1 hours
+			\item Estimated time taken (actual): 3 hours
+		  \end{itemize}
+	         \item Sub-task 2: Automatic create of TAB
+	            \begin{itemize}
+			\item Description: After finding the files needed to create a tab, I started searching and testing (by trial and error), if it was possible to create methods using rails to read all the files (modules) that are inside a folder.  This idea was to create all the files needed for the tab and store them in a folder, and then just 'include' those files (modules).  However, no usefull information was found which helped me to do this.  This took approximately 4 hours.  Note: a latter idea came to me at the end of the milestone and only had time to mention it to Ken but we have not discus it yet.  I am thinking to use the idea behind the ruby plugging system to create an automatic way to make tabs.  The idea is to create a script (something like scrip/makeNewTab tab\_name) which will ask the user for the name of the tab and then, it will automatically generate the files need for the tab (as I think all the files need to display the name of the tab in the browser have the same headers and starting information) and then just tell to the user on which of the newly create file he has to place the code that perform the function related to the tab.  In other words, this idea of automatically create a tab is just create and empty tab with the given title.
+			\item Idea/Solution: Have not yet try the latest idea 
+			\item Affected files: N/A
+			\item Git commits: N/A
+			\item Estimated time taken (planned): 2 hour
+			\item Estimated time taken (actual): 3 hours
+		 \end{itemize}
+	     \end{itemize}
+	\item Update of the ticket in trac
+	     \begin{itemize}
+	         \item Description: This task was assigned to me by Ken.  He asked me to modified/update the tickets information on the trac system
+	         \item Idea/Solution: tickets where updated
+	         \item Affected files: tickets 66 and ticket 23 on earth trac system
+	         \item Git commits: N/A
+	         \item Estimated time taken (planned): N/A
+		 \item Estimated time taken (actual): 0.5 hour
+	     \end{itemize}
+	\item Elaboration of documents
+	     \begin{itemize}
+	         \item Description: Elaboration of agendas and recording of minutes 
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{agenda_200808071000.pdf ,agenda_200808121100.pdf, minutes_200808071000.pdf, 200808131100.pdf}.  
+	         \item Git commits: \begin{itemize}
+	                             \item \textit{https://github.com/pamalite/segp2/tree/master/Subgroups/Group_3/Documents/Meetings/Agendas/agenda_200808071000.pdf}
+				     \item \textit{https://github.com/pamalite/segp2/tree/master/Subgroups/Group_3/Documents/Meetings/Agendas/agenda_200808121100.pdf}
+				     \item \textit{https://github.com/pamalite/segp2/tree/master/Subgroups/Group_3/Documents/Meetings/Minutes/minutes_200808071000.pdf}
+				     \item \textit{https://github.com/pamalite/segp2/tree/master/Subgroups/Group_3/Documents/Meetings/Minutes/200808131100.pdf} 
+	                            \end{itemize}
+		 \item Estimated time taken (planned): N/A
+	         \item Estimated time taken (actual): 0.5 hours for agendas, 1 hour for minutes
+	     \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 19 hours (from which 7 hours where on meetings, 3.5 hours where administrative tasks) over the spread of 3 weeks. I have only a budgeted 18 hours (maximun 6 hours per week) for this semester. 
+
+I think the investigation that I conducted did not produce results more than 'things that will not work', which made me feel disappointed as I was expecting to end this milestone with a first working prototype of how to at least create tabs (empty but with a title) in the browser in an easy way.  I think the problem is my knowledge of ruby and rails, on which I basically do a largely and time consuming 'trial and error' instead of know what I am doing.
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item Do not underestimate the time that I need to understand and work with ruby on rails
+   \item Keep in touch with my partners in order to ensure am in a right track or to check if they know how to solve any problem that I may be stuck with on work
+\end{itemize}
+
+\end{document}  
