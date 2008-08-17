@@ -1,0 +1,111 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+\begin{document}
+
+\title{Milestone 4 Individual Report}
+\author{Alex Egan}
+\date{ }
+
+\maketitle
+ 
+\section{Task Description}
+The task assigned to me was Ticket 75. This deals with dynamic sorting of the output in the Navigation and All Files tabs in the Earth application. The goal was to be able to click on a column heading, such as Name or Size, and have the file listing be sorted by the appropriate criterion.
+
+\section{Progress Summary}
+\label{prog-sum}
+The ticket was not completed as required. Investigations into the changes to be made revealed bugs in the current implementation of the pagination on the All Files view and the sorting of the columns. The All Files view has the dynamic sorting that the ticket requires implemented but it does not work when there is only one page of files to list. The sorting also takes two parameters so that it can sort by name and then by file size, for example. There is an arrow icon that indicates ascending or descending sort order by pointing up or down. The default sort state causes this icon to not show initially and this is another issue that needs to be addressed.\\
+\\
+The plan was to use the current code as much as possible and to use the All Files implementation as the basis for the Navigation tab to ensure visual and code consistency. I tried to fix the bugs but was unsuccessful in my attempts. Once these are fixed it will be easier to add the necessary changes for the Navigation tab.
+
+\section{Resource Allocation}
+The estimate as in the plan is below.\\
+\\
+\textbf{Subtasks:}
+\begin{enumerate}
+	\item Design and code the dynamic sorting of record listing. (7 hrs)
+	\item Test and integrate solution to the Subgroup 1 codebase. (2 hrs)
+	\item Update the Earth Trac system. (1 hr)
+\end{enumerate}
+\textbf{Total Time Estimate:} 10 hrs
+
+\section{Resource Use}
+See the Time Log in Section \ref{time-log} for detailed time spent on the tasks.\\
+\\
+The task was not completed on schedule. Once work began on this task, it became apparent that the planned approach was not going to work. The planned subtasks should have been more refined. The largest issue was understanding the existing code and how it works. Trying understand Haml proved more difficult than expected. The discovery of the bugs mentioned in Section \ref{prog-sum} was unexpected.\\
+\\
+To improve progress in the next sprint, working with someone who has a better knowledge of Haml, perhaps through pair programming, will assist in finding the issues that need to be resolved and help me improve my understanding of the markup language. This will assist in making progress on other tasks in the future as well.
+
+\section{Time Log}
+\label{time-log}
+%week 1
+\subsection*{Semester 2, Week 1}
+\subsubsection*{Monday Jul 28, 2008}
+1300 - 1500 hrs\\
+Attended main group meeting and discussed planned tasks for Milestone 4.\\
+\\
+\textbf{Daily Total} 2 hrs\\
+
+\subsubsection*{Thursday Jul 31, 2008}
+1800 - 2000 hrs\\
+Looked through Earth code to find the appropriate files to be modified for completion of the task. Began trying to figure out how the code works.\\
+\\
+\textbf{Daily Total} 2 hrs\\
+\\
+\textbf{Weekly Total:} 4 hrs
+
+%week 2
+\subsection*{Semester 2, Week 2}
+\subsubsection*{Monday Aug 4, 2008}
+1300 - 1400 hrs\\
+Attended main group meeting and discussed progress.\\
+\\
+\textbf{Daily Total:} 1 hrs
+
+\subsubsection*{Wednesday Aug 6, 2008}
+1400 - 1500 hrs\\
+Attended Group 1 subgroup meeting with Dr Li.\\
+\\
+1900 - 2000 hrs\\
+Discovered that my installation of Earth wasn't working when I tried to test some changes. Tried to remedy it unsuccessfully.\\
+\\
+\textbf{Daily Total:} 2 hrs\\
+
+\subsubsection*{Thursday Aug 7, 2008}
+1700 - 1900 hrs\\
+Got Earth working again. Coding.\\
+\\
+\textbf{Daily Total:} 2 hrs\\
+\\
+\textbf{Weekly Total:} 5 hrs
+
+%week 3
+\subsection*{Semester 2, Week 3}
+\subsubsection*{Monday Aug 11, 2008}
+1300 - 1400 hrs\\
+Group Meeting at Software Engineering Meeting Room\\
+\\
+2000 - 2300 hrs\\
+Coding and discovered bugs in All Files tab.\\
+\\
+\textbf{Daily Total} 4 hrs\\
+
+\subsubsection*{Wednesday Aug 11, 2008}
+2000 - 2200 hrs\\
+Coding.\\
+\\
+\textbf{Daily Total} 2 hrs\\
+
+\subsubsection*{Friday Aug 15, 2008}
+0300 - 0400 hrs\\
+Presentation preparation.\\
+\\
+1400 - 1500 hrs\\
+Attended Milestone 4 presentation.\\
+\\
+\textbf{Daily Total:} 2 hrs\\
+\\
+\textbf{Weekly Total:} 8 hrs\\
+\\
+\textbf{Sprint Total:} 17 hrs%%%%
+
+\end{document} 
