@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{SEGP2 Plugin Group (18$^{th}$ August, 2008)}
+\pagestyle{headings}
+
+\begin{center}
+{\large\textbf{\underline{Plugin Group Milestone 5 Plan}}}
+\end{center}
+
+\section*{Executive Summary}
+
+The Plugin Group was formed after the first sprint 5 meeting. This group consists of all MSE students as it was expected that the plugin system is a major tasks and all available resources are needed. The sub-tasks associated with creating the plugin system are:
+
+\begin{itemize}
+   \item API library composition
+   \item Earth daemon revamping
+   \item Plugin deployment interface
+\end{itemize}
+
+The first 2 tasks are expected to be delivered by the end of the sprint. It will be a plus if the last task can be delivered. The tasks are not decomposed further as the group prefers to divide themselves into task-forces, and incrementally complete the tasks by following the XP strategy. Also, frequent meetings are held to showcase each task-force's progress. 
+
+\section*{Resources and Timeline}
+
+\begin{itemize}
+   \item Resources:
+		\begin{itemize}
+		   \item Ken (Group Representative) [15 hours a week]
+		   \item Jian Huang (Advisor) [30 hours a week]
+		   \item Fillmoni [30 hours a week]
+		   \item Mohammad [30 hours a week]
+		   \item Ida Yang [30 hours a week]
+		   \item Keane Zhou [30 hours a week]
+		   \item Xiao Dong [30 hours a week]
+		   \item Total hours a week: 195 hours 
+		\end{itemize}
+   \item Timeline:
+       \begin{itemize}
+          \item Start Day: 18$^{th}$ August, 2008
+          \item End Day: 5$^{th}$ September, 2008
+          \item Duration: 15 days
+       \end{itemize}
+   \item Accumulated hours: \underline{585 hours}
+\end{itemize}
+
+\section*{Tasks and Task-forces}
+
+\begin{enumerate}
+   \item API library composition
+      \begin{itemize}
+         \item \textbf{Task-force:} Jian Huang, Xiao Dong, Keane, Ken and Ida
+         \item \textbf{Git repo:} \texttt{pamalite/earth}
+         \item \textbf{Description:} This task will decompose the File Monitor into a more basic level of classes and methods, and have them classified to different publicly available classes to be used by plugins. The following are the activities to be conducted: 
+            \begin{enumerate}
+               \item Identify utility methods and functions.
+               \item Classify the methods and functions into appropriate Ruby classes.
+               \item Standardize the storage location of the APIs (in database or location disk?). 
+            \end{enumerate}
+The goal is to decompose them to enable to the plugin prototypes for now.
+      \end{itemize}
+   \item Earth daemon revamping
+      \begin{itemize}
+         \item \textbf{Task-force:} Ken, Mohammad, Jian Huang and Fillmoni
+         \item \textbf{Git repo:} \texttt{pamalite/earth}
+         \item \textbf{Description:} This task is an effort to redevelop the earthd daemon to support the new plugins written using the APIs. The following are the responsibilities of the new daemon:
+            \begin{enumerate}
+               \item Dynamically loads plugins directly from the database. 
+               \item Loads plugins with higher priority first. 
+               \item Runs the plugins.
+               \item Blocks malicious plugins and alert administrator. 
+            \end{enumerate}
+The goal of this task is to have a revamped earthd running to the prototype plugins.                 
+      \end{itemize}
+   \item Plugin deployment interface
+      \begin{itemize}
+         \item \textbf{Task-force:} \textit{Unassigned}
+         \item \textbf{Git repo:} \texttt{pamalite/earth}
+         \item \textbf{Description:} This task is to redevelop the plugin deployment scripts provided by RSP for the new plugins made. The following are the responsibilities of the new deployment scripts:
+            \begin{enumerate}
+               \item Verify and sign off plugin codes. 
+               \item Install or update plugins into or in the database, respectively. 
+               \item Provides a one-stop Earth plugin management centre. 
+            \end{enumerate}
+This task is currently unassigned as it was agreed the completion of this task is good to have for this sprint. However, it will be addressed once the API framework and earthd are beta/production worthy. 
+      \end{itemize}
+\end{enumerate}
+
+\section*{Deliverables}
+
+\begin{itemize}
+   \item A demonstration of one or two plugins created using the API. 
+   \item Possibly of a live demonstration of creating a plugin using the API.
+   \item Individual and subgroup reports.
+   \item API specifications and developer's guides to Earth plugin creation. 
+\end{itemize}
+
+\end{document}  
