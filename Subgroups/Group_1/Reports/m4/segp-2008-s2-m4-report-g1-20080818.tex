@@ -3,6 +3,14 @@
 \usepackage{graphicx}
 \parindent=0pt
 
+\newenvironment{mylisting}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
+{\end{list}}
+
+\newenvironment{mytinylisting}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\tiny\bfseries}
+{\end{list}}
+
 \begin{document}
 \begin{titlepage}
 \begin{center}
@@ -22,14 +30,12 @@
 
 \tableofcontents
 
-\[----\]
-
 \newpage
 
 \section{Introduction}
 
 \paragraph{}
-Group 1 was assigned Tickets 75, 131, 174 and 186 for Milestone 4. Ticket 75 aimed listing by either name OR (with a slight modification) size. Ticket 131 wanted real disk usage instead of file bytes in all web applications. Ticket 174 allowed earth to release a gem. Ticket 186 added remove feature for earth.
+Group 1 was assigned tickets 75, 131, 174 and 186 for Milestone 4. Ticket 75 was aimed at dynamically sorting the listings of files in the Earth web application. Ticket 131 wanted real disk usage instead of the number of file bytes in all web applications. The aim of ticket 174 was to create a release gem for Earth. Ticket 186 added remove the feature for Earth.
 
 \section{Resources}
 
@@ -47,10 +53,10 @@ For Milestone 4, the distribution tasks amongst the members were based on among 
 things the hours that each member was expected to commit to the project. As a result, the tasks were distributed as the following.
 
 \begin{itemize}
- \item Alex:   Ticket 75 sort by name or size.
+ \item Alex: Ticket 75 sort by name or size.
  \item George: Ticket 174 creating the Earth Gem.
- \item Fili:   Ticket 186 remove feature of Earth Daemon and also in charge of managing the repository for Subgroup 1. This includes ensuring that the Milestone 4 solutions undergo integration testing before being committed onto the Subgroup 1 repository.
- \item Cui:    Ticket 131 use real disk usage instead of byte size and also in charge of writing documents for group 1.
+ \item Fili: Ticket 186 remove feature of Earth Daemon and also in charge of managing the repository for Subgroup 1. This includes ensuring that the Milestone 4 solutions undergo integration testing before being committed onto the Subgroup 1 repository.
+ \item Cui: Ticket 131 use real disk usage instead of byte size and also in charge of writing documents for group 1.
 \end{itemize}
 
 \newpage
@@ -140,7 +146,7 @@ The estimate as in the plan is below.\\
 \textbf{Total Time Estimate:} 10 hrs
 
 \subsection*{Resource Use}
-See the Time Log in Section \ref{time-log} for detailed time spent on the tasks.\\
+See the Time Log below for detailed time spent on the tasks.\\
 \\
 The task was not completed on schedule. Once work began on this task, it became apparent that the planned approach was not going to work. The planned subtasks should have been more refined. The largest issue was understanding the existing code and how it works. Trying understand Haml proved more difficult than expected. The discovery of the bugs mentioned in Section \ref{prog-sum} was unexpected.\\
 \\
@@ -217,7 +223,7 @@ Attended Milestone 4 presentation.\\
 \\
 \textbf{Weekly Total:} 8 hrs\\
 \\
-\textbf{Sprint Total:} 17 hrs%%%%
+\textbf{Sprint Total:} 17 hrs
 
 \newpage
 \section{Individual Milestone 4 Report - Xiaodong Cui}
@@ -564,7 +570,6 @@ to keep this log as accurate and informative as possible.
 
 \begin{mylisting}
 \begin{verbatim}
-
 Semester 2 Week 1
 
 
@@ -636,9 +641,6 @@ Daily Total: 6 hrs
 Weekly Total:  27 hrs
 ========================================================================
 
-
-
-
 Semester 2 Week 2
 
 
@@ -709,14 +711,6 @@ Daily Total: 6 hrs
 
 Weekly Total:  26 hrs
 ========================================================================
-
-
-
-
-
-
-
-
 
 Semester 2 Week 3
 
@@ -798,16 +792,12 @@ Daily Total: 5 hrs
 
 Weekly Total: 34 hrs
 ========================================================================
-
-
 \end{verbatim}
 \end{mylisting}
 
-\[----\]
-
 \newpage
 
-\section{Individual Milestone 4 Report - George Leonard Sainsbury}
+\section{Individual Milestone 4 Report - George Sainsbury}
 
 \subsection*{Progress Report}
 
