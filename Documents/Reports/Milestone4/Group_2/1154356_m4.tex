@@ -1,0 +1,136 @@
+\documentclass[10pt,a4,oneside]{article}
+\usepackage{a4wide}
+\usepackage{graphicx}
+
+
+\newenvironment{mylisting}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
+{\end{list}}
+
+\newenvironment{mytinylisting}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\tiny\bfseries}
+{\end{list}}
+
+
+\begin{document}
+
+\title{COMPSCI 7096B - Software Engineering Group Project}
+\author{Kun Zhou (a1154356) - Group 2\\ Milestone 4}
+\date{Mon Aug 18, 2008}
+
+\maketitle
+
+\section*{Individual Report}
+
+
+\subsection*{Introduction}
+
+This report writen by Kun Zhou is a discription about the finished job on milestion 4, including task allocation and discription, time management, stage discirption and conlution. 
+
+
+\paragraph{}
+
+\subsection*{Task Allocation and Discription}
+
+Ticket 43 proposed to create a login system in order to control the user permission or profile. It is vital for such a version control system like the Earth.Login System allows the users to have different display GUI and set the permission for security.
+
+
+\subsection*{Time Management}
+
+\paragraph{}
+Task Category: Planning  \\
+Discription: Make a plan about the development and research on ruby on rail in the second semester \\
+Cost: 4 hours\\
+
+
+Task Category: Planning\\
+Discription: Analyze the ticket 43 to get the requirement of users  \\
+Cost: 4 hours\\ 
+
+Task Category: Design\\
+Discription: Design a property method to achieve the goal \\
+Cost: 18 hours\\
+
+Task Category: Research\\
+Discription: Research about session control and the user authentication \\
+Cost: 12 hours\\
+
+Task Category: Coding (database)  \\
+Discription: Build the related database and model  \\
+Cost: 7 hours\\
+
+Task Category: Testing (database)\\
+Discription:  Testing database and related function\\
+Cost: 3 hours\\
+
+Task Category: Coding (GUI and others)  \\
+Discription: Modify the display and create new window for login system  \\
+Cost: 15 hours\\
+
+Task Category: Testing (GUI and others)  \\
+Discription: Testing GUI and related function\\
+Cost: 5 hours\\
+
+Task Category: Testing (Unit test)\\
+Discription:  Testing the new part of system\\
+Cost: 5 hours\\
+
+Total:  75 hours\\
+
+\subsection*{Stage Discirption}
+
+\paragraph{}
+\textbf{Research:}\\
+The aim for the login system absolutely is that Allowing different users to get the different experience on this system. In the further, the developers can use it to control the permission of accounts in order to achieve the goal of security or other related function For login system, the best way is that using the session. It can be used to control the behavior of users.  Additionally, the information about web programming is vital.\\
+
+\textbf{Planning:}\\
+Reading and Research would cost me a lot of time, and plan as well. All of these above would be finished at early of the second week. Coding and testing would cost me up to 40 hours.\\
+
+\textbf{Design:}\\
+\begin{enumerate}
+ \item Database: a new table in database is necessary to record the information about account, such as account name, password(stored by SHA1), created time and modified time. \\
+\item Daemon: a lot of file needed is used for view, model or testing. \\
+\item GUI: add some more file and code based on the current one, including login windows and related things.\\
+\item Function: After login, the account user could add new account, delete existed account, get the list of accounts in system and log out.\\
+\item Further function: different users, different permission. 
+\end{enumerate}
+
+\textbf{Coding:}\\
+\begin{verbatim}
+    Modified files: 
+
+
+    * app/controllers/browser_controller.rb
+    * app/controllers/graph_controller.rb
+    * app/helpers/browser_helper.rb
+    * app/views/browser/_breadcrumb_and_filter.html.haml
+
+
+
+    Added files: 
+
+    * app/controllers/login_controller.rb
+    * app/helpers/login_helper.rb
+    * app/models/account.rb
+    * app/views/login/add_account.html.erb
+    * app/views/login/delete_account.html.erb
+    * app/views/login/index.html.erb
+    * app/views/login/list_accounts.html.erb
+    * app/views/login/login.html.erb
+    * app/views/login/logout.html.erb
+    * db/migrate/060_create_accounts.rb
+    * lib/earth_plugins/metadata.rb
+    * test/fixtures/accounts.yml
+    * test/functional/login_controller_test.rb
+    * test/unit/account_test.rb
+\end{verbatim}
+\textbf{Testing:}
+Need to create more complex user behavior to test.\\
+\subsection*{Conclution}
+
+\paragraph{}
+In this milestone, i only spent less than 80 hours. It's a little less. In the next milestone, the time management would be more suitable for the requirement of the project.\\
+
+Next milestone, the plugin system is vital. We need to spend more time on it. And Making the finished ticket as a plugin is quite challenged. Additionally, the API of plugin has not been finished by group 3. Absolutely, this milestone would be the most important task in the whole project. The better planning is required.
+
+\end{document}
