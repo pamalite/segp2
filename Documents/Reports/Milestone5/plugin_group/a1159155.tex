@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{WONG KEN S'NG (1159155)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 5 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+I have been defaulted as the main contact of the newly formed Plugin Focus Group. Due to my hours being halved due to my commitment on delivering a research paper, I have been assigned to track and manage the group's progress. Besides that, I have initiated a plugin briefing with the group at the start of the group formation, and it was well accepted. The result of the briefing is the current working plugin mechanism, which was demonstrated during the Milestone 5 Meeting, that had exceeded my expectations on how far the new members can produce. On top of that, I had managed to fix a problem that was caused by an unknown bug in the PostgresSQL Ruby connector, and helped move the group forward. Overall, Sprint 5 have been very fruitful and Sprint 6 will be the polishing of what was leftover. 
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Overseeing the progress of the developments of the plugins mechanism development.
+	     \begin{itemize}
+	        \item Sub-task 1: API library composition.
+	           \begin{itemize}
+					\item Description: Standardize the APIs creation and how to integrate them into plugins.
+					\item Idea/Solution: N/A
+					\item Affected files: N/A
+					\item Git commits: N/A
+					\item Estimated time taken (planned): (throughout the sprint)
+					\item Estimated time taken (actual): (throughout the sprint)
+				\end{itemize}
+			\item Sub-task 2: Earth daemon revamping.
+			   \begin{itemize}
+					\item Description: Retrofitting earthd to support multiple plugins loading from database. 
+					\item Idea/Solution: The main problem of the daemon plugin was due to a translation error between PostgresSQL and Ruby, which caused the pre-signed signatures to corrupt when retrieved as Binary. The solution is to use Text as the storage data type, and pack the codes and signatures into Base64 encoded bundles to maintain consistency. The only thing left to do is to add the decoding process in the Plugin Manager.  
+					\item Affected files: \texttt{062\_change\_plugin\_descriptor\_code\_signature\_columns\_to\_text.rb} and \texttt{plugin\_manager.rb}
+					\item Git commits: \texttt{(pamalite/earth) ad4cbaed3a0ded49d44453ed674aaaaca6b86144}
+					\item Estimated time taken (planned): 6 hours
+					\item Estimated time taken (actual): 7 hours
+				\end{itemize}
+	     \end{itemize}
+	\item Updating the notes briefed during the plugins briefing.
+	     \begin{itemize}
+	         \item Description: Besides having technical briefing about what has been done in previous sprints, on  the subject of plugins, some form of a documented notes are needed for easy reference by the new developers. I have prepared some documentations previously, but I saw it is time to update them to reflect the new ideas.  
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{plugin\_developers\_guide.pdf} and \texttt{Plugin\_System\_Notes\_2.pdf}
+	         \item Git commits: \texttt{(pamalite/segp2) 20d0ef6cfc86618a57d08a27078ec8a692921c94}, \\\texttt{(pamalite/segp2) 74b7f3b8c4773935b8038329f5b309417375be1f}
+	         \item Estimated time taken (actual): 3 hours
+	     \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 22 hours (including 12 hours meeting time) over the spread of 3 weeks. I have only a budgeted 45 hours (15 hours per week) for this semester. The other 15 hours were spend on my research project. 
+
+Looking at the hours I felt that I have had a productive sprint, though I am only using half of my budgeted hours. The rest of the hours were used for other academics commitments. However, I managed to get the new group in-sync with the latest plugins development plans and designs. And, the group managed to exceed the expectation by coming up with a plugin system that works beyond the planned version. Also, the system is readily to be deployed, and it only needs to be polished.  
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item Better communication with team members: It was observed that a member of the team had branched off to work on what he feels it is right without the consensus of the group. His action nearly cost the group to repeat history of having too many leads that cannot be followed. Such an action maybe good for the future, but it is bad for the group's reputation when there is no prototype to be shown at the end of the milestone. Besides, having a member who do not share the same vision as everyone else may lead the group into unwanted conflicts. 
+      \begin{itemize}
+         \item Plan: Level expectations between all group members and myself.
+      \end{itemize}
+\end{itemize}
+
+\end{document}  
