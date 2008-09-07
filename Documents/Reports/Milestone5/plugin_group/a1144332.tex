@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{hyperref}
+
+\begin{document}
+\markright{Mohammad Bamogaddam (1144332)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 5 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+This report records my activities related to Earth project development for Milestone 5 period from 18-August-2008 to 6-September-2008.\\
+In this sprint,I have finished the following main tasks: re-implement the files' metadata feature using RSP tables, design a flexible architecture for (earth daemon) plugins and finally converts file-monitor and my metadata files into plugins for earth daemon.     
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Re-implement the files' metadata feature using RSP tables.
+	     \begin{itemize}
+	      \item Sub-task 1: 
+	           \begin{itemize}
+					\item Description: Adding metadata for files feature was implemented in milestone 4. Now, I re-implemented it using RSP tables. This makes the implementation more efficient and generic.  
+					\item Idea/Solution: avoid redundancy in the database and make all records in the same table having the same type.
+					\item Affected files:\\ 
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/file_monitor.rb}{lib/earth-plugins/filemonitor.rb},\\
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/metadata.rb}{lib/earth-plugins/metadata.rb},\\
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/rsp_metadata.rb}{lib/earth-plugins/rsp-metadata.rb} and\\
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/search_by_kv_pairs.rb}{lib/earth-plugins/search.rb}
+					\item Git commits: I have created a separate branch in my personal repository for this task named: fileMetadata. There are 12 commits under that branch related to this task:\\
+You can find all the commits in: \href{http://github.com/mfbDev/earth/commits/fileMetadata}{http://github.com/mfbDev/earth/commits/fileMetadata}.
+They started with \\
+\href{http://github.com/mfbDev/earth/commits/fileMetadata/0a9ffc836301f9b916}{commits/fileMetadata/0a9ffc836301f9b916}.
+and ended with \\
+\href{http://github.com/mfbDev/earth/commits/fileMetadata/9063828060000a}{commits/fileMetadata/9063828060000a}. 
+					\item Estimated time taken (planned): 18 hours
+					\item Actual time taken: 20 hours
+				\end{itemize}
+			\item Sub-task 2: testing
+			   \begin{itemize}
+					\item Description: test the new functionality with the new design
+					\item Idea/Solution: N/A. 
+					\item Affected files: N/A
+					\item Git commits: N/A
+					\item Estimated time taken (planned): 5 hours
+					\item Actual time taken: 6 hours
+				\end{itemize}
+	     \end{itemize}
+	\item Design a flexible architecture for (earth daemon) plug-ins
+		\begin{itemize}
+		\item Sub-task 1: reading
+			\begin{itemize}
+				\item Description: read about existing plugin architectures
+				\item Idea/Solution: N/A.
+				\item Affected files: \href{https://github.com/pamalite/segp2/tree/master/Subgroups/plugin_group/Documents/Design/extension_points_design.doc}{extension-points-design.doc}
+				\item Git commits: N/A
+				\item Estimated time taken (planned): 5 hours
+				\item Actual time taken: 3 hours
+			\end{itemize}
+		\item Sub-task 2: design and coding
+			\begin{itemize}
+				\item Description: design a new plug-in architecture for earth daemon and implement it 
+				\item Idea/Solution: The main idea was using extension-points.
+				\item Affected files: \\
+\href{http://github.com/mfbDev/earth/tree/metadata_as_plugin/lib/earth_plugin_interface/plugin_manager.rb}{lib/earth-plugin-interface/plugin-manager.rb},\\
+\href{http://github.com/mfbDev/earth/tree/metadata_as_plugin/lib/earth_plugin_interface/extensions.rb}{lib/earth-plugin-interface/extensions.rb},\\
+\href{http://github.com/mfbDev/earth/tree/metadata_as_plugin/lib/earth_plugin_interface/earth_plugin.rb}{lib/earth-plugin-interface/earth-plugin.rb},\\
+\href{http://github.com/mfbDev/earth/tree/metadata_as_plugin/lib/earth_plugins/file_monitor.rb}{lib/earth-plugins/file-monitor.rb}
+
+				\item Git commits: There are 10 commits related. All can be found under \href{http://github.com/mfbDev/earth/commits/metadata_as_plugin}{earth/commits/metadata-as-plugin}\\
+Started with: \href{http://github.com/mfbDev/earth/commits/metadata_as_plugin/9063828060000a}{commits/metadata-as-plugin/9063828060000a} \\
+Ended with: \href{http://github.com/mfbDev/earth/commits/metadata_as_plugin/30d8813d82236c148}{commits/metadata-as-plugin/30d8813d82236c148}
+				\item Estimated time taken (planned): 15 hours
+				\item Actual time taken: 10 hours
+			\end{itemize}
+		\item Sub-task 3: testing
+			\begin{itemize}
+				\item Description: test the new architecture and test file-monitor as a plug-in
+				\item Estimated time taken (planned): 5 hours
+				\item Actual time taken: 5 hours 
+			\end{itemize}
+		\end{itemize}
+	\item Add metadata as a plug-in for file-monitor
+		\begin{itemize}
+			\item Sub-task 1: adding rsp-metadata as a plug-in for file-monitor
+				\begin{itemize}
+					\item Description: create extension points in file-monitor. Link rsp-metadata to these extension points.
+					\item Affected files:\\
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/file_monitor.rb}{lib/earth-plugins/file-monitor.rb},\\ 
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/metadata.rb}{lib/earth-plugins/metadata.rb} and \\
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/rsp_metadata.rb}{lib/earth-plugins/rsp-metadata.rb},
+					\item Git commits: There are about 18 commits related.\\
+All can be found in: \href{http://github.com/mfbDev/earth/commits/metadata_as_plugin}{earth/commits/metadata-as-plugin}.\\
+Started with:\\
+\href{http://github.com/mfbDev/earth/commits/metadata_as_plugin/35a48ac6b3f4f92}{commits/metadata-as-plugin/35a48ac6b3f4f92}\\
+Ended with:\\
+\href{http://github.com/mfbDev/earth/commits/metadata_as_plugin/8434625e07aac85}{commits/metadata-as-plugin/8434625e07aac85}\\
+					\item Estimated time taken (planned): 5 hours
+					\item Actual time taken: 4 hours
+				\end{itemize}
+			\item Sub-task 2: testing
+				\begin{itemize}
+					\item Description: testing metadata feature while it is working as a plug-in
+					\item Affected files: N/A
+					\item Git commits: N/A
+					\item Estimated time taken (planned): 2 hours
+					\item Actual time taken: 4 hours
+				\end{itemize}
+			\item Sub-task 3: loading code from database instead from disk
+				\begin{itemize}
+					\item Description: I start the work by loading plug-in files from the disk which make things easier for me. After that, I change the implementation so extensions will load plug-ins from the database.
+					\item Affected files: same as previous
+					\item Git commits: included with the previous item
+					\item Estimated time taken (planned): 1 hours
+					\item Actual time taken: 3 hours
+				\end{itemize}
+		\end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+I estimated that I will spent about 70 hours for this milestone. I have spent about 60 hours including meeting times. 
+
+
+\section*{Milestone Observations}
+I believe this milestone was more productive than the previous one because there was more communication between the group members.\\
+
+\end{document}  
