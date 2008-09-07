@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{LUTUNAIKA FILIMONI (1154924)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 5 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+For the current milestone (M5), I was reassigned to the Plugin Focus Group. This group comprised all the seven (7) MSE students and 
+was tasked with investigating the plugin system for the Earth project. The investigation showed that while the file monitor class 
+(file\_monitor.rb) had been designed as a plugin, the actual implementation was tightly coupled to the underlying earth daemon code.
+This would make it difficult to expand the features and functions of the Earth project. So the investigation also involved modifying
+the Earth daemon code to make it modular and provide a standardised plugin interface.
+
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Examine and Verify Operations of Original Daemon Design and Plugin Support.
+		\begin{itemize}
+			\item Sub-task 1: Locate and learn about current group progress with the plugin system.
+	      	\begin{itemize}
+					\item Description: This involves reading the documentation (investigation report) of the plugin system by Group 3 in previous milestones.
+					\item Idea/Solution: The existing documents revealed that the original code incorporates the option to implement the file monitor class as a plugin.
+					\item Affected files: \texttt{Plugin\_Design\_Notes.pdf}
+					\item Git commits: N/A.
+					\item Estimated time taken (planned): 10 hours
+					\item Estimated time taken (actual): 16 hours
+				\end{itemize}
+			\item Sub-task 2: Identify all plugin-related designs in codes.
+			   \begin{itemize}
+					\item Description: While the relevant plugin notes (Sub-task 1) showed the design concepts and explained its implementation, it did not show where these design decisions are implemented in the source codes. As a result, this Sub-task (2) involved identifying the relevant source code files and code snippets in order to attain a better understanding of the original plugin design and implementation. 
+					\item Idea/Solution: N/A. 
+					\item Affected files: \texttt{lib/earth\_plugins/file\_monitor.rb}, \texttt{script/earthd}
+					\item Git commits: \texttt{(ssurfer/earth) 0f0464179d5da4d0d22b3e9345bece9aa02136e4}
+					\item Estimated time taken (planned): 20 hours
+					\item Estimated time taken (actual): 18 hours
+				\end{itemize}
+		\end{itemize}
+	\item Eliminate the Tight-Coupling of Earth Daemon and File Monitor Plugin
+		\begin{itemize}
+	   	\item Sub-task 1: Remove hard-coded elements of the file monitor plugin from daemon code.
+	      	\begin{itemize}
+	         	\item Description: The original form of the Earth daemon involves instantiating the file monitor class and subsequently invoking the (\@file\_monitor) object methods to update the database records of monitored directories. 
+					\item Idea/Solution: This particular Sub-task involved changing this process into a generic approach where the daemon simply invokes a general plugin method (main) that is specified in the EarthPlugin superclass and implemented through method override in all the respective plugin subclasses.
+					\item Affected files: \texttt{lib/earth\_plugins/file\_monitor.rb}, \texttt{script/earthd}
+					\item Git commits: \texttt{(ssurfer/earth) 0f0464179d5da4d0d22b3e9345bece9aa02136e4}
+					\item Estimated time taken (planned): 30 hours
+					\item Estimated time taken (actual): 24 hours
+				\end{itemize}
+			\item Sub-task 2: Verify operation of modified daemon and file monitor plugin codes after de-coupling.
+	      	\begin{itemize}
+					\item Description: Verification that de-coupling of the daemon and the file monitor plugin works as planned.
+					\item Idea/Solution:  This Sub-task involved ensuring that in addition to the preservation of the original behaviour of the Earth daemon and file monitor codes implementation, no unnecessary performance degradation occurred as a result of the design modification.  
+					\item Affected files: \texttt{lib/earth\_plugins/file\_monitor.rb}, \texttt{script/earthd}
+					\item Git commits: \texttt{(ssurfer/earth) 0f0464179d5da4d0d22b3e9345bece9aa02136e4}
+					\item Estimated time taken (planned): 10 hour
+					\item Estimated time taken (actual): 16 hours
+				\end{itemize}
+		\end{itemize}
+	\item Identify Effective Plugin Design
+		\begin{itemize}
+	   	\item Description: Examined ways to generically implement or load plugins from the daemon. 
+	      \item Idea/Solution: The most straight-forward way to implement the plugins was to simply load all existing plugins from the database. Conceptually, this idea also implies that the plugin itself has to have extra-functional features and logic blocks that determines runtime invocation and/or deactivation. The downside of this simplistic implementation means a signficant overhead on the plugin class, which would probably discourage the development of additional feature plugins. A further downside is that any interested plugin developer would need to access and study the daemon code in order to determine how his/her plugin will 'hookup' onto the daemon.
+	      \item Affected files: \texttt{lib/earth\_plugins/file\_monitor.rb}, \texttt{script/earthd}
+	      \item Git commits: \texttt{(ssurfer/earth) 0f0464179d5da4d0d22b3e9345bece9aa02136e4}
+	      \item Estimated time taken (planned): 20 hours
+	      \item Estimated time take (actual): 12 hours
+		\end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+After contributing about 86 hours over the course of 3 weeks during Milestone 5, I believe that more progress could have been achieved
+if the organisation of existing documents about the plugin system had been up-to-date and less cryptic than what it was at the commencement
+date of this current development sprint(M5). As a result, a significant portion of this 86 hours was spent on verifying the accuracy and
+correctness of the documentation. \\
+
+However, I believe that this situation was only applicable to those of us who were not part of Subgroup 3 during the previous development sprints.
+Subgroup 1 (my former group) had been exposed to every aspect of the Earth project except the plugin system in previous sprints. This might help explain
+why a few of us were not as well-versed with the available documentation at the beginning of this sprint. This situation was rectified with
+the appropriate updates of the plugin system documentation and a special briefing session conducted by Ken.
+
+
+\section*{Room for Improvement}
+
+\begin{itemize}
+   \item Better planning: Having coarse-grained Sub-tasks provides room for unproductive investigations that resulted in wasted resources.
+      \begin{itemize}
+         \item Plan: Refine subtasks further into 3-4 hours tasks for better monitoring and improved development focus. 
+      \end{itemize}
+\end{itemize}
+
+\end{document}  

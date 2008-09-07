@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{Kun Zhou(1154356)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 5 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+After previous milestone, the main tasks were changed to plugin system and integrated testing. So the MSE students were grouped together to focus on plugin system. Based on the progress of last Gourp3 in milestone 4, we were assigned different task. I and the other 3 students should finish the split-up of exsited file monitor and some research on plugin for GUI. The basic API for plugin has been created. But the API system shoule cost much more time to be perfect in the future. For GUI plugin, I and Jian Huang made a different plugin management system compared with Rails Plugin. The basic function can be used for plug some pages in the Controller side. Therefore, a lot of blocks need to be broken.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Daemon API and new File Monitor
+	     \begin{itemize}
+	        \item Sub-task 1: Analyse the File Monitor to find a better way to split it into API
+	           \begin{itemize}
+					\item This is the most first time for me to analyse the file monitor. I have not touched both of the earthd and file monitor before. That is a big challenge for me to understand the whole system and gain the relationship between different parf of file monitor. Unfortunately, more than 20 hours have been spent on it, including searching information from books and internet. 
+					\item Estimated time taken (planned): 18 hours
+					\item Estimated time taken (actual): 27 hours
+				\end{itemize}
+			\item Sub-task 2: Create a new file monitor treated as a plugin
+			   \begin{itemize}
+					\item Description: Honestly, it took much less time than i expected. The whole process is simple. Only two parts of file monitor can be seperated into two classes. Obviously, the testing went well.
+					\item Affected files: \texttt{plugin\_stuff.tar.gz} 
+					\item Google Group: \begin{verbatim}http://segp2.googlegroups.com/web/plugin_stuff.tar.gz?hl=en&gda=fD840
+					EUAAAAZYjv4r0sNEon_mhrM-rXNDDviO9ZU7gSmNAhfKCcIXE4EF7-alpc9UU2N5vbkz
+					bJuoARl3CxVwlYIPn-dXdeGu1iLHeqhw4ZZRj3RjJ_-A\end{verbatim}
+					\item Estimated time taken (planned): 20 hours
+					\item Estimated time taken (actual): 10 hours
+				\end{itemize}
+	     \end{itemize}
+	\item Run new plugin from database
+	     \begin{itemize}
+	         \item Sub-task1: sign and install the file monitor into database.
+	            \begin{itemize}
+							\item Description: It is easy for me by following the guider from ken. 
+							\item Estimated time taken (planned): 5 hours
+							\item Estimated time taken (actual): 5 hours
+							\end{itemize}
+	         \item Sub-task 2: Call file monitor from database
+	            \begin{itemize}
+							\item Description: Unfortunately, this is the bigges problem i have ever meet. The encode problem! I almost spent the whole weekend on this weird problem. The vertification is the key for security of plugin in earth system. When the lines of plugin file is less than around 300, the \'\\n\' woule be changed to \'\\012\'. At first I can't understand the reason of the problem. After the discuss in group meeting, ken got a solution using Base64 to encode the file first in order to avoid the appearance of \'\\n\'. After testing, it is proved as a best solutin so fa. 
+							\item Affected files: \texttt{plugin\_stuff.tar.gz} 
+							\item Google Group: \begin{verbatim}http://segp2.googlegroups.com/web/plugin_stuff.tar.gz?hl=en&gda=fD840
+							EUAAAAZYjv4r0sNEon_mhrM-rXNDDviO9ZU7gSmNAhfKCcIXE4EF7-alpc9UU2N5vbkz
+							IbJuoARl3CxVwlYIPn-dXdeGu1iLHeqhw4ZZRj3RjJ_-A\end{verbatim}
+							\item Estimated time taken (planned): 18 hours
+							\item Estimated time taken (actual): 26 hours
+							 \end{itemize}
+	     \end{itemize}
+	\item Help Jian Huang to realize his idea on GUI plugin
+	     \begin{itemize}
+	         \item Description: This task was self-sssigned.After the meeting with supervisor, I think Jian Huang's idea it possible to solve the plugin problem for GUI. Therefore, I decided to help him and work together for a couple of days on this aim. Now it can be presented but a lot of features are still needed to be done. The created plugin system influence the original earth system huge. So it did not uploaded into the git repository. In the next milestone, the group would discuss the functionality of it and decided whether it can be used for the new GUI plugin system.
+	         \item Estimated time taken (actual): 17 hour
+	     \end{itemize}
+	\item Low level separation of API
+	     \begin{itemize}
+	         \item Description: This task was self-sssigned for make API basically in order to make the new plugin can use it easily. But it haven't started. I would finish it in the next milestone as soon as possible
+	         \item Estimated time taken (actual): 8 hours
+	     \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+In this Milestone, I spent too much time on the analysis of file monitor and solution of the strange problem, almost 50 hours. Most of the other hours were mainly spending on working with my group member. But after this milestone, I have a whole structure of earthd includint file monitor and understand the way it works.
+
+\section*{Rooms for Improvement}
+
+
+The first problem in this milestone for me is my lacking of experience of deveopment about earth daemon. Fortunately, i have passed and got a lot of skills. It should be improved in the future. Additionally, I cost too much time on solution of a particular problem and tried to gain it individually. I should have sent it to the whole group and discusses with the others. It should be a better way to conquer the wall of difficulties.
+
+
+\end{document}  
