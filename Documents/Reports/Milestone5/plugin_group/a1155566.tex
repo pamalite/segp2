@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{Qing Yang (1155566)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 5 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+For this milestone, all the MSE students are regrouped together focusing on the plugin task.I was assigned to the decomposing subgroup. Due to it was my first time to get in touch with the plugin related work,I spent the first week of this sprint in understanding the structure of earth plugin and how earth plugin worked on earth.
+In the second week ,I thought about how to decomposing the existing plugin filemonitor into apis and then I self-assigned myself to the work of security part of plugin,including creating certificate and keys, sign plugin with the key and put everything into database.However,when I was working on it, I found a bug,but I was not sure whether the bug was from, the ruby::openssl or ruby postgres driver.Then Ken decided to solve the problem by using string to represent the signature rather than the binary.I also spent a lot of time on troubleshooting, The main trouble was that my earth running on Aptenna and earth running in console had a conflict.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Create plugin APIs in term of Ken's API standard.
+	     \begin{itemize}
+	        \item Sub-task 1: Have a research on earth plugin.
+	           \begin{itemize}
+				        \item Description:The research includes what is earth plugin , the relationships among filemonitor and other parts of earth, namely ,how they call and work with one another and how plugins work on earth,rather how to create a plugin and how to install a plugin.
+                                        \item Affected files: \\
+					 \texttt{earth/lib/earth\_plugins\\file\_file\_monitor.rb}\\
+                                        \texttt{earth/lib/earth\_plugin\_interface\\plugin\_manager.rb}\\
+                                        \texttt{earth/script/earthd}\\
+                                        \texttt{earth/script/create\_cert}\\
+                                        \texttt{earth/script/sign\_plugin}\\
+                                        \texttt{earth/script/install\_plugin} \\
+					\item Estimated time taken (planned):20 hours\\
+					\item Estimated time taken  (actual): 21 hours\\
+				\end{itemize}
+                                \end{itemize}  
+
+                    \begin{itemize}
+			 \item  Sub-task 2:Working with group members to decompose the plugin APIs .
+                         \begin{itemize}
+					\item Description: Discussing with group members and In terms of Ken's   API standard, we decomposed the existing plugin 
+                                        file\_monitor.rb into APIs.
+                                        \item Affected files: \\
+                                             file\_monitor.rb\\
+                                             api\_eta\_printer.rb\\
+                                             api\_file\_monitor.rb\\
+					\item Estimated time taken (planned):10 hours
+					\item Estimated time taken (actual): 10 hours
+		       \end{itemize}              
+                       \end{itemize}     
+           \end{itemize}
+
+ \begin{itemize}
+\item Fixing the conflict between earth running on Aptena and earth running in console.
+	     \begin{itemize}
+	         \item Sub-task 1: Find out the reason why I cannot run earth in console by using the command 
+                  ../script/earthd start
+	            \begin{itemize}
+	              \item Description:I found the socket was occupied by Aptena ,so that earth cannot work on        console. 		
+			   	       \item Affected files:\\
+                                      \item /tmp/earthd.sock\\
+				      \item Estimated time taken (planned):6 hours
+				      \item Estimated time taken (actual): 10hours
+	                  \end{itemize}
+                          \end{itemize}
+               \begin{itemize}
+	         \item Sub-task 2: Uninstall the Aptena Studio plugin on Eclipse
+	            \begin{itemize}
+				  \item Description: At first I did not know how to uninstall it.However, it                        was done finally.
+			          \item Estimated time taken (planned):5hour
+				  \item Estimated time taken (actual): 7hours
+                   \end{itemize}
+                   \end{itemize}
+  \end{itemize}
+
+\begin{itemize}
+\item Work on the security part.
+	     \begin{itemize}
+              \item Sub-task 1: Learn how to sign and install a plugin.
+                \begin{itemize}
+	         \item Description: This task included creating certificate,private and public key pair, sign the code of plugin with the private key ,and verify the code and it's signature with the public key in certifucate, when installing a plugin. I spent a lot of time to read the plugin\_manager and earthd and learned how to use openssl to do every thing, and felt comfortable to write all the security related functionalities by myself.It indeed took me a lot of time.But When I read Ken's plugin notes,I knew that all I had done were just waste of time.RSP have already finished everything for us.What we need to do was typing create\_cert, sign\_plugin and install\_plugin in command line. 
+	         \item Affected files: \\
+                                       \texttt{earth/lib/earth\_plugin\_interface/plugin\_manager.rb}\\
+                                        \texttt{earth/script/earthd}\\
+                                        \texttt{earth/script/create\_cert}\\
+                                        \texttt{earth/script/sign\_plugin}\\
+                                        \texttt{earth/script/install\_plugin}\\ 
+	      
+	          \item Estimated time taken (planed): 30 hour
+                  \item Estimated time taken (actual): 20 hour
+	     \end{itemize}
+             \end{itemize}
+
+     \begin{itemize}
+            \item Sub-task 2: Put the code,signature, and plugin's name and version into database. And install                  file monitor as a plugin.
+	            \begin{itemize}
+				    \item Description: Both Keane and I found that if we put the original file\_monitor into the database, when we ran ./script/install\_plugin the signature can be converted properly which was the same as the code in file\_monitor.rb. But once we broke the it into APIs and call the methods that we need from the new created file\_monitor file, everything changed. The weired problem is all the '$\setminus$n' was convered into '$\setminus$012',so that the code and signature pair could not pass the verification. I spent huge amount of time in testing.I compared the original file\_monitor with the new created file\_monitor and try to find out the source of the problem. I broke down the original file\_monitor little by little,namely the size of file\_monitor was becoming smaller and smaller. At first it could work properly, all the '$\setminus$n' signals were converted in the right way. But when I keeping making its size smaller. The file\_monitor was broken by sudden. Therefore, I was sure that this problem depanded on the size of the file. I considered that it was a bug 
+                                   However,I was not sure where the bug was from, openssl or postgres driver. And finally Ken solved this problem by using string into code and signature in database, instead of binary.
+					\item Estimated time taken (planned):10hour
+					\item Estimated time taken (actual): 25hours
+		     \end{itemize}
+                     \end{itemize}
+  \end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 95 hours (including 4 hours meeting time) over the spread of 3 weeks.
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item We have a big problem in the time and difficulty estimation. And tasks did not assigned to  each team        member properly.I found that at least half of the  team members did not feel comfortable to work in the       group. 
+      \begin{itemize}
+         \item Review more on past milestones, and perform reality checks during planning.
+      \end{itemize}
+
+     \begin{itemize}
+        \item  Better communication with other members.
+          Team members should trust one another,and be more helpful.
+          Estimation efficiency should be improved.       
+     \end{itemize}
+\end{itemize}
+\end{document}
