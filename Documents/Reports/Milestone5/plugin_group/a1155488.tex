@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{Huang Jian (1155488)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 4 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+For this milestone, all the MSE students are regrouped together focusing on the plugin task.I was assigned to the decomposing subgroup. Due to it was my first time to get in touch with the plugin related work,I spent the first week of this sprint in understanding the structure of earth plugin and how earth plugin worked on earth.
+In the second week ,I thought about how to decomposing the existing plugin filemonitor into apis and then I self-assigned myself to the work of security part of plugin,including creating certificate and keys, sign plugin with the key and put everything into database.However,when I was working on it, I found a bug,but I was not sure whether the bug was from, the ruby::openssl or ruby postgres driver.Then Ken decided to solve the problem by using string to represent the signature rather than the binary.I also spent a lot of time on troubleshooting, The main trouble was that my earth running on Aptenna and earth running in console had a conflict.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Create plugin APIs in term of Ken's API standard.
+	     \begin{itemize}
+			 \item  Sub-task: Working with group members to decompose the plugin APIs .
+                         \begin{itemize}
+					\item Description: Discussing with group members and In terms of Ken's   API standard, we decomposed the existing plugin 
+                                        file\_monitor.rb into APIs.
+                                        \item Affected files: \\
+                                             file\_monitor.rb\\
+                                             api\_eta\_printer.rb\\
+                                             api\_file\_monitor.rb\\
+					\item Estimated time taken (planned):5 hours
+					\item Estimated time taken (actual): 5 hours
+		       \end{itemize}              
+                       \end{itemize}     
+           \end{itemize}
+
+ \begin{itemize}
+\item research GUI plugin.
+	     \begin{itemize}
+	         \item Sub-task 1: understand how the rails plugin works
+	            \begin{itemize}
+	              \item Description: read relative books: the rail way, ruby on rail, and so on. After that, briefly illustrate how the rails plugin works, and what's the pro and con, if we use it. Think about my own way to improve it
+			   	       \item Affected files:\\
+                                      \item /tmp/earthd.sock\\
+				      \item Estimated time taken (planned):40 hours
+				      \item Estimated time taken (actual): 50hours
+	                  \end{itemize}
+                          \end{itemize}
+               \begin{itemize}
+	         \item Sub-task 2: build my way to create Gui plugin instead of rails plugin. In my way, I do not need to change earth coding and Gui plugin can be run in different ways, which will depends on my plugin management.
+	            \begin{itemize}
+				  \item Description: share my idea with group member, discuss it
+			          \item Estimated time taken (planned):20 hours
+				  \item Estimated time taken (actual): 20 hours
+                   \end{itemize}
+                   \end{itemize}
+  \end{itemize}
+
+\begin{itemize}
+\item change Ticket 66 which ken has done last semester into a Gui plugin.
+	     \begin{itemize}
+              \item Sub-task 1: .rebuild ticket 66 as a Gui plugin
+                \begin{itemize}
+	         \item Description: The reason to choose this ticket is that it involves three parts: view, controller and module. Meanwhile, the most difficult part is change / extend controller, not create a new one.
+	          \item Estimated time taken (planed): 20 hour
+                  \item Estimated time taken (actual): 30 hour
+	     \end{itemize}
+             \end{itemize}
+
+     \begin{itemize}
+            \item Sub-task 2: Test Gui plugin, change some parts of coding again, because what I've got the version of earth has been changed many times, and some parts of coding are not commented.
+	            \begin{itemize}
+				    \item Description: Thank keane for doing my a favour.
+					\item Estimated time taken (planned):30hour
+					\item Estimated time taken (actual): 40hours
+		     \end{itemize}
+                     \end{itemize}
+  \end{itemize}
+
+\section*{Resource Contributions}
+
+I'm pretty tired in this milestone, because of spending too much time on coding and testing, which means I'm not good at programming.
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item We have a big problem in the time and difficulty estimation. And tasks did not assigned to  each team        member properly.I found that at least half of the  team members did not feel comfortable to work in the       group. 
+      \begin{itemize}
+         \item Review more on past milestones, and perform reality checks during planning.
+      \end{itemize}
+
+     \begin{itemize}
+        \item  Better communication with other members.
+          Team members should trust one another,and be more helpful.
+          Estimation efficiency should be improved.       
+     \end{itemize}
+\end{itemize}
+\end{document}
