@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\pagestyle{headings}
+
+\begin{document}
+\title{\textbf{Milestone 6 Plan for Integration Development Group}}\author{Ming Jie Tan, Jonathan Velasco}
+
+\maketitle
+\thispagestyle{empty}
+\newpage{}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage{}
+
+\setcounter{page}{1}
+\section{Introduction}
+
+During the last iteration we were unable to complete the various tasks. While most of the work was complete, some of the front end changes are still to be added. In addition stress testing, to see whether these solutions work with large amounts of data. Following the completion of these tasks, the code for the various solutions will be integrated.
+
+\newpage{}
+\section{Tasks}
+
+The tasks to be undertaken are:
+\begin{itemize}
+	\item Filter GUI
+	\item Image Data GUI
+	\item Pagenation of Navigation View
+	\item Feedback on Plugin System
+	\item Integration
+	\item Testing
+\end{itemize}
+
+\subsection{Filter GUI}
+
+Upon execution of a filter, a highlight is added to show the data shown has been filtered. While this has been implemented, the highlight that shows that the data has been implement is quite ugly at the moment and the display will be changed during this iteration.
+
+\subsection{Image Data GUI}
+
+Ticket 29 required Image data to be available on Earth. Currently the image files are being accessed and the necessary data is being retrieved and stored in the database currently. However, the data is not being shown on the GUI, so we will need to add some additional columns to the GUI to enable images to have their type and resolution displayed.
+
+\subsection{Pagenation of Navigation View}
+
+The problem with the bug has been narrowed to the controller and the sorting should be fixed quite quickly. With this completed, addition of the pagenation to the navigation shouldn't take very long. The aim is to have pagenation similar to that of the all files view.
+
+\subsection{Feedback on Plugin System}
+
+With the Plugin System being redone, as the design choices are made for the system, group 2 will provide feedback on what should or shouldn't be added to the system in order to get the functionality of the system up and running. This process will be an on going one, with communication with group 1.
+
+\subsection{Integration}
+
+Given that much progress has already been made with these tickets, completion of these tickets shouldn't take that long. The aim is to integrate these tasks together to ensure they are able to work cohesively.
+
+\subsection{Testing}
+
+Upon completion of the integration, we will be testing the solutions on a dedicated linux machine to ensure that the solutions not only work but are able to work when given varying amounts of data. This will be continued in the next milestone.
+
+\section{Conclusion}
+
+Overall this iteration is mostly one of completing existing tasks in addition to integrating these tickets upon their completion.This is designed as a lead up for the final testing in the next milestone.
+
+\end{document}
