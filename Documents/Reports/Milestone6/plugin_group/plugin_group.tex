@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{hyperref}
+
+\begin{document}
+\markright{SEGP2 Plugin Group (13$^{th}$ October, 2008)}
+\pagestyle{headings}
+
+\begin{center}
+{\textbf{\underline{SEGP2 Plugin Group Milestone 6 Report}}}
+\end{center}
+
+\noindent{\textbf{Total Hours Spend:} approx. ??? hours}
+
+\section*{Executive Summary}
+
+Milestone 6 began by reviewing what were the leftover work and issues needed to be addressed. The following were the tasks that had been set by the group at the beginning of the sprint:
+
+\begin{itemize}
+    \item Finish up the 3$^{rd}$ pillar of plugins: deployment.
+    \item Create plugins and apply what was created and set up plugins development into them.
+    \item Front-end plugins union: Finalize and have the plugins framework set.
+\end{itemize}
+
+The first and second items were taken up by Ida, Mohammad, Fil and Ken, while Xiaodong, Keane and Huang Jian were assigned to the last item. 
+
+Ida managed to update the \texttt{plugins\_manager.rb} to support extension point, introduced by Mohammad, during the installation of a daemon plugin. She also managed to add an uninstall method and accessor script to uninstall the a plugin from Earth. Mohammad provided his expertise to assist Ida in getting the implementation correct. Ida had spend ?? hours on updating the scripts, while Mohammad spend ?? hours to lend his expertise to her, while implementing the file metadata as an extension point. 
+
+Ken created the \texttt{list\_plugins} script to enable the administrator to see what plugins had been installed. Also, he unified all the plugins related scripts (\texttt{sign\_plugin}, \texttt{install\_plugin} and \texttt{uninstall\_plugin}) into \texttt{earth\_plugins}. This root accessor script will call the appropriate script to perform the required plugin task. Ken had spend 4 hours creating the scripts. He also spend 3 hours to help in preliminary integration tasks.
+
+Fil created a daemon plugin that redirects the daemon status to the front-end. He spend ?? hours on it.
+
+Xiaodong, Keane and Huang Jian had conceptualized and implemented their versions of GUI plugins framework into functional prototypes.
+
+Xiaodong and Keane's implementation used the Rails plugin generation mechanism to get the plugins installed. They require the user to add specific codes into the controllers to activate the plugins. On the other hand, Huang Jian's implementation used his own way to get the plugins installed, without any code activation in the controller. Both ways are similar, but the difference is only in the ways the framework is implemented. Thus, they have agreed to work togather further to consolidate the ideas, or finalize one one as the final framework, while the other as a proof-of-concept branch. 
+
+All three spend ?? hours in bringing the concepts to functional implementations. 
+ 
+\section*{Individual Reports}
+
+Attached are the individual reports of each member of the group. 
+
+\include{a1159155.1}
+
+%\include{a1149546.1}
+
+%\include{a1154924.1}
+
+%\include{a1154356.1}
+
+%\include{a1144332.1}
+
+%\include{a1155566.1}
+
+%\include{a1155488.1}
+
+\end{document}  
