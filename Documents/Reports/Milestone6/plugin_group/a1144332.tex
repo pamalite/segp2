@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{hyperref}
+
+\begin{document}
+\markright{Mohammad Bamogaddam (1144332)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 6 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+This report records my activities related to Earth project development for Milestone 6 period from 7-September-2008 to 12-October-2008.\\
+In this sprint,I have finished the following main tasks: review the earth daemon plugin framework, prepare a document about the earth daemon plugin framework design, check the earthd status script and review the plugin installation script.      
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item Review the earth daemon plugin framework.
+		\begin{itemize}
+		\item Sub Task 1:
+			\begin{itemize}
+			\item Description: reviewing the metadata plugins which was created in the previews milestone.
+			\item Affected Files: \href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/rsp_add_file_metadata.rb}{/lib/earth-plugins/rsp-add-file-metadata.rb}, \newline
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/rsp_delete_file_metadata.rb}{/lib/earth-plugins/rsp-delete-file-metadata.rb} and \newline
+\href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugins/rsp_delete_under_dir_metadata.rb}{/lib/earth-plugins/rsp-delete-under-dir-metadata.rb}
+			\item Git Commits: check the commits on the next sub-task.
+			
+			\end{itemize}
+		\item Sub Task 2: Creating a metadata API which can be used for all metadata plugins in future
+			\begin{itemize}
+			\item Description: I create an API contains common metadata functionality like: saving, deleting, searching, etc. All metadata plugins should use this API and not use earth models directly. 
+			\item Affected files: \href{http://github.com/mfbDev/earth/tree/master/lib/earth_api/metadata_api.rb}{/lib/earth-api/metadata-api.rb}
+			\item Git Commits: These Commits includes the previous sub-task commits. 
+\href{http://github.com/mfbDev/earth/commit/8a1b6113590b28e}{earth/commit/8a1b6113590b28e}, \newline
+\href{http://github.com/mfbDev/earth/commit/3742a36327dde}{earth/commit/3742a36327dde}, \newline
+\href{http://github.com/mfbDev/earth/commit/48da91b6f4d}{earth/commit/48da91b6f4d}, \newline
+\href{http://github.com/mfbDev/earth/commit/a4b173b98b7a5}{earth/commit/a4b173b98b7a5}, \newline
+\href{http://github.com/mfbDev/earth/commit/946ba2c55f83}{earth/commit/946ba2c55f83}, \newline
+\href{http://github.com/mfbDev/earth/commit/b715eee7d38}{earth/commit/b715eee7d38} and \newline
+\href{http://github.com/mfbDev/earth/commit/cb98d73ac84}{earth/commit/cb98d73ac84}
+			
+			\end{itemize}
+		\item Sub Task 3: Testing the metadata API
+			\begin{itemize}
+			\item Description: testing the metadata API with the plugins  
+			\item Affected Files: N/A
+			\item Git Commits: N/A
+			
+			\end{itemize}
+		\end{itemize} 
+\newpage     
+	\item Prepare a document about the earth daemon plugin framework design
+		\begin{itemize}
+		\item Description: I created a document that includes details about the earth daemon plugins framework design. This document includes the following main sections: Overall structure, extension points, APIs, plugins loading, simple plugin example and steps to create a plugin. So, this document should be a guide or any one who want to create a new earth daemon plugin. 
+		\item Affected Files: \href{https://github.com/pamalite/segp2/tree/master/Subgroups/plugin_group/Documents/Design/earth_plugin_framework.pdf}{Subgroups/plugin-group/Documents/Design/earth-plugin-framework.pdf}
+		\item Git Commits: \href{https://github.com/pamalite/segp2/commit/68f83a173bdc}{pamalite/segp2/commit/68f83a173bdc}
+		
+		\end{itemize}
+	\item Review the plugin installation script 
+		\begin{itemize}
+		\item Description: Ida has been working on improving the plugin installation script so it will work with the new framework design (i.e. extension points). My task was reviewing her work and testing it. 
+		\item Affected Files: \href{http://github.com/mfbDev/earth/tree/master/lib/earth_plugin_interface/plugin_manager.rb}{lib/earth-plugin-interface/plugin-manager.rb} and \newline
+\href{http://github.com/mfbDev/earth/tree/master/script/uninstall_plugin}{script/uninstall-plugin}
+		\item Git Commits: 
+\href{http://github.com/mfbDev/earth/commit/465d98fa}{earth/commit/465d98fa}, \newline 
+\href{http://github.com/mfbDev/earth/commit/dd4f1ed5a7}{earth/commit/dd4f1ed5a7}, \newline 
+\href{http://github.com/mfbDev/earth/commit/0706e307042}{earth/commit/0706e307042} and \newline 
+\href{http://github.com/mfbDev/earth/commit/177e3e4924}{earth/commit/177e3e4924}, \newline 
+		
+		\end{itemize}
+	\item Check the earthd status script
+		\begin{itemize}
+		\item Description: We noticed a problem with the (status) script for earth daemon. When we install File-Monitor as a plugin, this script does not work anymore. This took lots of time to figure out the problem. At the beginning, I thought it is something related to Unix sockets since the system hangs on a (socket.receive) method. I did not find any documentation for this method in Rails API or in the Internet!!! But after several attempts, I figure out the problem. Earth daemon is reading the (status) from an instance variable from the File-Monitor. That's why when we install File-Monitor as a plugin, it does not work anymore. The solution for this could be: 
+\begin{enumerate}
+\item rewrite the status script
+\item use File-Monitor as a normal file because it is the heart of earth daemon
+\item create an extension point for reading the status (I am not sure if this is feasible)
+\end{enumerate}
+This task is pushed to be finished at the beginning of next milestone
+
+		\item Affected Files: \href{http://github.com/mfbDev/earth/tree/master/script/earthd}{script/earthd}
+		\item Git Commits: N/A
+		
+		\end{itemize}
+
+\end{itemize}
+\newpage
+\section*{Resource Contributions}
+I estimated that I will spent about 60 hours for this milestone. I have spent about 50 hours including meeting times. 
+
+
+\section*{Milestone Observations}
+I am happy with the outcome from this milestone from our group. Every one is finishing his assigned tasks and we made a good progress. One thing, we need to give more attention to the documentation and code comments on the next milestone.
+
+\end{document}  
