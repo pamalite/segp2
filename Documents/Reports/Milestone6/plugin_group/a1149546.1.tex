@@ -1,0 +1,75 @@
+\markright{Xiaodong Cui (1149546)}
+\pagestyle{headings}
+
+\begin{center}
+{\large\textbf{\underline{{Xiaodong Cui's Milestone 6 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+During this milestone, I worked with other two MSE students on GUI plugin stuff. We had two different implementation plans, one was to use rails plugin to development Earth GUI plugin, other one was to develop Earth own plugin manager, and then create GUI plugin. So, we divided us into two small team, each team was focused on one plan only. I worked with Kun to implement GUI plugin system based on rails plugin system. I created four GUI plugins, one was used to add a method to add tabs, the other one was based on ticket 66, and another one was to convert existing radial graph to a plugin, and the last one was Mr bogus, which was used to show how a simple plugin system could be created.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+    \item Research on relevant information for rails plugin
+        \begin{itemize}
+            \item Sub-task 1: We decided to use rails plugin system to create GUI plugin system for earth, so we need to know how rails plugin system works, and how we use it to create plugin for earth.
+                \begin{itemize}
+                    \item Description: Research on how rails plugin system works, such as how to create new method for controllers, models or views, how to generate new files, and how to copy files to the correct location using generator
+                    \item Estimated time taken (planned): 25 hours
+                    \item Estimated time taken (actual):  26 hours (08/09/08-13/09/08)
+                \end{itemize}
+        \end{itemize}
+    \item GUI plugin development
+        \begin{itemize}
+            \item Sub-task 1: Modification on existing plugin created last milestone.
+                \begin{itemize}
+                    \item Description: Modified the adding a tab plugin which developed last milestone, to make it seperated from the user usage plugin, so it can add a tab and a filter field as well.
+                    \item Affected files: plugins/act\_as\_add\_tab plugin folder
+                    \item git commit 954f8e7da15738d694f9e07a8d9cc353778d48c3
+                    \item Estimated time taken (planned): 5 hours
+                    \item Estimated time taken (actual): 5 hours (14/09/08-14/09/08)
+                \end{itemize}
+            \item Sub-task 2: User usage plugin
+                \begin{itemize}
+                    \item Description: Generator was used for user usage plugin to generate files. All files needed for the ticket 66 can be generated or copied to the correct locations under earth.
+                    \item Affected files: plugins/user\_usage plugin folder
+                    \item git commit 954f8e7da15738d694f9e07a8d9cc353778d48c3
+                    \item Estimated time taken (planned): 15 hour
+                    \item Estimated time taken (actual): 14 hours (15/09/08-17/09/08)
+                \end{itemize}
+            \item Sub-task 3: Convert radial graph views to a plugin
+                \begin{itemize}
+                    \item Description: The graph plugin is a plugin for users want to see radial graph views, this plugin was developed based on existing earth function radial graph, I changed this function to a plugin.
+                    \item Affected files: plugins/graph plugin folder
+                    \item git commit 954f8e7da15738d694f9e07a8d9cc353778d48c3
+                    \item Estimated time taken (planned): 5 hour
+                    \item Estimated time taken (actual): 2 hours (02/10/08-02/10/08)
+                \end{itemize}
+            \item Sub-task 4: Mr bogus plugin
+                \begin{itemize}
+                    \item Description: Mr bogus plugin was developed just to help other people to understand how a plugin could be created. It has only one controller file and one view file.
+                    \item Affected files: plugins/mr\_bogus plugin folder
+                    \item git commit 954f8e7da15738d694f9e07a8d9cc353778d48c3
+                    \item Estimated time taken (planned): 3 hour
+                    \item Estimated time taken (actual): 1 hours (07/10/08-07/10/08)
+                \end{itemize}
+            \item Sub-task 5: Installation and uninstallation scripts, rake files
+                \begin{itemize}
+                    \item Description: I created a installation and uninstallation script for user to install and uninstall plugin conveniently, also I created rake files for user to generate a gem package for a given plugin.
+                    \item Estimated time taken (planned): 15 hour
+                    \item Estimated time taken (actual): 17 hours (01/10/08-07/10/08)
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 73 hours (including 5 hours meeting time) over the spread of 3 weeks. I spent the first week to gather knowledge on rails plugin, and then spent the following weeks to modified the existing plugin system, and used the knowledge to create new plugins for Earth. I felt I have spent my time effectively, since I spent enough time on research, so it made me more easier in the plugin development stage. 
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item The major problem for this milestone was that we could not communicate with the other team member. We agreed to develop the GUI plugin system in different ways, however I also expected the possibilities to combine the two methods together to make a better way for GUI plugin, so I asked help from other team member to get the idea of how to modify the existing files, because our current method can not modify existing files. But due to some reasons, I could not manage to get any help, I hope we can share our code between team members in the next milestone, that will benefit everybody.
+\end{itemize}

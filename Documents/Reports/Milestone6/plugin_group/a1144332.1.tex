@@ -1,0 +1,72 @@
+\markright{Mohammad Bamogaddam (1144332)}
+\pagestyle{headings}
+
+\begin{center}
+{\large\textbf{\underline{{Mohammad's Milestone 6 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+This report records my activities related to Earth project development for Milestone 6 period from 7-September-2008 to 12-October-2008.\\
+In this sprint,I have finished the following main tasks: review the earth daemon plugin framework, prepare a document about the earth daemon plugin framework design, check the earthd status script and review the plugin installation script.      
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+    \item Review the earth daemon plugin framework.
+        \begin{itemize}
+            \item Sub Task 1:
+                \begin{itemize}
+                    \item Description: reviewing the metadata plugins which was created in the previews milestone.
+                    \item Affected Files: \texttt{rsp\_add\_file\_metadata.rb, rsp-add-file-metadata.rb, rsp\_delete\_file\_metadata.rb, rsp-delete-file-metadata.rb} and \texttt{rsp\_delete\_under\_dir\_metadata.rb, rsp-delete-under-dir-metadata.rb}
+                    \item Git Commits: check the commits on the next sub-task.
+                \end{itemize}
+            \item Sub Task 2: Creating a metadata API which can be used for all metadata plugins in future
+                \begin{itemize}
+                    \item Description: I create an API contains common metadata functionality like: saving, deleting, searching, etc. All metadata plugins should use this API and not use earth models directly. 
+                    \item Affected files: \texttt{metadata-api.rb}
+                    \item Git Commits: These Commits includes the previous sub-task commits. 
+\texttt{mfbDev/earth: 8a1b6113590b28e, 3742a36327dde, 3742a36327dde, 48da91b6f4d, 48da91b6f4d, a4b173b98b7a5, a4b173b98b7a5, 946ba2c55f83, 946ba2c55f83, b715eee7d38, b715eee7d38, cb98d73ac84, cb98d73ac84}
+                \end{itemize}
+            \item Sub Task 3: Testing the metadata API
+                \begin{itemize}
+                    \item Description: testing the metadata API with the plugins  
+                    \item Affected Files: N/A
+                    \item Git Commits: N/A
+                \end{itemize}
+        \end{itemize} 
+\newpage     
+    \item Prepare a document about the earth daemon plugin framework design
+        \begin{itemize}
+            \item Description: I created a document that includes details about the earth daemon plugins framework design. This document includes the following main sections: Overall structure, extension points, APIs, plugins loading, simple plugin example and steps to create a plugin. So, this document should be a guide or any one who want to create a new earth daemon plugin. 
+            \item Affected Files: \texttt{earth\_plugin\_framework.pdf, earth-plugin-framework.pdf}
+            \item Git Commits: \texttt{pamalite/segp2: 68f83a173bdc, 68f83a173bdc}
+        \end{itemize}
+    \item Review the plugin installation script 
+        \begin{itemize}
+            \item Description: Ida has been working on improving the plugin installation script so it will work with the new framework design (i.e. extension points). My task was reviewing her work and testing it. 
+            \item Affected Files: \texttt{plugin\_manager.rb, plugin-manager.rb} and \texttt{uninstall\_plugin, uninstall-plugin}
+            \item Git Commits: 
+\texttt{mfbDev/earth: 465d98fa, 465d98fa, dd4f1ed5a7, dd4f1ed5a7, 0706e307042, 0706e307042, 177e3e4924, 177e3e4924} 
+        \end{itemize}
+    \item Check the earthd status script
+        \begin{itemize}
+            \item Description: We noticed a problem with the (status) script for earth daemon. When we install File-Monitor as a plugin, this script does not work anymore. This took lots of time to figure out the problem. At the beginning, I thought it is something related to Unix sockets since the system hangs on a (socket.receive) method. I did not find any documentation for this method in Rails API or in the Internet!!! But after several attempts, I figure out the problem. Earth daemon is reading the (status) from an instance variable from the File-Monitor. That's why when we install File-Monitor as a plugin, it does not work anymore. The solution for this could be: 
+                \begin{enumerate}
+                    \item rewrite the status script
+                    \item use File-Monitor as a normal file because it is the heart of earth daemon
+                    \item create an extension point for reading the status (I am not sure if this is feasible)
+                \end{enumerate}
+This task is pushed to be finished at the beginning of next milestone
+
+            \item Affected Files: \texttt{earthd}
+            \item Git Commits: N/A
+        \end{itemize}
+    \end{itemize}
+\newpage
+\section*{Resource Contributions}
+I estimated that I will spent about 60 hours for this milestone. I have spent about 50 hours including meeting times. 
+
+
+\section*{Milestone Observations}
+I am happy with the outcome from this milestone from our group. Every one is finishing his assigned tasks and we made a good progress. One thing, we need to give more attention to the documentation and code comments on the next milestone.
+
