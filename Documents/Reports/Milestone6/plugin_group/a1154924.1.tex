@@ -1,8 +1,9 @@
+
 \markright{FILIMONI LUTUNAIKA (1154924)}
 \pagestyle{headings}
 
 \begin{center}
-{\LARGE\textbf{\underline{{Individual Milestone 6 Report}}}}
+{\large\textbf{\underline{{Filimoni Milestone 6 Report}}}}
 \end{center}
 
 \section*{Executive Summary}
@@ -12,22 +13,22 @@ I had proposed to produce a daemon feature in the form of a plugin to relay the 
 \section*{Tasks and Activities Assigned}
 
 \begin{itemize}
-	\item Design and Implement Display of Daemon Status Information on Web-Based GUI.
-	     \begin{itemize}
-					\item Description: This task involved capturing the daemon status information and displaying it on the web-based GUI in real-time.
-					\item Idea/Solution: N/A
-					\item Affected Files:
-					\begin{itemize}
-						\item app/controllers/servers\_controller.rb
-						\item app/helpers/servers\_helper.rb
-						\item app/models/earth/server.rb
-						\item app/views/servers/configure.haml
-						\item script/earthd
-					\end{itemize}
-					\item Git commits: \texttt{(ssurfer/earth.git) 563eb803cfbb8ffb687c86b4c473b718a03dffbd}
-					\item Estimated time taken (planned): 70 hours
-					\item Estimated time taken (actual): 80 hours
-	     \end{itemize}
+    \item Design and Implement Display of Daemon Status Information on Web-Based GUI.
+        \begin{itemize}
+            \item Description: This task involved capturing the daemon status information and displaying it on the web-based GUI in real-time.
+            \item Idea/Solution: N/A
+            \item Affected Files:
+                \begin{itemize}
+                    \item app/controllers/servers\_controller.rb
+                    \item app/helpers/servers\_helper.rb
+                    \item app/models/earth/server.rb
+                    \item app/views/servers/configure.haml
+                    \item script/earthd
+                \end{itemize}
+            \item Git commits: \texttt{(ssurfer/earth.git) 563eb803cfbb8ffb687c86b4c473b718a03dffbd}
+            \item Estimated time taken (planned): 70 hours
+            \item Estimated time taken (actual): 80 hours
+        \end{itemize}
 \end{itemize}
 
 \section*{Resource Contributions}
@@ -36,11 +37,9 @@ At the beginning of this Milestone, some time was spent identifying which partic
 
 In the meantime, the development focus was altered slightly to accommodate these delays and one such change involves the relaying of data between the daemon and the web-based GUI. Presently, the only existing mechanism that is able to facilitate any communication between the daemon and the GUI is the underlying PostgreSQL database. The daemon updates the database based on the changes in the monitored file system and the Rails application retrieves this information from the database for further processing and subsequent display on the browser. This works flawlessly for the file monitoring operations of the daemon, with the GUI passively updating the results when a web request from the application user is received. Unfortunately, this passivity of information relay may not be adequate or suit certain types of operation such as the real-time monitoring of the daemon status. A more direct mean of communication between the daemon and the GUI is more suited for such requirement. \\
 
-To this end, a more simplistic solution was implemented which involved the periodic updates of a newly created 'daemon status' log file by the daemon. The corresponding GUI front end then simply retrieves the daemon status information from the said log file and displays it on the browser. Alternately, this approach could also be satisfied using the database instead of the log file. However, the approach employing the log file was adopted during this Milestone to quickly complete the proof-of-concept stage in the investigation of this particular design approach and eliminate the inherent complexities that normally arise with the alteration of the database schema. With the successful implementation and demonstration of the proof-of-concept stage results, the feature can then be implemented using the database instead of the log file. This change is necessary to ensure that this particular application feature can operate in a range of situation such as when the daemon and the web-based GUI are running on two different machines. This later expansion to a database-based implementation of the daemon status information update on the GUI is planned for the next development sprint.
+To this end, a more simplistic solution was implemented which involved the periodic updates of a newly created `daemon status' log file by the daemon. The corresponding GUI front end then simply retrieves the daemon status information from the said log file and displays it on the browser. Alternately, this approach could also be satisfied using the database instead of the log file. However, the approach employing the log file was adopted during this Milestone to quickly complete the proof-of-concept stage in the investigation of this particular design approach and eliminate the inherent complexities that normally arise with the alteration of the database schema. With the successful implementation and demonstration of the proof-of-concept stage results, the feature can then be implemented using the database instead of the log file. This change is necessary to ensure that this particular application feature can operate in a range of situation such as when the daemon and the web-based GUI are running on two different machines. This later expansion to a database-based implementation of the daemon status information update on the GUI is planned for the next development sprint.
 
 
 \section*{Rooms for Improvement}
 
 The allocated time of 70 hours which had been initially earmarked for this particular task was in hindsight a bit optimistic. During the planning phase for the current development sprint, it was wrongly assumed that there was some simple way that the daemon could directly relay its status information to the GUI, which would not necessarily involve an intermediate facility such as the log file or the database. The subsequent investigation which revealed that no such simple provision existed also indicated that the incorporation of such feature through direct code manipulation or the creation of an appropriate plugin would take more time than budgeted. This experience clearly highlighted the costly and adverse effect of design decisions based on wrong assumptions on the schedule of software development projects.
-
-\[----\]
