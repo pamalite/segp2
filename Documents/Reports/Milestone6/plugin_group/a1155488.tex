@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{Huang Jian (1155488)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 6 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+In this milestone, I extend ``Management'', which means it can add new object (file). And then test it with the stuff - use\_usage together. These two plugins use the same API in the applicationhelper, and they are different kinds of plugins: One is pluged into the existing files, and the other is created as a new object. Meanwhile, I try to transfer my skill into rails-plugin, because on matter how good and power my technology is, rails-plugin has been mature and tested very well.
+
+Well, during this milestone, I met a big trouble about my laptop, whose motherboard burned twice and take my whole data away. This disaster take me some days to rebuild systems, redo my assignments.
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+    \item Extend Management
+    \item Description: Check the files I'll use, create and/or overwrite. Copy new plugin files into their relative folders.
+    \item Estimated time taken (planned):15 hours
+    \item Estimated time taken (actual): 15 hours
+\end{itemize}
+
+\begin{itemize}
+    \item Test 2 plugins: use\_usage and graphic
+        \begin{itemize}
+            \item Sub-task 1: Test use\_usage
+                \begin{itemize}
+                    \item Description:  Use\_usage is a kind of plugin, which can extend existing file. In this milestone, some part of it has been redone. 
+                    \item Estimated time taken (planned):1 hour
+                    \item Estimated time taken (actual): 2 hours
+                \end{itemize}
+            \item Sub-task 2: Test graphic
+                \begin{itemize}
+                    \item Description:  Graphic is treated as a new object.
+                    \item Estimated time taken (planned):1 hour
+                    \item Estimated time taken (actual): 1 hours
+                \end{itemize}
+            \item Sub-task 3: Test use\_usage and graphic
+                \begin{itemize}
+                    \item Description: These two plugins share one API in the applicationhelper.
+                    \item Estimated time taken (planned):5 hour
+                    \item Estimated time taken (actual): 40 hours
+                \end{itemize}
+            \item Reason for sub-task 3 using much more hours than I expected:
+                \begin{itemize}
+                    \item 1: Ruby on Rails has a bug when using ``include'' statement. The ``include'' is just read once by rails when the rsp starts, and later, it will not be treated as part of rsp.
+                    \item 2: Therefore, my plugin structure is not as good as for ruby on rails. I need to rewrite	API, some part of coding in applicationhelper.
+                \end{itemize}
+        \end{itemize}
+    \item Chat with the other 2 members about rails plugin.
+        \begin{itemize}
+            \item discuss the skill and help them. 
+            \item Estimated time taken (planed): 5 hour
+            \item Estimated time taken (actual): 5 hour
+        \end{itemize}
+    \item Add my technology into rails-plugin.
+        \begin{itemize}
+            \item Description: Rails-plugin cannot extending the existing file, which means it will change rsp code very time when adding plugin.
+            \item Estimated time taken (planed): 10 hours
+            \item Estimated time taken (actual): 10 hours
+            \item Summary: In this milestone, I've got not enough time to finish this.
+        \end{itemize}
+    \item Build system and redo some work
+        \begin{itemize}
+            \item Description: I never thought my laptop's motherboard burned two times in one week.
+            \item Estimated time taken (planned):10 hours
+            \item Estimated time taken (actual): 10 hours
+        \end{itemize}
+\end{itemize}
+
+\section*{Rooms for Improvement}
+\begin{itemize}
+    \item Talk more: I feel very guilty without discuss with team members. I just try to finish my par mission and the assignment for ABI.
+    \item Backup: How important the backup is. I took more than a week to redo ABI. It's a lesson.
+\end{itemize}
+\end{document}
