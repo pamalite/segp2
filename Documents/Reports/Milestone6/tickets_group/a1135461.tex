@@ -1,0 +1,74 @@
+\documentclass{article}
+\begin{document}
+\markright{JONATHAN VELASCO (1135461)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 6 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+I was assigned to the integration of the repositories of group 1, group 2 and group 3.  In addition to that, I also assisted Ming with the documention of the plan for this millestone
+
+\section*{Tasks and Activities Performed}
+
+\begin{itemize}
+	\item Assisting in the elaboration of the plan for this millestone
+	     \begin{itemize}
+                \item Description: Helped Ming to elaborate such document
+                \item Idea/Solution: N/A
+                \item Affected files: \texttt{segp2/Subgroups/integration\_group/group2-milestone6-plan.tex , ssegp2/Subgroups/integration\_group/group2-milestone6-plan.pdf}
+                \item Git commits: d4856502a6fe61cadd4754c97b90222fec97a7cb
+                \item Estimated time taken (planned):3 hours (including the meting held before starting the documentation)
+            
+	     \end{itemize}
+	\item Integration of previous millestone
+	     \begin{itemize}
+	        \item Description: Several sessions were needed in order to perform the integration of the three group repositories.  Some of them were done in pair with Ming and otherone was done with Ken
+		\item Idea/Solution: merge all the group branches into group 3 branch
+		\item Affected files: \begin{itemize}
+                                       \item earth/app/controllers/application.rb
+                                       \item earth/app/controllers/browser\_controller.rb
+                                       \item earth/app/controllers/graph\_controller.rb
+                                       \item earth/app/helpers/application\_helper.rb
+                                       \item earth/app/helpers/usages\_helper.rb
+                                       \item earth/config/usage\_routes.rb
+                                       \item earth/lib/earth\_api eapi\_utilities.rb
+                                       \item earth/lib/earth\_plugin\_interface plugin\_manager.rb
+                                       \item earth/lib/earth\_plugins file\_monitor.rb
+                                       \item earth/script/earthd
+                                       \item earth/script/sign\_plugin
+                                      \end{itemize}
+		\item Git commits: 2c9092391b371f18e0fc70a0440d9ad9ef599dd6
+		\item Estimated time taken (planned): 8 hours
+		\item Estimated time taken (actual): 13
+	      \end{itemize}
+       
+                
+	\item Elaboration of documents
+	     \begin{itemize}
+	         \item Description: Elaboration of report (milestone 5)
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{Documents/Reports/Milestone5/tickets\_group/a1135461.1.tex, Documents/Reports/Milestone4/Group\_3/a1135461.tex}.  
+	         \item Git commits:  695add05d554afd0910c5a3c5ac07041bd942186
+		 \item Estimated time taken (planned): N/A
+	         \item Estimated time taken (actual): 0.5 hours 
+	     \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+The integration was started with the help of Ming, solving several merge conflicts.  Some of the rake test were failing and therefore, Ken's help was needed due the his knowledges of specific pats of the system.
+
+One of the major problems presented during the merging phase was that different versions of the same ticket were presented in several repositories, having to be merged by hand, making it difficult to know which version was the one to keep.  This was increased due to the lack of documentation of the code written.  Possible solutions that may reduce this problem
+\begin{itemize}
+ \item  Commenting the code added/modified with a brief description, and perhaps the date, help in finding out which is the latest version and the one to keep.
+ \item  After completing something that is working correctly, it should be integrated and everybody should sync with it
+\end{itemize}
+
+
+
+
+
+\end{document}  
