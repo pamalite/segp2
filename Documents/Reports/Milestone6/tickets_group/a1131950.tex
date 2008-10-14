@@ -1,0 +1,48 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+\begin{document}
+
+\title{Milestone 6 Individual Report}
+\author{Alex Egan}
+\date{ }
+
+\maketitle
+ 
+\section{Task Description}
+The task assigned to me was a continuation of work from the last milestone. This was to implement sorting in the Navigation view by being able to click on the column headings. Identifying the issues in the All Files view and correcting them were decided to be a prerequisite for altering the Navigation view.
+
+\section{Progress Summary}
+\label{prog-sum}
+While the task was not completed, progress was made. Through work in this milestone, I have explored more possible causes for the issues and have eliminated some either fully or to some extent. The queries for returning the list data were found to be formed correctly and everything works with more than one page of results. There is no explicit handling of the one-page case in either the controller or view code so I investigated caching of the results for one page. The Rails environment is currently in development mode and caching is disabled in config/environments/development.rb as indicated by the line config.action\_controller.perform\_caching = false. Research into how caching works in Ruby on Rails suggested several methods of setting caching behaviour on the fly and I tried some of the simple methods to ensure it was disabled for the query in question. These, however, did not help fix the problem. I did not try any of the more complex caching configurations as they required enabling various other modules which I thought was not a good solution for keeping Earth light. Caching by Postgres is another avenue to be explored. There are three levels of sorting by default in Earth and I thought that this may have led to some issues but after reducing this to only one level of sorting, the problem still remained. Another issue was noted in that individual pages of results can be sorted in reverse to the overall sort method. For instance, if there are multiple pages of results sorted overall as descending, the individual pages themselves may be shown sorted in an ascending fashion. This suggests the way results are cut up by offsets does some sorting or there is secondary sorting somewhere.\\
+\\
+The plan for the next milestone is to either fix or re-write the sorting to fix it and then move on to integration and other finalisation tasks such as documentation.
+
+\section{Resource Allocation}
+The estimate as in the plan is below.\\
+\\
+\textbf{Subtasks:}
+\begin{enumerate}
+	\item Investigate issues raised in previous milestone. (6 hrs)
+	\item Implement changes. (3 hrs)
+	\item Test and integrate solution to the group codebase. (1 hr)
+	\item Miscellaneous administration and meetings. (2 hrs)
+\end{enumerate}
+\textbf{Total Time Estimate:} 12 hrs
+
+\section{Resource Use}
+See the Time Log in Section \ref{time-log} for a break-down time spent by individual tasks.\\
+\\
+The task was not completed on the planned schedule. There were less meetings than expected due to restructuring of the group and the well directed tasks. Taking time to research concepts and review code meant that direct, immediate progress was not necessarily made but was worth it for better understanding and future development.
+
+\section{Time Log}
+\label{time-log}
+Times are rounded to the nearest hour.\\
+\\
+Caching research: 3 hrs\\
+Coding: 6 hrs\\
+Pre-presentation meeting: 1 hr\\
+Presentation: 1 hr\\
+\\
+\textbf{Sprint Total:} 11 hrs%%%%
+
+\end{document}
