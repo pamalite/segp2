@@ -1,0 +1,10 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces The structure of the GUI Plugin framework.}}{3}
+\contentsline {figure}{\numberline {2}{\ignorespaces Original Earth front-end.}}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces Running the \texttt {generate} script to create mr\_bogus plugin.}}{5}
+\contentsline {figure}{\numberline {4}{\ignorespaces The \texttt {bogus\_controller.rb} file.}}{5}
+\contentsline {figure}{\numberline {5}{\ignorespaces The \texttt {bogus.rhtml} file.}}{5}
+\contentsline {figure}{\numberline {6}{\ignorespaces The \texttt {mr\_bogus\_generator.rb} file.}}{6}
+\contentsline {figure}{\numberline {7}{\ignorespaces The \texttt {plugin\_cfg} file.}}{6}
+\contentsline {figure}{\numberline {8}{\ignorespaces \texttt {mr\_bogus} implemented in Earth.}}{7}
+\contentsline {figure}{\numberline {9}{\ignorespaces The \texttt {mr\_bogus} tab.}}{7}
+\contentsline {figure}{\numberline {10}{\ignorespaces New text fields.}}{8}
