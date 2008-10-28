@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\pagestyle{headings}
+
+\begin{document}
+\title{\textbf{Milestone 5 Report for Group 4}}\author{Callum Baillie \\ Ming Jie Tan \\ Alex Egan \\ George Sainsbury \\ Jonathan Velasco \\ Sahil Choujar}
+
+\maketitle
+\thispagestyle{empty}
+\newpage{}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage{}
+
+\setcounter{page}{1}
+\section{Introduction}
+
+Below is are the reports for the group as a whole and the individual reports given by each member to reflect what each person did in addition to what was completed overall.
+
+\section{Report - Group Summary}
+
+During this sprint this group, tentatively called development group 5, undertook a few tasks to progress during this iteration. The first was identifying and fixing the issue with sorting small amounts of data and to also add pagination to the navigation view once the sorting issue was fixed. This was worked on by Ming Tan, George Sainsbury and Alex Egan. A lot of time was spent playing around with the existing haml and helper files to understand how the pagination was working and to locate where the problem was before the problem being narrowed down to the controller. However while progress was made, the final steps weren’t quite ready by the end of the iteration, and will need to be completed and tested at the beginning if the next iteration before being integrated into the system.\\
+\\
+The second issue was acquiring image data from image files and to store this data in the database. Currently this is working however this is nothing to show on the GUI end of the system and it hasn’t been stress tested with many files. This task was worked on by Ming Tan, Jon Velasco and Callum Baillie. This task was mainly sorted by using existing code to extract the image data with some slight changes being used to store the data into the database. The current database set up is only temporary, and during this iteration in addition to testing the system and adding the GUI section, the correct database table will need to be used. Another minor task that was also done was the addition of a highlight to show that filtering had been done. Currently this is implemented, but it looks slightly ugly and so the highlight will be changed during this iteration before being integrated. This task was undertaken by Callum Baillie. \\
+\\
+The integration phase was started toward the end of this phase with Jon Velasco working on this. However, all the tickets are still not collaborated into one repository and this process will not likely be complete until the end of the next iteration.\\
+\\
+Overall the group has made progress in the areas that we aimed and for the next iteration we hope to have completed all the above tasks in preparation for testing and packaging during the last sprint.\\
+
+\newpage{}
+
+\section{Report - Ming Tan}
+
+During this iteration I worked on a number of tasks. The task breakdown for this iteration falls under the categories below. In the following sections I explain the various tasks that I took during this development cycle, and how I planned the way to tackle the various tasks that I was required to do.
+
+\subsection{Planning}
+
+At the start of this iteration the groups were reorganised and this was documented into the planning documentation as were the tasks that the new groups would undertake. In addition to this, individual and subgroup planning was done in order to know the direction that the group would take as well as what tasks and what steps I needed to take in order to do those tasks. In reflection, planning took up a number of hours during the first week.\\
+
+\subsection{Administration}
+
+Following the group meeting to decide what each group would undertake as tasks for this iteration, I sketched up a general task flow for the various tasks There were a number of meetings that took place during this iteration. During the first week a full group meeting was done so that the reformation of groups could take place as well as organising the tasks that each group would undertake so that planning could then be done. There were then a number of meetings that took place toward the end of the iteration to determine progress and to know prepare for the presentation of this development sprint. With regard to the presentation, progress and preparation for the slides and the presentation in general was also conducted with Ken to allow for a succinct presentation. I also discussed progress with Ken a number of times so that both groups were kept up to date with the other group’s progress. In addition the group and individual reports were written at the start of this iteration to reflect on the previous iteration. Overall this section took numerous hours over the entire duration, and was the single section that I spent the majority of my time on.\\
+
+\subsection{Research and Debugging}
+
+In order to locate the error that was causing sorting problems within the all files view, I worked with Alex and George for a few hours looking at the relevant Haml and Ruby code. While the solution wasn’t found, the problem was narrowed down to lying within the controller and we were able to understand how the pagination works, so that converting the navigation view to pagination should hopefully be quite straight forward and be achievable during the next iteration.\\
+In addition to this, when working with Jon and Callum on the image data task, we analysed the existing file monitor code and figured out that much of the existing code used to store job/sequence/shot data could also be used to store the data.\\
+
+\subsection{Code Analysis}
+
+While not much actual coding was done, investigation of the coding was done and some open source code was located that did some image data extraction. This code was then adapted for our use. This section took the least amount of time thus far, but a fair amount of pair programming and debugging was done during this iteration. Both the coding and code debugging sections used up time mostly during the second half of the development sprint.\\
+
+\subsection{Time Spent}
+
+I would estimate that each week, I spent around 10 hours on average on the project, although some weeks a bit more was spent on this. A closer estimation is provided in the logs of the document\\
+
+\newpage{}
+
+\section{Report - Jonathan Velasco}
+
+% I took responsibility for the administrative tasks and elaboration of agendas and minutes.  Also, I was originally, together with the rest of the group, assigned to work extracting the possible API methods, however, this task was then taken by Ken and Jian.  And I was suggested by Ken to start studying the GUI together with Sahil.
+
+\subsection{Tasks and Activities Performed}
+
+\begin{itemize}
+	\item Re-installation of software
+	     \begin{itemize}
+                \item Description: Due to a power failure in my laptop (equipment I dedicated for earth) I had to install/update  the needed software on my PC (I had already some previous version installed but they needed to be updated to be able to work with earth).  However, when trying to update the rubygems I was getting an error related to rdoc.  After searching on the internet the problem seems to be related to the installation of rdoc.  After several attempts to fix it I decided that it was faster to just make a new partition and install all the needed software from scratch following the step-by-step guide I putted together previously
+                \item Idea/Solution: new partition on disk
+                \item Affected files: N/A
+                \item Git commits: N/A
+                \item Estimated time taken (planned): N/A (was not planified.  Though I could fix it in 0.5 hours)
+                \item Estimated time taken (actual): 2 hours (approx 0.75 trying to fix the rdoc error, and 1.25 doing the actual diskpartition plus installation of ruby, rubygem, postgres and the other libraries needed for earth)
+            
+	     \end{itemize}
+	\item Integration of previous millestone
+	     \begin{itemize}
+	        \item Description: Start looking a what should be integrated from the 3 groups from the previous millestone.  I then studied the instructions elaborated by Alex and Mohammad and also followed the link from the source they gave.  However, after several attempts, following different methods and ideas I discovered I was not able to perform the integration due to restrictions on my privileges. .This issue was then reported to Mohammad  (who corroborated me that the problem was the privileges) in order to grant me the necessary privileges in order to be able to the integration for the next milestone
+		\item Idea/Solution: report privilege issue to Mohammad
+		\item Affected files: N/A
+		\item Git commits: N/A
+		\item Estimated time taken (planned): 8 hours
+		\item Estimated time taken (actual): 2 (due to privileges restrictions) hours
+	      \end{itemize}
+	\item Due to the technical impediments to perform the integration, I then join Ming and Callum in order to help them with the image task.   We conducted a research about how this could be done.  We then found a piece of code which we modified to accommodate to out necessity.
+            \begin{itemize}
+                \item sub-task 1
+                \begin{itemize}
+                    \item Description: Research on how to extract information from the images
+                    \item Idea/Solution: found code on internet which could be adapted to our needs
+                    \item Affected files:N/A
+                    \item Git commits: N/A
+                    \item Estimated time taken (planned): 1 hour
+                    \item Estimated time taken (actual): 2.5 hour
+                \end{itemize}
+                \item sub-task 2
+                \begin{itemize}
+                    \item Description: Study and modifications were done to the code found.  
+                    \begin{itemize}
+                     \item Changed it from looping through all files from the current directory and extracting their information, to only extract information form the file specified on a given variable.
+                     \item Extraction the piece of code that allowed to get the file name from I/O (not needed)
+                     \item Also stopped from processing all files (even if they are not images) to only process images file.
+                    \end{itemize}
+                    As this work was assigned to Callum and Ming, they already had a solution in mind which involved the files and tables that their group did in previous milestone; as I do not have access to it, I could not test the code in earth, therefore, all the changes where sent to Callum and Ming.
+                    \item Idea/Solution: Study and adaptation of code to meet our necessities
+                    \item Affected files: image\_size.rb (original code found)
+                    \item Git commits: N/A (changes where mailed, not need of GIT for it)
+                    \item Estimated time taken (planned): 2 hour
+                    \item Estimated time taken (actual): 3.5 hour
+                \end{itemize}
+            \end{itemize}
+       
+                
+	\item Elaboration of documents
+	     \begin{itemize}
+	         \item Description: Elaboration of report (milestone 4)
+	         \item Idea/Solution: N/A
+	         \item Affected files: \texttt{Documents/Reports/Milestone4/Group\_3/a1135461.1.tex, Documents/Reports/Milestone4/Group\_3/a1135461.tex}.  
+	         \item Git commits: f7e675bda62c13ab2c744572d397d85fe979de7a
+		 \item Estimated time taken (planned): N/A
+	         \item Estimated time taken (actual): 0.5 hours 
+	     \end{itemize}
+\end{itemize}
+
+\subsection{Resource Contributions}
+
+In addition to all the time specified above, there where several meetings realted to mileston 5 and the new groups.  Some of these meetings were held before the reform of the groups; on such meeting,  Ken, Jian and I disccussed about this possibility of reforming the groups and evaluate different options on how to make the new groups.  The total time spent on meetings was approx 5 hours, given a total for milestone 5 of 15.5 hours.
+
+\end{document}
