@@ -12,9 +12,15 @@
 \begin{titlepage}
     \begin{center}
         Rising Sun Pictures \\
-        \vspace{3cm}
-        {\LARGE\bf Earth Daemon Plugins} \\
+        \vspace{1cm}
+        \begin{center}                
+        \includegraphics{earth.png} \\
+        \end{center}
         \vspace{5cm}
+        {\LARGE\bf Daemon Plugins} \\
+        \vspace{5cm}
+        {\LARGE\bf Development Documentation} \\
+        \vspace{6cm}
         \today
     \end{center}
 \end{titlepage}
@@ -27,11 +33,11 @@
 \section{Introduction} % (fold)
 \label{sec:introduction}
 
-The Earth Daemon plugin, or just simply Earth plugin, was originally implemented in the existing Earth design. However, this feature was turned off. After three sprints, this feature was further explored. 
+\noindent
+The plugin concept that is already included as part of the existing Earth Daemon (earthd) design provides a clear indication that extensibility and maintainability are a priority consideration of the Earth application. Within the daemon, the design logic of the file monitor had been removed and implemented as a separate module in a pluggable form. However, the actual implementation had been constructed in such a way that the invocation of the file monitor module can switch between the plugin option or the more direct file inclusion option. This switch is simply activated with the setting or clearing of the LOAD\_FILE\_MONITOR\_AS\_PLUGIN flag. Further investigation revealed that the purpose for retaining this option was to enable the quick alteration and testing of the file monitor module should a necessary modification or update become necessary. With the plugin option, the additional preparatory tasks of signing and installing the plugin is time-consuming and can become intolerable particularly for simple code alterations. \\ 
 
-It was found that the main engine of Earth, the File Monitor, was implemented as a plugin. However, the plugin feature was turned off, which was indicated by the flag \texttt{LOAD\_FILE\_MONITOR\_AS\_PLUGIN} being set to \texttt{FALSE}. The solution to this problem is to update the flag to \texttt{TRUE}. This potential solution had created a new problem, as there was no clear understanding of how plugins work in Earth. 
-
-The following sections will present the exploration conducted on the plugins framework, and the modification performed. Also, a quick guide to create and install a plugin. 
+\noindent
+The following sections will present the exploration conducted on the plugins framework, and the modification performed. Also, a quick guide to create and install a plugin. \\
 
 % section introduction (end)
 
@@ -42,7 +48,7 @@ An exploration on getting a better understanding of the plugin framework was don
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.7]{plugin_standard_codes.png}
+    \includegraphics[scale=0.5]{plugin_standard_codes.png}
     \caption{Plugin standard code structure.}
     \label{fig:plugin}
 \end{figure}
@@ -64,8 +70,8 @@ A further exploration was done to understand how a plugin is invoked from the da
 This table will be revisited in later sections as well as further investigation found that the \texttt{code} and \texttt{sha1\_signature} columns are not compatible with the PostgresSQL RubyGem connector. Figure \ref{fig:flow} shows the flow of plugins being loaded in Earth.
 
 \begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.7]{flow.png}
+    \centering        
+    \includegraphics[scale=0.5]{flow.png}
     \caption{Plugin loading flow.}
     \label{fig:flow}
 \end{figure}
@@ -77,7 +83,7 @@ It is now understood that the reason why the plugins are stored and loaded from 
 \section{Security Retrofitting} % (fold)
 \label{sec:security_retrofitting}
 
-From the Figure \ref{fig:flow}, it is understood that plugins are to be dynamically and remotely loaded from the database, and there is a security processing overhead imposed on the load time. This is a mandatory overhead imposed as remote plugin calls can be susceptible to `man in the middle attack', which a hacker can modify the codes during transmission for any malicious act. The challenge now is to have File Monitor loaded into the database. However, it was found that the \texttt{sign\_plugin} and \texttt{create\_cert} scripts were not updated to be compatible with Rails 2.0.2. The following codes were updated to \texttt{require\_gem 'termios'}: 
+From the Figure \ref{fig:flow}, it is understood that plugins are to be dynamically and remotely loaded from the database, and there is a security processing overhead imposed on the load time. This is a mandatory overhead imposed as remote plugin calls can be susceptible to `man in the middle attack', which a hacker can modify the codes during transmission for any malicious act. The challenge now is to have File Monitor loaded into the database. However, it was found that the \texttt{sign\_plugin} and \texttt{create\_cert} scripts were not updated to be compatible with Rails 2.0.2. The following codes were updated to \texttt{require\_gem `termios'}: 
 
 \begin{verbatim}
     gem 'termios'
@@ -121,136 +127,18 @@ This will allow the code and signature to be stored and loaded from the database
 
 After the first rounds of retrofitting, another challenge arise, which is to allow a plugin to be plug-able as well. In the other words to have Earth support plugins of plugins. In the beginning, the idea of re-writing Earth to introduce an Application Programmable Interface (API) was used. However, this idea was gradually dropped due to the very monolithic design. Thus, a new idea was explored, which is to include extensions into the plugins. Figure \ref{fig:framework} shows the re-implemented plugin framework, from the \texttt{earthd}'s point of view. 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.7]{plugin_framework.png}
+    \includegraphics[scale=0.4]{daemon_plugins.png}
     \caption{The re-implemented plugin framework.}
     \label{fig:framework}
 \end{figure}
 
-The current plugin framework do not support such a framework. Thus, a new extension module was developed, which is included when the daemon is launched. Listing \ref{list:extension} presents the extension module. The following line can be added into the plugin intended for extension:
+The current plugin framework do not support such a framework. Thus, a new extension module was developed, which is included when the daemon is launched. The following line can be added into the plugin intended for extension:
 
 \begin{verbatim}
-    extension_point(<the extension point name>,self.class.to_s,:file => new_file)
+    extension_point(<the extension point name>, <class name>, <list of variables>)
 \end{verbatim}
-
-\begin{lstlisting}[caption=The extensions.rb.,label=list:extension]
-    module Extensions
-
-      # The +extension_point+ method is used to create an extension point 
-      # inside a plugin file
-      # It instantiates all plugins which are linked to a specific extension 
-      # point
-      # The extension point (in the extension_points table) should be created 
-      # while installing the plugin using the +add_extension_point+ method
-      # Note: except the extension point at the Earthd which is created when 
-      #       we create the extension_points table
-      def extension_point(extension_point_name,host_plugin, *args)
-        plugins = []
-        #args are the paremetrs should be passed to the plug-in
-        #so, put them in the plug-in session
-        args.each do |arg|
-          $plugin_session = arg
-        end
-
-        plugin_manager = PluginManager.new
-
-        #temporary method to get the class name
-        host_plugin = extract_plugin_name(host_plugin)
-
-        # bring all the plug_ins for this extension point using: host_plugin 
-        # name and the extension_point name
-        extension_point = Earth::ExtensionPoint.find(:first, 
-                                                     :conditions => {
-                                                         :host_plugin => host_plugin, 
-                                                         :name => extension_point_name
-                                                      })
-        #debugger
-        plugins = extension_point.plugin_descriptors unless extension_point.nil?
-        for p in plugins do
-          # instantiate the plugin class
-          #TODO DELETE ME
-          #plugin = get_class_from_name(p.name)
-
-          plugin = plugin_manager.load_plugin(p.name, p.version)
-
-          #execute a specific method
-          eval 'plugin' + '.' + p.method unless p.method.nil?
-        end
-
-        #clear the plugin_session
-        $plugin_session = {}
-      end
-
-      # the +add_extension_point+ method creates a new extension point in the 
-      # extension_points table
-      # this method should be used while installing new plugin
-      def add_extension_point(name, host_plugin, description)
-        Earth::ExtensionPoint.create :name => name, :host_plugin => host_plugin, 
-                                                    :description => description
-      end
-
-      #TODO method comments
-      def get_class_from_name(name)
-        eval name + '.new'
-      end
-
-      private
-
-      def extract_plugin_name(name)
-        tokens = name.split('::')
-        tokens.last unless tokens.nil?
-      end
-
-    end
-    
-\end{lstlisting}
-
-Therefore, to re-implement the plugin framework to use extension, a new table was added into the database, and two new columns were added to the \texttt{plugin\_descriptors} table as well:
-
-\begin{verbatim}
-    create_table :extension_points do |t|
-      t.column :name, :string, :null => false
-      #TODO this could be changed to be a foriegn key to the plug-in descriptors
-      #currently, just leave it as a class name (Sting)
-      t.column :host_plugin, :string, :null => false
-      t.column :description, :text, :null => false
-    end
-
-    #add a foreign key to the plug-in descriptor table
-    add_column :plugin_descriptors, :extension_point_id, :integer
-    
-    #TODO this is temporarily until we read the code from the database
-    change_column :plugin_descriptors, :code, :text, :null => true
-    change_column :plugin_descriptors, :sha1_signature, :text, :null => true
-
-    #add the first extension point which is located at Earthd
-    ext = Earth::ExtensionPoint.create :name => "main_loop", 
-                                       :host_plugin => "Earthd", 
-                                       :description => "extension point at the 
-                                                        main loop in the earthd script"
-    #add file_monitor as a plugin for Earthd
-    ext.reload
-\end{verbatim}
-
-The final step for re-implementation is to make the daemon extendable by adding the \texttt{main\_loop} point, which is shown in the following:
-
-\begin{verbatim}
-    while true
-        logger.info("Inside main loop")
-
-        # create an extension point here
-        # to extend the earthd functionality on each iteration
-        # if no plugins are installed, earthd will do nothing
-        extension_point("main_loop", self.class.to_s, 
-                         :logger => logger, 
-                         :cache => cache, 
-                         :only_initial_update => false, 
-                         :force_update_time =>@config["override_update_interval"])       
-    end
-\end{verbatim}
-
-The plugin framework is now re-implemented.
 
 % section plugin_framework_re-implementation (end)
 
@@ -319,4 +207,5 @@ To uninstall a plugin, the following command can be used:
 One can obtain the plugin name from the list command, as stated in the previous section.
 
 % section uninstallation (end)
+
 \end{document}  

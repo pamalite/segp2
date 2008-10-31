@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Exploration}{2}
 \contentsline {section}{\numberline {3}Security Retrofitting}{3}
-\contentsline {section}{\numberline {4}Plugin Framework Re-implementation}{4}
-\contentsline {section}{\numberline {5}Plugin Creation}{7}
+\contentsline {section}{\numberline {4}Plugin Framework Re-implementation}{5}
+\contentsline {section}{\numberline {5}Plugin Creation}{5}
 \contentsline {section}{\numberline {6}Installation}{7}
-\contentsline {section}{\numberline {7}Uninstallation}{8}
+\contentsline {section}{\numberline {7}Uninstallation}{7}
