@@ -1,0 +1,176 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2007.7.24)  1 NOV 2008 23:03
+entering extended mode
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**a1159155.tex
+(./a1159155.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2007/texmf-dist/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/local/texlive/2007/texmf-dist/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+No file a1159155.aux.
+\openout1 = `a1159155.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 9.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 19.
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
+
+Overfull \hbox (13.39558pt too wide) in paragraph at lines 24--25
+[]\OT1/cmr/m/n/10 Affected files: \OT1/cmtt/m/n/10 plugin[]group/daemon[]plugin
+s/*\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 plugin[]group/GUI plugins Doc/* 
+ []
+
+
+Overfull \hbox (0.48625pt too wide) in paragraph at lines 25--28
+[]\OT1/cmr/m/n/10 Git com-mits: \OT1/cmtt/m/n/10 (pamalite/segp2) efb25d3bb1777
+2440d08e98f53ede927bc1c16cf 
+ []
+
+
+Overfull \hbox (6.56606pt too wide) in paragraph at lines 35--49
+[]\OT1/cmr/m/n/10 Git com-mits: \OT1/cmtt/m/n/10 (Jonv/earth/group1[]2) 619b85e
+55cabe9c959ea128d8e8536d5fc684d96 
+ []
+
+
+Overfull \hbox (22.25026pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (Jonv/earth/group1[]2[]earthd[]plugins) ca3c9fda5539cb10881166
+195df76e99806bcbfb 
+ []
+
+
+Overfull \hbox (41.78008pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (Jonv/earth/group1[]2[]earthd[]gui[]plugins) ca3c9fda5539cb108
+81166195df76e99806bcbfb 
+ []
+
+
+Overfull \hbox (43.25008pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]plugins) 901bda47ff97d8f4d4
+3a313971653b66b1f15f1a 
+ []
+
+
+Overfull \hbox (43.25008pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]plugins) 1ea191e6ba50bb2458
+987dd22bed2eda95d935cf 
+ []
+
+
+Overfull \hbox (43.25008pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]plugins) f643d7727a9f563ab3
+c1a04f2039f109f2054788 
+ []
+
+
+Overfull \hbox (43.25008pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]plugins) fe2aea30ec40e46b4d
+88ca9960a138f864f81bce 
+ []
+
+
+Overfull \hbox (62.77989pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]gui[]plugins) d40768224acf6
+90b7fc0395730ffffb1b78c2bff 
+ []
+
+
+Overfull \hbox (62.77989pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]gui[]plugins) 286490b58f53e
+db0601672efd33bb3c3757b5d04 
+ []
+
+
+Overfull \hbox (62.77989pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]gui[]plugins) 901bda47ff97d
+8f4d43a313971653b66b1f15f1a 
+ []
+
+
+Overfull \hbox (62.77989pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]gui[]plugins) 1ea191e6ba50b
+b2458987dd22bed2eda95d935cf 
+ []
+
+
+Overfull \hbox (62.77989pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]gui[]plugins) f643d7727a9f5
+63ab3c1a04f2039f109f2054788 
+ []
+
+
+Overfull \hbox (62.77989pt too wide) in paragraph at lines 35--49
+\OT1/cmtt/m/n/10 (pamalite/earth/group1[]2[]earthd[]gui[]plugins) fe2aea30ec40e
+46b4d88ca9960a138f864f81bce 
+ []
+
+[1{/usr/local/texlive/2007/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+[2] (./a1159155.aux) ) 
+Here is how much of TeX's memory you used:
+ 260 strings out of 94073
+ 3280 string characters out of 1162984
+ 52804 words of memory out of 1500000
+ 3614 multiletter control sequences out of 10000+50000
+ 7208 words of font info for 26 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 23i,4n,19p,917b,274s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/c
+m/cmbx10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx12.
+pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/
+local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsl10.pfb></usr/local/tex
+live/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy10.pfb></usr/local/texlive/2007
+/texmf-dist/fonts/type1/bluesky/cm/cmtt10.pfb>
+Output written on a1159155.pdf (2 pages, 44991 bytes).
+PDF statistics:
+ 33 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
