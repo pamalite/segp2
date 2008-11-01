@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{FILIMONI LUTUNAIKA (1154924)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 7 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+For this milestone, integration of all the features and fixes that were developed during the previous development sprints was the highest priority. Hence, changes made in individual and subgroup repositories were pushed to the main group repository. The relevant documentation also had to be reviewed and updated on the project document repository. Furthermore, some pending modifications such as the display of daemon status information on the web-based graphical user interface had to be completed before being included in the main group repository. There were also some significant improvements in the milestone planning processing, in particular the allocation of resources to tasks.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{enumerate}
+    \item Modify configuration page to update daemon status information in real-time
+        \begin{itemize}
+            \item Description: This task involved capturing the daemon status information and displaying it on the web-based GUI in real-time.
+            \item Affected Files:
+                \begin{itemize}
+                    \item app/controllers/servers\_controller.rb
+                    \item app/models/earth/server.rb
+                    \item script/earthd
+                \end{itemize}
+            \item Git commits: \texttt{(ssurfer/earth.git) dc1a5ef6cbb3898bf66702304d70e3a5d283993e}
+            \item Estimated time taken (planned): 30 hours
+            \item Estimated time taken (actual): 30 hours
+        \end{itemize}
+    \item Integrate tickets done by Subgroup1 in previous development sprints (milestones)
+        \begin{itemize}
+            \item Description: This task involved merging the fixes for tickets that were attempted during the early development sprints for subsequent integration with the main group repository.
+            \item Affected Files:
+                \begin{itemize}
+                    \item app/controllers/browser\_controller.rb
+                    \item app/controllers/graph\_controller.rb
+                    \item app/controllers/servers\_controller.rb
+                    \item app/helpers/application\_helper.rb
+                    \item app/helpers/graph\_helper.rb
+                    \item app/models/earth/directory.rb
+                    \item app/models/earth/server.rb
+                    \item app/models/size.rb
+                    \item app/views/browser/flat.html.haml
+                    \item app/views/browser/show.html.haml
+                    \item config/earth-webapp.yml
+                    \item test/functional/browser\_controller\_test.rb
+                \end{itemize}
+            \item Git commits: \texttt{(segp2sg1/earth.git) a0854e2c929e958bfb422b2ecff46883270ebd86}
+            \item Estimated time taken (planned): 30 hours
+            \item Estimated time taken (actual): 30 hours
+        \end{itemize}
+    \item Assist with integration of SEGP2 Repository for Milestone 7 (Final)
+        \begin{itemize}
+            \item Description: This task involved integrating the repository of the various project subgroups to create the final group repository.
+            \item Affected Files:
+                \begin{itemize}
+                    \item app/controllers/application.rb
+                    \item app/helpers/application\_helper.rb
+                    \item app/views/browser/\_breadcrumb\_and\_filter.html.haml
+                    \item app/views/layouts/application.haml
+                    \item vendor/plugins/plugin\_bios/MIT-LICENSE
+                    \item vendor/plugins/plugin\_bios/README
+                    \item vendor/plugins/plugin\_bios/Rakefile
+                    \item vendor/plugins/plugin\_bios/generators/plugin\_bus/USAGE
+                    \item vendor/plugins/plugin\_bios/generators/plugin\_bus/plugin\_bus\_generator.rb
+                    \item vendor/plugins/plugin\_bios/init.rb
+                    \item vendor/plugins/plugin\_bios/install.rb
+                    \item vendor/plugins/plugin\_bios/lib/plugin\_bios.rb
+                    \item vendor/plugins/plugin\_bios/tasks/plugin\_bus\_tasks.rake
+                    \item vendor/plugins/plugin\_bios/test/plugin\_bus\_test.rb
+                    \item vendor/plugins/plugin\_bios/uninstall.rb
+                \end{itemize}
+            \item Git commits: \texttt{(Jonv/earth.git) e55a0dc1bda43819357e849373f72f4074089481 (branch: group\_1\_2\_earthd\_gui\_plugins)}
+            \item Estimated time taken (planned): 20 hours
+            \item Estimated time taken (actual): 16 hours
+        \end{itemize}
+    \item Review Earth Daemon and Earth GUI plugins documentation
+        \begin{itemize}
+            \item Description: This task involved reviewing the documentation of the various aspect of the Earth application, particularly the newly added plugin framework, to ensure better comprehension and understanding.
+            \item Affected Files:
+                \begin{itemize}
+                    \item Subgroups/plugin\_group/daemon\_plugins/daemon\_plugins.pdf
+                    \item Subgroups/plugin\_group/GUI plugin Doc/gui\_plugins.pdf
+                \end{itemize}
+            \item Git commits: \texttt{(pamalite/segp2.git)}
+            \item Estimated time taken (planned): 6 hours
+            \item Estimated time taken (actual): 12 hours
+        \end{itemize}
+\end{enumerate}
+
+\section*{Resource Contributions}
+
+Apart from the under-resourced Task 4, the planned allocation of resources (time) was quite accurate for the designated tasks (Task 1 - Task 3) during this development sprint (M7). This can be explained by the improvements made during the previous development sprints. As a developer works on a project for a number of development sprints or cycles, planning efforts is expected to improve. As a result, the planned develoment time of 86 hours for this milestone was quite close to the actual development time of 88 hours. \\
+
+It should also be noted that for Task 1, the initial design of updating and fetching the daemon status information in real-time through the database, was quite inefficient and lacks the necessary responsiveness for such feature to be of any practical use. Further investigation showed that the implementation of the daemon status update feature could be improved significantly by simply bypassing the database processing. This would involve having the necessary model method spawn a sub-process to invoke status command on the daemon and return the daemon status information to the parent process, which subsequently passes it on to the relevant view page for display on the web-based GUI (browser). \\
+
+For Task 4, the documentation review process took more time than budgeted due to the inconsistency of the various part of the document. It had been wrongly assumed that the different parts of the documents (drafted by different developers) will adopt a similar writing style and cohesiveness. This was not the case and further efforts had to be expended to improve documentation for the plugin systems. While the submitted final documents is note quite perfect, it is certainly more understandable than the initial draft.
+
+
+\section*{Room for Improvement}
+
+As in previous milestones, some improvements could have been made during the course of this (M7) development sprint. In addition to the swift resolve of the problems with Tasks 1 and 4 mentioned above, the integration of ticket fixes should be made as and when they become available. This involves pushing all the changes up to the main group repository perhaps at the end of each development sprint. It should not be left until the final development sprint because it ties up a number of significant resources that could have been better utilised on other aspects of the project.
+
+\[----\]
+\end{document}  
