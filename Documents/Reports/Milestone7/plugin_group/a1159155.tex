@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Ken's Milestone 7 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+I helped in strategizing how integration should be done, togather with Fil, Mohammad and Jon. I suggested to use branches instead of forks to have the integration done. In the end a new fork was created and in that fork, there were several branches created as a buffer for each integration stages. The stages are partial integration between groups. The first two groups were first integrated, then followed by plugins. I have also helped in documenting the plugins design, development and implementation. I mainly re-wrote the document that was written by the GUI plugins group, and compiled all the notes on daemon plugins into a structured document. I was also put in charge of creating the final presentation slides. 
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+    \item Co-writing plugins documentations.
+        \begin{itemize}
+            \item Daemon Plugins
+                \begin{itemize}
+                    \item Description: There were already several prepared notes about daemon plugins that were written by myself. In this sprint, the focus was on getting the plugins integrated and properly documented. The task is to compile the notes into developers comprehensible documents for future reference. 
+                    \item Affected files: \texttt{plugin\_group/daemon\_plugins/*}, \texttt{plugin\_group/GUI plugins Doc/*}
+                    \item Git commits: \texttt{(pamalite/segp2) efb25d3bb17772440d08e98f53ede927bc1c16cf} \\
+                        \texttt{(pamalite/segp2) eee6f84c9a9160d1d17e452b9bc91fb3ecb15676} \\
+                        \texttt{(pamalite/segp2) 55801f180e90aa91ddf88f79d2a7762c40fa7d80} 
+                    \item Estimated time taken (planned): 2 hours
+                    \item Estimated time taken (actual): 2 hours
+                \end{itemize}
+        \end{itemize}
+    \item Strategizing and testing integrated branches.
+        \begin{itemize}
+            \item Description: Started strategizing with Jon, Fil and Mohammad on how to mitigate merge errors during integration with GIT. Also, I pointed out that we needed a strategy on not relying too much on GIT's merge algorithms as they tend not to merge files properly. Thus, it was suggested to merge files in stages, and each stage is a branch from the master trunk. However, I did not do the merge. I tested the merged stages to help check whether the mergers were properly made. I fixed some errors and committed the corrections back to the respective branches. Some minor merge errors were related to Ticket 66 and missed codes for other tickets which broke the system upon a more in-depth testing was conducted. However, the Unit Test was given up as it was realized that there is not enough time to re-write the extension points codes to cope with Rails' unit test cases. 
+            \item Git commits: \texttt{(Jonv/earth/group1\_2) 619b85e55cabe9c959ea128d8e8536d5fc684d96} \\
+                \texttt{(Jonv/earth/group1\_2\_earthd\_plugins) ca3c9fda5539cb10881166195df76e99806bcbfb} \\
+                \texttt{(Jonv/earth/group1\_2\_earthd\_gui\_plugins) ca3c9fda5539cb10881166195df76e99806bcbfb} \\
+                \texttt{(pamalite/earth/group1\_2)  572f62ecb1c8b806d2745ea69a3698af6f1f84c7} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_plugins) 901bda47ff97d8f4d43a313971653b66b1f15f1a} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_plugins) 1ea191e6ba50bb2458987dd22bed2eda95d935cf} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_plugins) f643d7727a9f563ab3c1a04f2039f109f2054788} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_plugins) fe2aea30ec40e46b4d88ca9960a138f864f81bce} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_gui\_plugins) d40768224acf690b7fc0395730ffffb1b78c2bff} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_gui\_plugins) 286490b58f53edb0601672efd33bb3c3757b5d04} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_gui\_plugins) 901bda47ff97d8f4d43a313971653b66b1f15f1a} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_gui\_plugins) 1ea191e6ba50bb2458987dd22bed2eda95d935cf} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_gui\_plugins) f643d7727a9f563ab3c1a04f2039f109f2054788} \\
+                \texttt{(pamalite/earth/group1\_2\_earthd\_gui\_plugins) fe2aea30ec40e46b4d88ca9960a138f864f81bce}
+            \item Estimated time taken (planned): 4 hours
+            \item Estimated time taken (actual): 4 hours
+        \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 10 hours (including 4 hours meeting time) over the spread of 3 weeks. I have budgeted 45 hours (15 hours per week) for this semester. The other 15 hours were spend on my research project. 
+
+Looking at the hours I felt that I have had a productive sprint, though I am only using a fraction of my budgeted hours. The rest of the hours were used on the research project thesis. However, I observed that my skills on using GIT matured the most in this sprint, due to the fact that I was requested to create a backup repository incase that Jon's repository was mistakenly broken. I have also spend some time to help Jon understand some GIT commands to ease integration and synchronizing with the backup repository. 
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item Low levels of patience was observed during this sprint. This was because one of the members were not showing interest in helping out with the closing of the project. I lost my patience with the member and had ignored his complaints and ranting completely as I thought this member can be hindrance towards the success of this project, and I focused myself on members who are interested in having a proper project closure. I will try to be more approachable and keep my cool in future projects by trying to have a constructive confrontation with such members. 
+\end{itemize}
+
