@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{a4wide}
+
+\begin{document}
+\markright{Xiaodong Cui (1149546)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 7 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+
+Milestone 7 is the last milestone for the whole year project. We focused on clean up, polish and integrate existing codes, and also tried to implement a ticket by combining Daemon and GUI plugins. During this milestone, I wrote a document for the GUI plugin, and then integrate my code to the group repository, and worked with others to create the metadata GUI plugin.
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+    \item GUI plugin system documentation
+        \begin{itemize}
+            \item Sub-task 1: Write GUI plugin system documentation
+                \begin{itemize}
+                    \item Description: The GUI plugin system documentation can help users to understand the idea behind the system, includes introduction, investigation, preparation, implementation, and installation, also an example was given in the instruction section to explain how the whole system works. The draft was created by GUI plugin system development team, and then viewed and corrected by other group members.
+		     \item Affected Files:
+                	\begin{itemize}
+                    		\item Subgroups/plugin\_group/GUI plugin Doc/gui\_plugins.pdf
+                	\end{itemize}
+		    \item Git commits: \texttt{(pamalite/segp2.git)}
+                    \item Estimated time taken (planned): 25 hours
+                    \item Estimated time taken (actual):  24 hours (15/10/08-20/10/08)
+                \end{itemize}
+        \end{itemize}
+    \item Clean up, polish, and integrate existing codes.
+        \begin{itemize}
+            \item Sub-task 1: Clean up and polish the existing codes.
+                \begin{itemize}
+                    \item Description: The codes for tickets and plugin should be cleaned and polished so that the unrelevant stuff must be removed and useful comments must be added. Also, need to past all the tests before pushing to the repository. 
+                    \item Estimated time taken (planned): 10 hours
+                    \item Estimated time taken (actual): 12 hours (18/10/08-23/10/08)
+                \end{itemize}
+            \item Sub-task 2: Integration
+                \begin{itemize}
+                    \item Description: The code for tickets and plugin system must be integrated to one repository to make a final version of earth.
+		    \item Affected Files:
+                	\begin{itemize}
+				\item app/controllers/browser\_controller.rb
+				\item app/controllers/graph\_controller.rb
+				\item app/controllers/servers\_controller.rb
+				\item app/helpers/application\_helper.rb
+				\item app/helpers/graph\_helper.rb
+				\item app/models/earth/directory.rb
+				\item app/models/earth/server.rb
+				\item app/models/size.rb
+				\item app/views/browser/flat.html.haml
+				\item app/views/browser/show.html.haml
+				\item config/earth-webapp.yml
+				\item test/functional/browser\_controller\_test.rb	
+                	\end{itemize}
+		    \item Git commits: \texttt{(segp2sg1/earth.git) a0854e2c929e958bfb422b2ecff46883270ebd86}
+                    \item Estimated time taken (planned): 10 hours
+                    \item Estimated time taken (actual): 15 hours (25/10/08-28/10/08)
+                \end{itemize}
+        \end{itemize}
+  \item Implement a plugin for milestone 7 presentation using both daemon and GUI plugin systems (metadata).
+        \begin{itemize}
+            \item Sub-task 1: Implement the GUI plugin part with other GUI plugin team member for metadata plugin.
+                \begin{itemize}
+                    \item Description: The GUI plugin for meatdata plugin contains three filter fields (job, shot, sequence) and one tab (category), the search results must be displayed under the tab.
+                    \item Estimated time taken (planned): 15 hours
+                    \item Estimated time taken (actual):  13 hours (21/10/08-27/10/08)
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+\section*{Resource Contributions}
+
+For this milestone, I have estimated that I had spend about 68 hours (including 4 hours meeting time) over the spread of 3 weeks. I spent the first week writing up GUI plugin documentation, and then spent the following week to clean up and integrate my ticket and plugin codes, and also spent some time with other group members working on the metadata plugin for end milestone presentation. 
+
+\section*{Rooms for Improvement}
+
+\begin{itemize}
+   \item The integration should be done at the end of each milestone but not the last one. I think each new milestone should be developed based on the works done in previous milestones by the whole project group.
+   \item The project is coming to the end, I started with no experiences on rails project, and then little by little with other group members, we managed to solve several tickets and set up plugin framework for Earth project. I have learnt alot from this project, especially from the second semester. The first semester was not very good for me, because I felt I was working on tickets individually, with no communication with other group members, and things changed in second semester, I worked with other group members as a real team, focused on one thing, and worked together to acheive our goal. So, the second semester was the one that we acheived the most. I think what I learnt from the project will be very useful for me in my future work.
+\end{itemize}
+
+\end{document}  
