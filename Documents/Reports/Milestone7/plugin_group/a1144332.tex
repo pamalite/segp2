@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{hyperref}
+
+\begin{document}
+\markright{Mohammad Bamogaddam (1144332)}
+\pagestyle{headings}
+
+\begin{center}
+{\LARGE\textbf{\underline{{Individual Milestone 7 Report}}}}
+\end{center}
+
+\section*{Executive Summary}
+This report records my activities which are related to the Earth project development for Milestone 7 period from 13-October-2008 to 2-November-2008.\\
+In this sprint,the main focus was on integrating all the previous milestone's code into one repository. I started by reviewing the earth daemon plugin's code and make sure that there is enough and clear comments in the code. Then, I performed more tests to confirm code success. Finally, I joined the group in integrating the code from all groups and individuals repositories into one main repository.    
+
+\section*{Tasks and Activities Assigned}
+
+\begin{itemize}
+	\item \textit{\textbf{Reviewing Earth daemon Plugins' Code:}}\\
+Review all Earth daemon code and make sure that the code is clean and readable. Then, insure that the plugins installation is smooth. Also, add comments to ease understanding the code.\\
+This includes the following code changes:
+\begin{enumerate}
+\item New special methods were added inside each new plugin. These methods will be used to provide any required data which needs to be inserted into the system database. An example of this is a plugin extension points. So, when a plugin is installed a special method named (migration-up) will be called to add new records to the database. On the same way, a special method named (migration-down) will be called when a plugin is uninstalled to remove any data which is used by this plugin. \\
+\underline{\textbf{Git Commits: }} \\
+\href{http://github.com/Jonv/earth/commit/ab698ee229}{earth/commit/ab698ee229}, \\
+\href{http://github.com/Jonv/earth/commit/1a027b0118}{earth/commit/1a027b0118}, \\
+\href{http://github.com/Jonv/earth/commit/d514a875ad}{earth/commit/d514a875ad} and \\
+\href{http://github.com/Jonv/earth/commit/6512ef9d4476}{earth/commit/6512ef9d4476}
+
+\item Read the search criteria in the GUI from the metadata attributes table. By doing this, the GUI search criteria will be flexible and it will be changed depending on the installed plugins.\\
+\underline{\textbf{Git Commits: }} \\
+\href{http://github.com/Jonv/earth/commit/941ffe0d6d5}{earth/commit/941ffe0d6d5}
+
+
+
+\item Change the file monitor status reading approach. When we changed file-monitor to a plugin the earth daemon (status) script was damaged. That is because the old script is reading the (status) information from a file-monitor instance variable. I changed this so the script will read the status from a log file instead.\\
+\underline{\textbf{Git Commits: }} \\
+\href{http://github.com/Jonv/earth/commit/4296cc85b8e}{earth/commit/4296cc85b8e},\\
+\href{http://github.com/Jonv/earth/commit/356c49fe2c7}{earth/commit/356c49fe2c7} and\\
+\href{http://github.com/Jonv/earth/commit/2337035f1}{earth/commit/2337035f1}\\
+
+\newpage
+
+\item Give the developers a choice of running file-monitor as a plugin or not. This choice makes testing file-monitor easier. \\
+\underline{\textbf{Git Commits: }} \\
+\href{http://github.com/Jonv/earth/commit/1982dd82fcec}{earth/commit/1982dd82fcec}
+
+\item Add more comments and perform minor fixes like changing some method names to avoid any Ruby methods overriding problem.\\ 
+\underline{\textbf{Git Commits: }} \\
+\href{http://github.com/Jonv/earth/commit/3fb9eedc3}{earth/commit/3fb9eedc3},\\
+\href{http://github.com/Jonv/earth/commit/1e508f971}{earth/commit/1e508f971},\\
+\href{http://github.com/Jonv/earth/commit/914bf757f3}{earth/commit/914bf757f3} and\\
+\href{http://github.com/Jonv/earth/commit/22b584ab1}{earth/commit/22b584ab1},\\
+\end{enumerate}
+	\item \textit{\textbf{Integrating All Groups Code into One Repository:}}\\
+I worked in conjunction with Ken, Filli and Jon in integrating all groups code into one unified repository. We started by creating a new repository to hold the merged code. Then, we created separate branches for each group: group1, group2 and group3. Then, we merged group1 and group2 into a new branch: group1-2. Next, we add earth daemon plugins code: group1-2-earthd-plugins. Finally, GUI plugins code was merged: group1-2-earthd-gui-plugins.\\
+\underline{\textbf{Git Commits: }} \\ 
+\href{http://github.com/Jonv/earth/commit/f803e612ac}{earth/commit/f803e612ac},\\
+\href{http://github.com/Jonv/earth/commit/bd2182473e}{earth/commit/bd2182473e},\\
+\href{http://github.com/Jonv/earth/commit/40e772e229}{earth/commit/40e772e229},\\
+\href{http://github.com/Jonv/earth/commit/a93251ff7b}{earth/commit/a93251ff7b},\\
+\href{http://github.com/Jonv/earth/commit/69c958090b}{earth/commit/69c958090b},\\
+\href{http://github.com/Jonv/earth/commit/4e0d8b7a38}{earth/commit/4e0d8b7a38},\\
+\href{http://github.com/Jonv/earth/commit/819cbbea2a}{earth/commit/819cbbea2a},\\
+\href{http://github.com/Jonv/earth/commit/addf7a99e0}{earth/commit/addf7a99e0},\\
+\href{http://github.com/Jonv/earth/commit/ea6e6fa36d}{earth/commit/ea6e6fa36d},\\
+\href{http://github.com/Jonv/earth/commit/b0d3c77061}{earth/commit/b0d3c77061},\\
+\href{http://github.com/Jonv/earth/commit/dea6c53537}{earth/commit/dea6c53537},\\
+\href{http://github.com/Jonv/earth/commit/a79f386e74}{earth/commit/a79f386e74} and \\
+\href{http://github.com/Jonv/earth/commit/e55a0dc1bd}{earth/commit/e55a0dc1bd}
+
+\item \textit{\textbf{Fix Deleting Directory Feature:}}\\
+When integrating the code, a new problem occurs when testing the deleting directory feature with the files metadata. The problem was fixed immediately and easily.\\
+\underline{\textbf{Git Commits: }} \\ 
+\href{http://github.com/Jonv/earth/commit/733dc42588}{earth/commit/733dc42588}
+\end{itemize}
+
+\newpage
+
+\section*{Resource Contributions}
+I estimated that I will spent about 50 hours for this milestone. I have spent about 60 hours including meeting times. It seems that I underestimated the integration effort. It includes many meetings and consumes huge time and effort until we made it right. In addition, I spent about 10 hours in preparation for the last presentation.
+
+
+\section*{Milestone Observations}
+Different groups have worked on developing this project. In addition, the groups distribution has changed during the project lifetime. Each group has created its own Git repository. This adds more complexity to the integration process. In order to avoid this problem, the repositories must be in sync at the end of each milestone. \\
+At the end of this project, I think we managed to deliver a very good framework for creating daemon plugins and GUI plugins. In future, this framework could be used to redevelop the whole earth GUI as plugins. In addition, different daemon plugins could be developed easily and new functionality could be added. 
+
+\end{document}  
