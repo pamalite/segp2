@@ -1,0 +1,50 @@
+\documentclass[10pt, a4]{article}
+\usepackage{times}
+\begin{document}
+
+\title{Milestone 7 Individual Report}
+\author{Alex Egan}
+\date{ }
+
+\maketitle
+ 
+\section{Task Description}
+The task assigned to me was a continuation of work from the last milestone. This was to implement sorting in the Navigation view by being able to click on the column headings. Identifying the issues in the All Files view and correcting them were was abandoned and the aim was to add either pagination or sorting or both to the Navigation view.
+
+\section{Progress Summary}
+\label{prog-sum}
+Unfortunately, the task was not completed. Although I managed to implement some pagination and some steps to get the sorting working, I could not get either to function completely or correctly. The Navigation view is structured differently to that of the All Files view and this was an issue when trying to directly copy code. I managed to find some work-arounds for the problems I encountered but they inevitably created other issues.\\
+\\
+Implementing the All Files pagination in Navigation caused a listing of every file below the current directory, as it technically should have. To remedy this, I removed the code that was doing the giant listing. Without this complete list of files, the pagination did not work. Keeping the complete list of files but not displaying them caused the pagination to show multiple pages that should not have been there. Back and forth fixing of issues resulted in a greater understanding of what was going on in the code but did not generate the required solution. I could not pinpoint the issue with the sorting in Navigation. It seemed the sort parameters were not being picked for some reason.
+\\
+There was discussion about rewriting the views as GUI plugins and this would be a perfect opportunity to fix and implement the pagination and sorting functionalities.
+
+\section{Resource Allocation}
+The estimate as in the plan is below.\\
+\\
+\textbf{Subtasks:}
+\begin{enumerate}
+	\item Investigate issues raised in previous milestone. (3 hrs)
+	\item Implement changes. (6 hrs)
+	\item Test and integrate solution to the group codebase. (1 hr)
+	\item Miscellaneous administration and meetings. (2 hrs)
+\end{enumerate}
+\textbf{Total Time Estimate:} 12 hrs
+
+\section{Resource Use}
+See the Time Log in Section \ref{time-log} for a break-down time spent by individual tasks.\\
+\\
+The task was not completed on the planned schedule. There were less meetings than expected but this was due to more direct collaboration by group members. Taking time to research concepts and review code meant that direct was important as it allowed for new ideas about how to attack the problem.
+
+\section{Time Log}
+\label{time-log}
+Times are rounded to the nearest hour.\\
+\\
+Ruby, Rails and HAML research: 3 hrs\\
+Coding: 9 hrs\\
+Pre-presentation meetings: 1 hr\\
+Presentation: 1 hr\\
+\\
+\textbf{Sprint Total:} 14 hrs%%%%
+
+\end{document}
